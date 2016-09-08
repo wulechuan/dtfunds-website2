@@ -1,6 +1,37 @@
 .width-wrap {
 	min-width: 728px;
 }
+.page-chief-section {
+	background: #fdfdfd;
+}
+.page-chief-section > .content > .row {
+	position: absolute;
+	left: 8%;
+	right: 8%;
+	margin: auto;
+	}
+	.page-chief-section > .content > .row .width-wrap {
+		min-width: 574px;
+		height: 100%;
+	}
+	.page-chief-section > .content > .row.illustrate-block {
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		padding: 0;
+	}
+	.page-chief-section > .content > .row.illustrate-block .width-wrap {
+		height: 100%;
+		max-width: none;
+	}
+	.qrcode .qrcode-image {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+	}
+
+
 
 .section-first-fold {
 	}
@@ -23,55 +54,47 @@
 		color: white;
 	}
 
-	.section-first-fold > .content > .row {
-		position: absolute;
-		left: 8%;
-		right: 8%;
-		margin: auto;
-	}
-	.section-first-fold > .content > .row .width-wrap {
-		min-width: 574px;
-	}
 
-	.section-first-fold > .content .row.info {
+
+	.section-first-fold > .content .row.slogan-block {
 		top: 15%;
 		height: 36%;
 		min-height: 220px;
 	}
-	.section-first-fold > .content .row.call-to-action-button {
+	.section-first-fold > .content .row.call-to-action-button-block {
 		top: 52%;
 		height: 2rem;
 	}
-	.section-first-fold > .content .row.call-to-action-qrcode {
+	.section-first-fold > .content .row.call-to-action-qrcode-block {
 		bottom: 15%;
 	}
 
 
-	.section-first-fold > .content .row.info > .width-wrap {
-		height: 100%;
+	.section-first-fold > .content .first-fold-title,
+	.section-first-fold > .content .slogan,
+	.section-first-fold > .content .subtitle {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
 		}
-		.section-first-fold > .content .first-fold-title,
-		.section-first-fold > .content .slogan,
+		.section-first-fold > .content .first-fold-title {
+			top: 5%;
+		}
+		.section-first-fold > .content .slogan {
+			top: 38%;
+		}
 		.section-first-fold > .content .subtitle {
-			position: absolute;
-			left: 0;
-			right: 0;
-			margin: 0 auto;
-			}
-			.section-first-fold > .content .first-fold-title {
-				top: 5%;
-			}
-			.section-first-fold > .content .slogan {
-				top: 38%;
-			}
-			.section-first-fold > .content .subtitle {
-				top: 77%;
-			}
-	.section-first-fold > .content .row.call-to-action-button  button,
-	.section-first-fold > .content .row.call-to-action-button .button {
+			top: 77%;
+		}
+
+
+	.section-first-fold > .content .row.call-to-action-button-block  button,
+	.section-first-fold > .content .row.call-to-action-button-block .button {
 		margin: 0 auto;
 		width: 8.8rem;
 	}
+
 
 	.section-first-fold > .content .first-fold-title {
 		position: relative;
@@ -129,20 +152,15 @@
 	}
 
 
-	.section-first-fold > .content .row.call-to-action-qrcode .qrcode {
+	.section-first-fold > .content .row.call-to-action-qrcode-block .qrcode {
 		width: 4.2rem;
 		height: 4.2rem;
 		margin: 0 auto 1rem;
 	}
-	.section-first-fold > .content .row.call-to-action-qrcode .qrcode .qrcode-image {
-		width: 100%;
-		height: 100%;
-		margin: 0;
-	}
 
 
 	@media only screen and (max-width: 980px) {
-		.section-first-fold > .content .row.call-to-action-button {
+		.section-first-fold > .content .row.call-to-action-button-block {
 			top: 57%;
 		}
 		.section-first-fold > .content .subtitle span {
@@ -151,22 +169,259 @@
 	}
 
 	@media only screen and (max-height: 720px) {
-		.section-first-fold > .content .row.call-to-action-button {
+		.section-first-fold > .content .row.call-to-action-button-block {
 			top: 63%;
 			bottom: 15%;
 		}
-		.section-first-fold > .content .row.call-to-action-qrcode {
+		.section-first-fold > .content .row.call-to-action-qrcode-block {
 			bottom: 5%;
 			left: 1rem;
 		}
-		.section-first-fold > .content .row.call-to-action-qrcode .width-wrap {
+		.section-first-fold > .content .row.call-to-action-qrcode-block .width-wrap {
 			min-width: 0;
 			margin: 0;
 			position: absolute;
 			left: 0;
 			bottom: 0;
 		}
-		.section-first-fold > .content .row.call-to-action-qrcode .figcaption .less-important-segment {
+		.section-first-fold > .content .row.call-to-action-qrcode-block .qrcode-block > .content {
+			margin: 0;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+		.section-first-fold > .content .row.call-to-action-qrcode-block .figcaption .less-important-segment {
 			display: none;
 		}
 	}
+
+
+.section-financing {
+	}
+
+	.section-financing .row.features-block {
+		height: 50%;
+		min-height: 270px;
+		max-height: 450px;
+		top: 0;
+		bottom: 0;
+		font-size: 1rem;
+		}
+
+	.section-financing .f-list.features .f-item {
+		left: 8%;
+		position: absolute;
+		padding: 1em 2em 1em 6.4em;
+		margin: 0;
+		-webkit-transform: translateY(-50%);
+		        transform: translateY(-50%);
+		    -ms-transform: translateY(-50%);
+		}
+		.section-financing .f-list.features .f-item *,
+		.section-financing .f-list.features .f-item {
+			transition-property: background, width, height, max-width, min-width, max-height, min-height, color, opacity, visibility, transform;
+		}
+		.section-financing .f-list.features .f-item.f-item-1 {
+			top: 0;
+		}
+		.section-financing .f-list.features .f-item.f-item-2 {
+			top: 40%;
+		}
+		.section-financing .f-list.features .f-item.f-item-3 {
+			top: 80%;
+		}
+		.section-financing .f-list.features .f-item p {
+			font-weight: 200;
+			font-size: 90%;
+			line-height: 1.8;
+			color: #848484;
+		}
+		.section-financing .f-list.features .f-item p .label {
+			display: block;
+			font-size: 150%;
+			color: black;
+		}
+
+		.section-financing .f-list.features .f-item .icon {
+			position: absolute;
+			left: 0;
+			top: 0.6em;
+			width: 4.5em;
+			height: 4.5em;
+			font-size: 1em;
+			line-height: 4.5em;
+		}
+		.section-financing .f-list.features .icon .icon-bg {
+			font-size: 4.5em;
+			color: #cca25d;
+		}
+		.section-financing .f-list.features .icon .icon-face {
+			color: white;
+		}
+
+
+	.section-financing .illustrate.device-0 .illustrate-look {
+		background-position: right bottom;
+		background-size: contain;
+		background-image: url(../../images/pages/index/page-section-1-device-0.jpg);
+	}
+
+	@media only screen and (max-width: 1440px) {
+		.section-financing .illustrate.device-0 .illustrate-look {
+			background-position: 120% bottom;
+		}
+	}
+	@media only screen and (max-width: 768px) {
+		.section-financing .f-list.features .f-item {
+			left: 0;
+		}
+	}
+
+	@media only screen and (max-height: 768px) {
+		.section-financing .f-list.features .f-item {
+			font-size: 80%;
+			padding-left: 6em;
+		}
+		.section-financing .f-list.features .icon .icon-bg {
+			font-size: 4.5em;
+		}
+	}
+
+
+.section-contacts {
+	background-color: #1c1c1c;
+	}
+
+	.section-contacts > .content {
+		text-align: center;
+		color: white;
+	}
+
+	.section-contacts > .content .links-block,
+	.section-contacts > .content .copyright-block {
+		color: #474747;
+		font-size: 0.7rem;
+		font-weight: 200;
+	}
+
+	.section-contacts > .content .row.info-block {
+		top: 10%;
+	}
+	.section-contacts > .content .row.call-to-action-qrcode-block {
+		top: 37%;
+		height: 30%;
+		max-height: 200px;
+		z-index: 3;
+	}
+	.section-contacts > .content .row.links-block {
+		bottom: 13%;
+		left: 0;
+		right: 0;
+	}
+	.section-contacts > .content .row.copyright-block {
+		bottom: 9%;
+	}
+
+	.section-contacts > .content .brand,
+	.section-contacts > .content .subtitle {
+		margin: 1.8rem auto;
+	}
+
+	.section-contacts > .content .brand {
+		position: relative;
+		width: 70%;
+		max-width: 25rem;
+		height: 2.1rem;
+		overflow: hidden;
+		white-space: nowrap;
+		text-indent: 4000px;
+		border-color: #cca25d;
+		/* margin: 0 auto; */
+
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		background-image: url(../../images/pages/index/brand-firt-fold-title.png);
+		}
+
+
+	.section-contacts > .content .subtitle {
+		font-size: 1.7rem;
+		font-weight: 200;
+	}
+	.section-contacts > .content .subtitle span {
+		display: inline-block;
+	}
+
+
+	.section-contacts > .content .row.call-to-action-qrcode-block .qrcode {
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 7rem;
+		height: 7rem;
+		margin: 0 auto 2.25rem;
+
+		top: 0;
+	}
+	.section-contacts > .content .row.call-to-action-qrcode-block .figcaption {
+		position: absolute;
+		left: 0;
+		right: 0;
+		font-size: 1.3rem;
+		font-weight: 200;
+
+		bottom: 0;
+	}
+
+	.section-contacts > .content .row.links-block h3 {
+		margin: 0.7rem auto;
+	}
+
+	.section-contacts > .content .row.links-block .f-list.links > li {
+		display: inline-block;
+		margin: 0.3rem 0.6rem; 
+	}
+
+	.section-contacts > .content .row.links-block .f-list.links > li a {
+		display: inline-block;
+		padding: 0.2em 0.5em;
+		margin: -0.2em -0.25rem;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.section-contacts > .content .row.links-block .f-list.links > li:hover a {
+		color: white;
+		background-color: rgba(204, 162, 93, 0.32);
+	}
+
+	@media only screen and (max-height: 720px) {
+		.section-contacts > .content .row.info-block {
+			top: 6%;
+		}
+		.section-contacts > .content .row.info-block .subtitle {
+			width: 0;
+			height: 0;
+			opacity: 0;
+			visibility: hidden;
+			overflow: hidden;
+		}		
+		.section-contacts > .content .row.call-to-action-qrcode-block {
+			top: 30%;
+		}		
+		.section-contacts > .content .row.call-to-action-qrcode-block .figcaption {
+			width: 0;
+			height: 0;
+			opacity: 0;
+			visibility: hidden;
+			overflow: hidden;
+		}		
+		.section-contacts > .content .row.links-block {
+			bottom: 12%;
+		}
+		.section-contacts > .content .row.copyright-block {
+			bottom: 6%;
+		}
+	}
+

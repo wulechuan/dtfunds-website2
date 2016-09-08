@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1473329829'); /* IE9*/
-  src: url('iconfont.eot?t=1473329829#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1473329829') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1473329829') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1473329829#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1473346685'); /* IE9*/
+  src: url('iconfont.eot?t=1473346685#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1473346685') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1473346685') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1473346685#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -15,4 +15,5 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-ttt-copy:before { content: "\e600"; }
+.icon-polygon-6-rounded-corners:before { content: "\e601"; }
+.icon-triangle-45-90-downwards:before { content: "\e600"; }

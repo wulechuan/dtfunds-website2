@@ -257,8 +257,10 @@ dd {
 		overflow: hidden;
 		}
 		.icon.icons-in-elements .iconfont,
+		.icon.icons-in-elements .icon-face-part,
+		.icon.icons-in-elements .icon-face-2,
 		.icon.icons-in-elements .icon-face-1,
-		.icon.icons-in-elements .icon-face-2 {
+		.icon.icons-in-elements .icon-face {
 			display: block;
 			position: absolute;
 			left: 0;
@@ -266,15 +268,14 @@ dd {
 			height: 100%;
 			margin: 0;
 			top: 0;
-			transition-property: opacity;
 		}
 
 		.icon.icons-in-elements .iconfont {
 			zoom: 1;
 			vertical-align: baseline;
 			font-size: inherit;
-			transition-property: opacity, color, visibility;
-			transition-duration: 0.24s, 0.6s, 0.6s;
+			transition-property: opacity, transform, color, visibility;
+			transition-duration: 0.24s, 0.6s, 0.6s, 0.6s;
 		}
 
 		.icon.icons-in-elements .iconfont:before {
@@ -332,27 +333,16 @@ dd {
 			}
 
 		.icon.icons-in-elements.animation {
-			animation-name: icon-hide-icon-faces-for-a-moment;
-			animation-timing-function: ease-in;
-			}
-			@keyframes icon-hide-icon-faces-for-a-moment {
-				/* so that no initial ugly child animations will be seen */
-				0% { opacity: 0; }
-				66% { opacity: 0; }
-				to {  opacity: 1; }
 			}
 			.icon.icons-in-elements.animation,
 			.icon.icons-in-elements.animation .icon-face-1,
 			.icon.icons-in-elements.animation .icon-face-2 {
-				animation-duration: 0.45s;
+				transition-duration: 0.45s;
 			}
 
 			.icon.icons-in-elements.animation .icon-face-1,
 			.icon.icons-in-elements.animation .icon-face-2 {
 				top: 0;
-				transition-property: none;
-				animation-timing-function: ease-in;
-				animation-fill-mode: none;
 			}
 
 			.icon.icons-in-elements.animation .icon-face-1 {
@@ -376,28 +366,6 @@ dd {
 				transform: translateY(0px);
 				-ms-transform: translateY(0px); /* ie9 */
 				animation-name: icon-face-2-slides-upwards;
-			}
-
-			@keyframes icon-face-1-slides-downwards {
-				0% { transform: translateY(-100%); opacity: 0; visibility: hidden; }
-				50% { opacity: 0.05; }
-				to { transform: translateY(0px); opacity: 1; visibility: visible; }
-			}
-			@keyframes icon-face-1-slides-upwards {
-				0% { transform: translateY(0px); opacity: 1; visibility: visible; }
-				50% { opacity: 0.05; }
-				to { transform: translateY(-100%); opacity: 0; visibility: hidden; }
-			}
-
-			@keyframes icon-face-2-slides-downwards {
-				0% { transform: translateY(0px); opacity: 1; visibility: visible; }
-				50% { opacity: 0.05; }
-				to { transform: translateY(100%); opacity: 0; visibility: hidden; }
-			}
-			@keyframes icon-face-2-slides-upwards {
-				0% { transform: translateY(100%); opacity: 0; visibility: hidden; }
-				50% { opacity: 0.05; }
-				to { transform: translateY(0px); opacity: 1; visibility: visible; }
 			}
 
 
@@ -587,6 +555,31 @@ label, .label {
 
 .content {
 	background-color: transparent;
+	}
+
+
+.illustrate,
+.symbol {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	}
+	.illustrate .locator,
+	.illustrate .illustrate-look,
+	.symbol .locator,
+	.symbol .symbol-look {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.illustrate .illustrate-look,
+	.symbol .symbol-look {
+		transition-property: all;
+		background-repeat: no-repeat;
 	}
 
 

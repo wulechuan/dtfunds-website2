@@ -43,12 +43,12 @@
 
 
 #app-header {
+	box-sizing: border-box;
+	border-width: 0 0 1px 0;
 	position: fixed;
 	left: 0;
 	right: 0;
 	top: 0;
-	background-color: rgba(255, 255, 255, 0);
-	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.07);
 	-webkit-transition-property: background-color, box-shadow;
 	        transition-property: background-color, box-shadow;
 	    -ms-transition-property: background-color, box-shadow;
@@ -58,10 +58,10 @@
 	}
 
 	#app-header {
-		height: 2.25rem;
+		height: 2.3rem;
 	}
 	.page-chief-section > .content {
-		top: 2.25rem;
+		top: 2.3rem;
 	}
 
 	.page-chief-section > .content *,
@@ -108,11 +108,6 @@
 		height: 100%;
 	}
 
-	#app-header.use-theme-for-first-fold {
-		background-color: transparent;
-		box-shadow: 0 2px 3px rgba(0, 0, 0, 0);
-	}
-
 
 #app-chief-nav {
 	margin: 0;
@@ -123,8 +118,15 @@
 	#app-chief-nav .menu.level-1 {
 		height: 100%;
 		margin-right: -0.6rem;
-		background-color: transparent;
 		}
+
+		@media only screen and (max-width: 1280px) {
+			#app-chief-nav .menu.level-1 {
+				margin-right: 0rem;
+			}
+		}
+
+
 		#app-chief-nav .menu.level-1 > .menu-item {
 			max-width: none;
 			margin: 0 0.6rem;
@@ -156,71 +158,19 @@
 			padding: 0;
 			border-width: 1px;
 			border-style: solid;
-			/* border-color: #cca25d; */
-			border-color: rgba(204, 162, 93, 0.35);
-
-			box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.147);
-			/* box-shadow: 0 0 8px 0 #cca25d; */
 		}
 
 		#app-chief-nav .menu.level-2 > .menu-item {
 			margin: 0;
-			line-height: 2.25rem;
+			line-height: 2.3rem;
 			text-align: center;
-			border-color: #cca25d;
-		}
-		#app-chief-nav .menu.level-2 > .menu-item:hover {
-			background-color: #cca25d;
-			/* background-color: rgba(204, 162, 93, 0.35); */
 		}
 		#app-chief-nav .menu.level-2 > .menu-item > a > .label,
 		#app-chief-nav .menu.level-2 > .menu-item     > .label {
 			padding: 0 0.5rem;
-			color: black;
 			vertical-align: top;
 			text-indent: -2px;
 		}
-
-
-	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item > a > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item     > .label {
-		color: #cca25d;
-	}
-	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item > a > .label:hover,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item     > .label:hover,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item.coupled-shown  > a > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item.coupled-shown      > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item.current-parent > a > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item.current-parent     > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item.current        > a > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item.current            > .label {
-		color: white;
-	}
-
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 {
-		background-color: transparent;
-	}
-
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 > .menu-item:hover {
-		background-color: transparent;
-	}
-
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 > .menu-item > a > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 > .menu-item     > .label {
-		color: #cca25d;
-	}
-
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 > .menu-item > a > .label:hover,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 > .menu-item     > .label:hover,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 > .menu-item.coupled-shown  > a > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 > .menu-item.coupled-shown      > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 > .menu-item.current-parent > a > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 > .menu-item.current-parent     > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 > .menu-item.current        > a > .label,
-	.use-theme-for-first-fold #app-chief-nav .menu.level-2 > .menu-item.current            > .label {
-		color: white;
-		background-color: rgba(204, 162, 93, 0.35);
-	}
 
 
 .swiper-container.page-chief-sections {
@@ -242,7 +192,6 @@
 			right: 5%;
 		}
 		.swiper-container.page-chief-sections.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
-			background-color: transparent;
 			margin: 0.1rem 0;
 		}
 		.swiper-container.page-chief-sections .swiper-pagination-bullet:before {
@@ -261,9 +210,6 @@
 			-webkit-transform: scale(0.5, 0.5);
 			        transform: scale(0.5, 0.5);
 			    -ms-transform: scale(0.5, 0.5);
-			background-color: #757575;
-			background-color: #cca25d;
-			box-shadow: 0 0 0 0 transparent;
 
 			-webkit-transition-property: -webkit-transform, background-color, box-shadow;
 			        transition-property:         transform, background-color, box-shadow;
@@ -276,7 +222,6 @@
 			-webkit-transform: scale(1, 1);
 			        transform: scale(1, 1);
 			    -ms-transform: scale(1, 1);
-			background-color: #cca25d;
 		}
 		.swiper-container.page-chief-sections .swiper-pagination-bullet.swiper-pagination-bullet-active {
 			cursor: default;
@@ -285,13 +230,23 @@
 			-webkit-transform: scale(1, 1);
 			        transform: scale(1, 1);
 			    -ms-transform: scale(1, 1);
-			background: transparent;
-			box-shadow: 0 0 0 2px #cca25d;
 		}
 		.swiper-container.page-chief-sections .swiper-pagination-bullet.swiper-pagination-bullet-active:hover:before {
-			-webkit-transform: scale(1, 1) rotateY(180deg);
+			/* -webkit-transform: scale(1, 1) rotateY(180deg);
 			        transform: scale(1, 1) rotateY(180deg);
-			    -ms-transform: scale(1, 1) rotateY(180deg);
+			    -ms-transform: scale(1, 1) rotateY(180deg); */
+			-webkit-animation: swiper-active-bullet-spinning 1s infinite linear;
+			        animation: swiper-active-bullet-spinning 1s infinite linear;
+			    -ms-animation: swiper-active-bullet-spinning 1s infinite linear;
+		}
+
+		@-webkit-keyframes swiper-active-bullet-spinning {
+			0% { -webkit-transform: scale(1, 1) rotateY(  0deg); }
+			to { -webkit-transform: scale(1, 1) rotateY(360deg); }
+		}
+		@keyframes swiper-active-bullet-spinning {
+			0% {         transform: scale(1, 1) rotateY(  0deg); }
+			to {         transform: scale(1, 1) rotateY(360deg); }
 		}
 
 
@@ -306,6 +261,7 @@
 		left: 0;
 		right: 0;
 		margin: auto;
+		overflow: hidden; /* for masking expanded bgs */
 	}
 
 	.page-chief-section > .content {
@@ -326,7 +282,6 @@
 		top: 0;
 		bottom: 0;
 		z-index: 2;
-		background-color: rgba(0, 0, 0, 0.5);
 		-webkit-transition-property: none;
 		        transition-property: none;
 		    -ms-transition-property: none;

@@ -4,16 +4,23 @@
 	new Swiper('.swiper-container', {
 		direction: 'vertical',
 		mousewheelControl: true,
+		hashnav: true,
 		loop: false,
 		pagination: '.swiper-pagination',
 		paginationClickable: true,
 		onSlideChangeStart: function (swiperControl) {
 			var slideIndexToShow = swiperControl.activeIndex;
 			var cssClassName0 = 'use-theme-for-first-fold';
+			var cssClassName2 = 'use-theme-for-contacts';
 			if (slideIndexToShow === 0) {
 				$appHeader.addClass(cssClassName0);
 			} else {
 				$appHeader.removeClass(cssClassName0);
+			}
+			if (slideIndexToShow === 2) {
+				$appHeader.addClass(cssClassName2);
+			} else {
+				$appHeader.removeClass(cssClassName2);
 			}
 		}
 	});
@@ -28,9 +35,8 @@
 		var slidesCount = $slides.length;
 		var interval = 12000;
 
-		// showSlide(Math.floor(Math.random() * slidesCount));
-		showSlide(0);
-		// window.setInterval(showNextSlide, interval);
+		showSlide(Math.floor(Math.random() * slidesCount));
+		window.setInterval(showNextSlide, interval);
 
 		function showNextSlide() {
 			if (isNaN(currentIndex)) showSlide(0);
