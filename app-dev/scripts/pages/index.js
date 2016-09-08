@@ -28,8 +28,9 @@
 		var slidesCount = $slides.length;
 		var interval = 12000;
 
-		showSlide(Math.floor(Math.random() * slidesCount));
-		window.setInterval(showNextSlide, interval);
+		// showSlide(Math.floor(Math.random() * slidesCount));
+		showSlide(0);
+		// window.setInterval(showNextSlide, interval);
 
 		function showNextSlide() {
 			if (isNaN(currentIndex)) showSlide(0);
@@ -52,17 +53,17 @@
 			}
 		}
 		function showOneSlide(slideElement, i) {
-			console.log('show', i);
+			// console.log('show', i);
 			$(slideElement).addClass('start-to-show');
 			currentIndex = i;
 			slideElement.style.zIndex = 2;
 			window.setTimeout(function () {
-				console.log('remove class', i);
+				// console.log('remove class', i);
 				$(slideElement).removeClass('start-to-show');
 			}, 9000);
 		}
 		function hideOneSlide(slideElement, i) {
-			console.log('hide', i);
+			// console.log('hide', i);
 			$(slideElement).removeClass('start-to-show');
 			slideElement.style.zIndex = '';
 		}

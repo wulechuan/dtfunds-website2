@@ -5,12 +5,16 @@
 
 /* transitions: start */
 	div, span, button, input, ol, ul, li, p, a, em,
+	.button, .button:before, .button:after,
 	[role="button"], [role="button"]:before, [role="button"]:after,
 	div:before, span:before, button:before, input:before, ol:before, ul:before, li:before, p:before,
 	div:after, span:after, button:after, input:after, ol:after, ul:after, li:after, p:after {
-		transition-property: visibility, opacity, color, background-color, border-color;
-		transition-duration: 0.33s,      0.33s,   0.20s, 0.30s,            0.30s;
-		transition-timing-function: ease-out;
+		-webkit-transition-property: -webkit-transform, visibility, opacity, color, background-color, border-color;
+		        transition-property:         transform, visibility, opacity, color, background-color, border-color;
+		-webkit-transition-duration:         0.33s,     0.33s,      0.33s,   0.20s, 0.30s,            0.30s;
+		        transition-duration:         0.33s,     0.33s,      0.33s,   0.20s, 0.30s,            0.30s;
+		-webkit-transition-timing-function: ease-out;
+		        transition-timing-function: ease-out;
 		/* ie9 doesn't support css transition but does support css -ms-transform */
 	}
 
@@ -33,11 +37,7 @@ body {
 	line-height: 1.25;
 	}
 
-	body, button, input, select, option, [role="button"], [role="button"] label {
-		font-size: 16px;
-	}
-	input.empty-field:focus,
-	input.empty-field:active {
+	body, button, input, select, option, a[role="button"], [role="button"], a.button, .button, label {
 		font-size: 16px;
 	}
 
@@ -98,6 +98,7 @@ a, a:link {
 		text-decoration: underline;
 	}
 
+	a.button, a.button:hover,
 	a[role="button"], a[role="button"]:hover {
 		text-decoration: none;
 	}
@@ -107,6 +108,7 @@ select,
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
+.button,
 [role="button"],
 button {
 	line-height: 1.25;
@@ -114,7 +116,8 @@ button {
 	cursor: pointer;
 	}
 
-	*[role="button"] > .label,
+	.button > .label,
+	[role="button"] > .label,
 	button > .label {
 		display: block;
 		font-size: inherit;
@@ -125,6 +128,7 @@ button {
 	input[type="button"].size-std-wide,
 	input[type="submit"].size-std-wide,
 	input[type="reset"].size-std-wide,
+	.button.size-std-wide,
 	[role="button"].size-std-wide,
 	button.size-std-wide {
 		width: 170px;
@@ -134,6 +138,7 @@ button {
 	input[type="button"].size-std-regular,
 	input[type="submit"].size-std-regular,
 	input[type="reset"].size-std-regular,
+	.button.size-std-regular,
 	[role="button"].size-std-regular,
 	button.size-std-regular {
 		width: 106px;
@@ -142,6 +147,7 @@ button {
 	input[type="button"].simple-look,
 	input[type="submit"].simple-look,
 	input[type="reset"].simple-look,
+	.button.simple-look,
 	[role="button"].simple-look,
 	button.simple-look {
 		min-height: 0;
@@ -159,6 +165,7 @@ button {
 	input[type="button"].simple-look > .label,
 	input[type="submit"].simple-look > .label,
 	input[type="reset"].simple-look > .label,
+	.button.simple-look > .label,
 	[role="button"].simple-look > .label,
 	button.simple-look > .label {
 		width: auto;
@@ -180,6 +187,8 @@ button {
 		outline-style: none;
 	}
 
+	a.button:active,
+	a.button:focus,
 	a[role="button"]:active,
 	a[role="button"]:focus,
 	button:active,
@@ -1567,6 +1576,7 @@ button.button-x {
 	.buttons-in-single-line input[type="reset"],
 	.buttons-in-single-line input[type="submit"],
 	.buttons-in-single-line input[type="button"],
+	.buttons-in-single-line .button,
 	.buttons-in-single-line [role="button"],
 	.buttons-in-single-line button {
 		margin: 0 0 10px 20px;
@@ -1801,6 +1811,8 @@ button.button-x {
 
 		.tabular > .header button,
 		.tabular > .footer button,
+		.tabular > .header .button,
+		.tabular > .footer .button,
 		.tabular > .header [role="button"],
 		.tabular > .footer [role="button"] {
 			display: block;
@@ -2028,6 +2040,7 @@ ol.f-list, ul.f-list { /* function list */
 	padding: 15px 20px;
 	margin-bottom: 30px;
 	}
+	.pagination .button,
 	.pagination [role="button"],
 	.pagination button {
 		border-radius: 2px;
@@ -2040,6 +2053,7 @@ ol.f-list, ul.f-list { /* function list */
 	}
 
 	.pagination button.page-number,
+	.pagination .button.page-number,
 	.pagination [role="button"].page-number {
 		padding-left: 4.16px;
 		padding-right: 4.12px;
@@ -2049,6 +2063,7 @@ ol.f-list, ul.f-list { /* function list */
 		text-align: right;
 		margin-right: -20px;
 	}
+	.page-chief-part > .content.has-sidebar .pagination .button,
 	.page-chief-part > .content.has-sidebar .pagination [role="button"],
 	.page-chief-part > .content.has-sidebar .pagination button {
 		margin-left: 12px;

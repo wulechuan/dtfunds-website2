@@ -32,6 +32,8 @@ html, body {
 	}
 
 
+a.button.bg-transparent,
+.button.bg-transparent,
 *[role="button"].bg-transparent,
 .bg-transparent {
 	background-color: transparent;
@@ -83,7 +85,7 @@ input {
 	input[type="button"],
 	input[type="submit"],
 	input[type="reset"],
-	a[role="button"],/* this line is for ie8 */
+	a.button,
 	a[role="button"],
 	button {
 		color: white;
@@ -94,6 +96,7 @@ input {
 	input[type="button"]:hover,
 	input[type="submit"]:hover,
 	input[type="reset"]:hover,
+	.button:hover,
 	[role="button"]:hover,
 	button:hover {
 		background-color: #3f93ff;
@@ -102,6 +105,7 @@ input {
 	input[type="reset"].bg-transparent,
 	input[type="button"].bg-transparent,
 	input[type="submit"].bg-transparent,
+	.button.bg-transparent,
 	[role="button"].bg-transparent,
 	button.bg-transparent {
 		color: #cca25d;
@@ -110,14 +114,16 @@ input {
 	input[type="reset"].bg-transparent:hover,
 	input[type="button"].bg-transparent:hover,
 	input[type="submit"].bg-transparent:hover,
+	.button.bg-transparent:hover,
 	[role="button"].bg-transparent:hover,
 	button.bg-transparent:hover {
-		background-color: #e5f1ff;
+		background-color: rgba(204, 162, 93, 0.16);
 	}
 
 	input[type="reset"].bg-transparent.color-white,
 	input[type="button"].bg-transparent.color-white,
 	input[type="submit"].bg-transparent.color-white,
+	.button.bg-transparent.color-white,
 	[role="button"].bg-transparent.color-white,
 	button.bg-transparent.color-white {
 	    color: white;
@@ -127,6 +133,7 @@ input {
 	input[type="reset"].bg-transparent.color-white:hover,
 	input[type="button"].bg-transparent.color-white:hover,
 	input[type="submit"].bg-transparent.color-white:hover,
+	.button.bg-transparent.color-white:hover,
 	[role="button"].bg-transparent.color-white:hover,
 	button.bg-transparent.color-white:hover {
 	    background-color: rgba(255, 255, 255, 0.16)!important;
@@ -135,6 +142,7 @@ input {
 	input[type="reset"].bg-transparent.color-red,
 	input[type="button"].bg-transparent.color-red,
 	input[type="submit"].bg-transparent.color-red,
+	.button.bg-transparent.color-red,
 	[role="button"].bg-transparent.color-red,
 	button.bg-transparent.color-red {
 	    color: #ff291d;
@@ -144,6 +152,7 @@ input {
 	input[type="reset"].bg-transparent.color-red:hover,
 	input[type="button"].bg-transparent.color-red:hover,
 	input[type="submit"].bg-transparent.color-red:hover,
+	.button.bg-transparent.color-red:hover,
 	[role="button"].bg-transparent.color-red:hover,
 	button.bg-transparent.color-red:hover {
 	    background-color: rgba(255, 41, 29, 0.08)!important;
@@ -213,41 +222,52 @@ input {
 	    background-color: rgba(255, 41, 29, 0.08)!important;
 	} */
 
+	.pagination .button,
 	.pagination [role="button"],
 	.pagination button {
 		color: #666;
 		background-color: transparent;
 		}
 
+		.pagination a.button.page-number,
 		.pagination a[role="button"].page-number {
 			border-color: transparent;
 		}
+		.pagination .button,
+		.pagination a.button.page-number:link,
 		.pagination [role="button"],
-		.pagination [role="button"].page-number:link,
+		.pagination a[role="button"].page-number:link,
 		.pagination button {
 			border-color: #dadada;
 		}
 
+		.pagination .button.page-number:hover,
 		.pagination [role="button"].page-number:hover {
 			background-color: transparent;
 		}
+		.pagination .button:hover,
+		.pagination .button.page-number:link:hover,
 		.pagination [role="button"]:hover,
 		.pagination [role="button"].page-number:link:hover,
 		.pagination button:hover {
 			background-color: #f3f3f3;
 		}
 
+		.pagination .button.page-number.current,
 		.pagination [role="button"].page-number.current,
 		.pagination button.page-number.current {
 			color: white;
 			border-color: #cca25d;
 			background-color: #cca25d;
 		}
+		.pagination .button.current:hover,
 		.pagination [role="button"].current:hover,
 		.pagination button.current:hover {
 			background-color: #3f93ff;
 		}
 
+	a.button:active,
+	a.button:focus,
 	a[role="button"]:active,
 	a[role="button"]:focus,
 	button:active,

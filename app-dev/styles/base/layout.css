@@ -1,3 +1,16 @@
+.company-logo {
+	display: inline-block;
+	background-repeat: no-repeat;
+	/* background-image: url(../../images/company-brand/shiji-logo-gold-bg-transparent.png); */
+	background-image: url(../../images/company-brand/dtfunds-logo-gold-bg-transparent-large-cropped.png);
+}
+.qrcode-for-app-downloading {
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-image: url(../../images/company-brand/shiji-qrcode-app-downloading.png);
+}
+
 .row {
 	padding-left: 20px;
 	padding-right: 20px;
@@ -51,6 +64,18 @@
 		top: 2.25rem;
 	}
 
+	.page-chief-section > .content *,
+	.page-chief-section > .content {
+	-webkit-transition-property: all;
+	        transition-property: all;
+	    -ms-transition-property: all;
+	-webkit-transition-duration: 0.3s;
+	        transition-duration: 0.3s;
+	    -ms-transition-duration: 0.3s;
+
+	}
+
+
 	#app-header .app-header-bar {
 		position: static;
 		height: 100%;
@@ -61,8 +86,20 @@
 	}
 
 	#app-header .app-header-bar .company-logo-block {
-		width: 100%;
+		width: 6rem;
 		height: 100%;
+	}
+	#app-header .app-header-bar .company-logo-block .company-logo {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		width: 100%;
+		height: 1.5rem;
+		background-size: contain;
+		background-position: left;
 	}
 	#app-header .app-header-bar .app-chief-nav-block {
 		position: absolute;
@@ -235,12 +272,26 @@
 			        transition-duration: 0.3s;
 			    -ms-transition-duration: 0.3s;
 		}
+		.swiper-container.page-chief-sections .swiper-pagination-bullet:hover:before {
+			-webkit-transform: scale(1, 1);
+			        transform: scale(1, 1);
+			    -ms-transform: scale(1, 1);
+			background-color: #cca25d;
+		}
+		.swiper-container.page-chief-sections .swiper-pagination-bullet.swiper-pagination-bullet-active {
+			cursor: default;
+		}
 		.swiper-container.page-chief-sections .swiper-pagination-bullet.swiper-pagination-bullet-active:before {
 			-webkit-transform: scale(1, 1);
 			        transform: scale(1, 1);
 			    -ms-transform: scale(1, 1);
 			background: transparent;
 			box-shadow: 0 0 0 2px #cca25d;
+		}
+		.swiper-container.page-chief-sections .swiper-pagination-bullet.swiper-pagination-bullet-active:hover:before {
+			-webkit-transform: scale(1, 1) rotateY(180deg);
+			        transform: scale(1, 1) rotateY(180deg);
+			    -ms-transform: scale(1, 1) rotateY(180deg);
 		}
 
 
@@ -264,6 +315,8 @@
 		left: 0;
 		right: 0;
 		margin: auto;
+		padding: 2rem;
+		z-index: 5;
 	}
 
 	.page-chief-section > .bg-set .bg-tint {
