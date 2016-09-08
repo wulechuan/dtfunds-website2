@@ -17,7 +17,20 @@ time, mark, audio, video {
 	font-size: inherit;
 	font: inherit;
 	vertical-align: baseline;
+	border-style: solid;
 }
+div:before, span:before, i:before, sub:before, p:before, 
+h1:before, h2:before, h3:before, h4:before, h5:before, h6:before, 
+a:before, button:before, hr:before, blockquote:before,
+ul:before, ol:before, li:before, dl:before, dt:before, dd:before,
+div:after , span:after , i:after , sub:after , p:after , 
+h1:after , h2:after , h3:after , h4:after , h5:after , h6:after , 
+a:after , button:after , hr:after , blockquote:after ,
+ul:after , ol:after , li:after , dl:after , dt:after , dd:after  {
+	border-width: 0;
+	border-style: inherit;
+}
+
 body {
 	/* The 3 lines below are for ".row" full width even if some content is wider than browser window */
 	display: inline-block;
@@ -32,7 +45,7 @@ body {
 a {
 	font-size: inherit;
 }
-input, select, option, button, [role="button"] {
+input, select, option, button, [role="button"], .button {
     box-sizing: content-box;
     margin: 0.5em;
     padding: 0.5em 1em;

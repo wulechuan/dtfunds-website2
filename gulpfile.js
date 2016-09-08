@@ -101,6 +101,12 @@ gulp.task('styles-base', ['before-everything'], () => {
   ;
 });
 
+gulp.task('styles-vendors', ['before-everything'], () => {
+  return gulp.src(pathSrcRoot+'/styles/vendors/**/*.css')
+    .pipe(gulp.dest(pathNewDistCacheRoot+'/styles/vendors/')) // 将文件写入指定文件夹
+  ;
+});
+
 gulp.task('styles-iconfonts', ['before-everything'], () => {
   return gulp.src([
     pathSrcRoot+'/styles/base/iconfonts/*',
@@ -120,7 +126,8 @@ gulp.task('styles-specific', ['before-everything'], () => {
 
   return gulp.src(
     [
-      pathSrcRoot+'/styles/**/*.css'
+      pathSrcRoot+'/styles/**/*.css',
+      '!'+pathSrcRoot+'/styles/vendors/**/*.css'
     ]
       .concat(baseCssGlobsIngored)
   )
@@ -143,6 +150,7 @@ gulp.task('styles-specific', ['before-everything'], () => {
 gulp.task('styles', [
   'styles-base',
   'styles-iconfonts',
+  'styles-vendors',
   'styles-specific'
 ], () => {
   return gulp.src([
