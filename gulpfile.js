@@ -257,6 +257,7 @@ gulp.task('html-inject-snippets', ['pre-process-html-snippets'], () => {
     { file: 'module-app-body-wrap-end.html', name: 'appBodyWrapEnd:html' },
     { file: 'module-popup-layers-wrap-begin.html', name: 'popupLayersWrapBegin:html' },
     { file: 'module-popup-layers-wrap-end.html', name: 'popupLayersWrapEnd:html' },
+    { file: 'module-copyright-0.html', name: 'copyright0:html' },
     { file: 'module-partner-links.html', name: 'partnerLinks:html' }
   ];
 
