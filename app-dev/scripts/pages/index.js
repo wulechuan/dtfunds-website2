@@ -1,7 +1,8 @@
 (function () {
 	var $appHeader = $('#app-header');
+	$appHeader.addClass('use-theme-for-first-fold');
 
-	new Swiper('.swiper-container', {
+	new window.Swiper('#app-body > .swiper-container', {
 		direction: 'vertical',
 		mousewheelControl: true,
 		hashnav: true,
@@ -29,19 +30,22 @@
 
 
 	(function SimpleBgSlides() {
+		var $bgTint = $('.bg-tint');
+		var cssClassNameSlide = 'start-to-show';
 		var $rootElement = $('.page-chief-section.section-first-fold .bg-set');
 		var $slides = $rootElement.find('.bg');
 		var currentIndex = NaN;
 		var slidesCount = $slides.length;
-		var interval = 12000;
+		var interval = 6000;
 
-		showSlide(Math.floor(Math.random() * slidesCount));
+		// showSlide(Math.floor(Math.random() * slidesCount));
+		showSlide(0);
 		window.setInterval(showNextSlide, interval);
 
 		function showNextSlide() {
 			if (isNaN(currentIndex)) showSlide(0);
 			else {
-				showSlide(currentIndex + 1)
+				showSlide(currentIndex + 1);
 			}
 		}
 		function showSlide(index) {
@@ -57,20 +61,31 @@
 					hideOneSlide(slide, i);
 				}
 			}
+
+			var shouldFadeOut = index === 0;
+
+			var cssClassNameTint = 'fading-in';
+			if (shouldFadeOut) {
+				cssClassNameTint = 'fading-out'
+				$bgTint.addClass('fading-out-on-show');
+			} else {
+				$bgTint.removeClass('fading-out-on-show');
+			}
+			$bgTint.addClass(cssClassNameTint);
+			setTimeout(function () {
+				$bgTint.removeClass(cssClassNameTint);
+			}, 5100);
 		}
 		function showOneSlide(slideElement, i) {
-			// console.log('show', i);
-			$(slideElement).addClass('start-to-show');
+			$(slideElement).addClass(cssClassNameSlide);
 			currentIndex = i;
 			slideElement.style.zIndex = 2;
 			window.setTimeout(function () {
-				// console.log('remove class', i);
-				$(slideElement).removeClass('start-to-show');
-			}, 9000);
+				$(slideElement).removeClass(cssClassNameSlide);
+			}, 4000);
 		}
 		function hideOneSlide(slideElement, i) {
-			// console.log('hide', i);
-			$(slideElement).removeClass('start-to-show');
+			$(slideElement).removeClass(cssClassNameSlide);
 			slideElement.style.zIndex = '';
 		}
 	})();

@@ -253,18 +253,13 @@ gulp.task('html-inject-snippets', ['pre-process-html-snippets'], () => {
     { file: 'tag-body-end.html', name: 'bodyEnd:html' },
     { file: 'module-app-header.html', name: 'appHeader:html' },
     { file: 'module-app-footer.html', name: 'appFooter:html' },
+    { file: 'module-app-footer-simple.html', name: 'appFooterSimple:html' },
     { file: 'module-app-body-wrap-begin.html', name: 'appBodyWrapBegin:html' },
     { file: 'module-app-body-wrap-end.html', name: 'appBodyWrapEnd:html' },
     { file: 'module-popup-layers-wrap-begin.html', name: 'popupLayersWrapBegin:html' },
     { file: 'module-popup-layers-wrap-end.html', name: 'popupLayersWrapEnd:html' },
-    { file: 'module-xfzq-user-info-bar.html', name: 'xfzqUserInfoBar:html' },
-    { file: 'module-xfzq-page-wrap-begin.html', name: 'xfzqPageWrapBegin:html' },
-    { file: 'module-xfzq-page-wrap-end.html', name: 'xfzqPageWrapEnd:html' },
-    { file: 'module-xfzq-page-sidebar-0.html', name: 'xfzqPageSidebar0:html' },
-    { file: 'module-xfzq-page-chief-part-wrap-begin.html', name: 'xfzqPageChiefPartWrapBegin:html' },
-    { file: 'module-xfzq-page-chief-part-wrap-end.html', name: 'xfzqPageChiefPartWrapEnd:html' },
-    { file: 'module-xfzq-page-content-wrap-begin.html', name: 'xfzqPageContentWrapBegin:html' },
-    { file: 'module-xfzq-page-content-wrap-end.html', name: 'xfzqPageContentWrapEnd:html' }
+    { file: 'module-copyright-0.html', name: 'copyright0:html' },
+    { file: 'module-partner-links.html', name: 'partnerLinks:html' }
   ];
 
   var targetFilesToProcess = gulp.src([

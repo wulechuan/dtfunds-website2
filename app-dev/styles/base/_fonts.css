@@ -1,3 +1,9 @@
 html, body, button, textarea, input, select, option, .font-default {
 	font-family: 'Noto Sans S Chinese', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Helvetica', Arial, 'Lucida Grande', 'SimHei', Sans-Serif;
 }
+
+.arial-digits {
+	font-family: Arial, 'Helvetica', 'Lucida Grande', 'SimHei', Sans-Serif;
+}
+
+

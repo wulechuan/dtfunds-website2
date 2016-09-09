@@ -19,6 +19,9 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	border-style: solid;
 }
+hr {
+	border-style: solid;
+}
 div:before, span:before, i:before, sub:before, p:before, 
 h1:before, h2:before, h3:before, h4:before, h5:before, h6:before, 
 a:before, button:before, hr:before, blockquote:before,
