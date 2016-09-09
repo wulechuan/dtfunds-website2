@@ -18,13 +18,6 @@
 		};
 	}
 
-	// if (isIE8) {
-	// 	$('.f-list > li .timestamp').each(function () {
-	// 		this.innerHTML = '2013-05-15 11:55';
-	// 	});
-	// } else {
-	// 	$('.f-list > li .timestamp > time').html('2013-05-15 11:55');
-	// }
 
 	function processParametersPassedIn() {
 		var qString = location.href.match(/\?.*/);
@@ -129,51 +122,6 @@
 
 		if (popupWindow) popupWindow.style.width = currentWidth + 'px';
 	};
-
-
-	$('input[placeholder]').each(function () {
-		function _updateInputStyleForGroomingPlaceholder(field) {
-			if (!field) {
-				return false;
-			}
-
-			var tagNameLC = field.tagName.toLowerCase();
-			if (tagNameLC !== 'input' && tagNameLC !== 'textarea') {
-				return false;
-			}
-
-			var classNameToDealWith = 'empty-field';
-			if (field.value) {
-				$(field).removeClass(classNameToDealWith);
-			} else {
-				$(field).addClass(classNameToDealWith);
-			}
-		}
-
-		_updateInputStyleForGroomingPlaceholder(this);
-
-		if (isIE8) {
-			$(this).on('focus', function () {
-				_updateInputStyleForGroomingPlaceholder(this);
-			});
-
-			$(this).on('blur', function () {
-				_updateInputStyleForGroomingPlaceholder(this);
-			});
-
-			$(this).on('change', function () {
-				_updateInputStyleForGroomingPlaceholder(this);
-			});
-
-			$(this).on('keypress', function () {
-				_updateInputStyleForGroomingPlaceholder(this);
-			});
-		} else {
-			$(this).on('input', function () {
-				_updateInputStyleForGroomingPlaceholder(this);
-			});
-		}
-	});
 
 
 	$('.tab-panel-set').each(function () {
@@ -457,100 +405,19 @@
 		}
 	});
 
-
-	setPageSidebarNavCurrentItem(urlParameters.psn);
-
-	function updatePageSidebarNavSubMenuForMenuItem(menuItem, action) {
-		var forceUpdatingContainer = $('.page')[0];
-		var $subMenu = $(menuItem).find('> .menu');
-		var subMenuWasExpanded = $(menuItem).hasClass('coupled-shown');
-		var needAction =
-			(!subMenuWasExpanded && action==='expand') ||
-			(subMenuWasExpanded && action==='collapse') ||
-			(action==='toggle')
-		;
-		if (!needAction) {
-			return 0;
-		}
-
-		if (subMenuWasExpanded) {
-			$(menuItem).removeClass('coupled-shown');
-			$subMenu.slideUp(null, _onAnimationEnd);
+	$('#app-chief-nav .menu.level-1 > .menu-item').each(function (index, menuItem) {
+		if (index === window.appChiefNavCurrentL1) {
+			$(menuItem).addClass('current');
+			var labelWrappedInAnchor = $(menuItem).find('> a > .label')[0];
+			if (labelWrappedInAnchor) {
+				var anchor = labelWrappedInAnchor.parentNode;
+				menuItem.appendChild(labelWrappedInAnchor);
+				menuItem.removeChild(anchor);
+			}
 		} else {
-			$(menuItem).addClass('coupled-shown');
-			$subMenu.slideDown(null, _onAnimationEnd);
+			$(menuItem).removeClass('current');
 		}
-
-		function _onAnimationEnd() {
-			if (!isIE8) return true;
-
-			if (forceUpdatingContainer) {
-				forceUpdatingContainer.visibility = 'hidden';
-				setTimeout(function () {
-					forceUpdatingContainer.visibility = '';
-				}, 0);
-			}
-		}
-	}
-
-	function setPageSidebarNavCurrentItem(conf) {
-		conf = conf || {};
-		conf.level1IdPrefix = 'menu-psn-1-';
-		setMenuCurrentItemForLevel(1, 2, $('#page-sidebar-nav'), conf);
-	}
-
-	function setMenuCurrentItemForLevel(level, depth, parentDom, conf) {
-		level = parseInt(level);
-		depth = parseInt(depth);
-		if (!(level > 0) || !(depth >= level)) {
-			throw('Invalid menu level/depth for configuring a menu tree.');
-		}
-		if (typeof conf !== 'object') {
-			throw('Invalid configuration object for configuring a menu tree.');
-		}
-
-		var prefix = conf['level'+level+'IdPrefix'];
-		var desiredId = prefix + conf['level'+level];
-
-		var $allItems = $(parentDom).find('.menu.level-'+level+' > .menu-item');
-		var currentItem;
-		var currentItemId;
-
-		$allItems.each(function (index, menuItem) {
-			var itemLabel = $(menuItem).find('> a > .label')[0];
-			var itemId = itemLabel.id;
-
-			var isCurrentItemOrParentOfCurrentItem = itemId && desiredId && (itemId===desiredId);
-			var isCurrentItem = isCurrentItemOrParentOfCurrentItem && level === depth;
-			if (isCurrentItemOrParentOfCurrentItem) {
-				currentItem = menuItem;
-				currentItemId = itemId;
-				if (isCurrentItem) {
-					$(menuItem).addClass('current');
-					$(menuItem).removeClass('current-parent');
-				} else {
-					$(menuItem).addClass('current-parent');
-					$(menuItem).removeClass('current');
-				}
-			} else {
-				$(menuItem).removeClass('current');
-				$(menuItem).removeClass('current-parent');
-			}
-		});
-
-		var currentSubMenuItem = null;
-		if (level < depth && currentItem) {
-			var nextLevel = level + 1;
-			conf['level'+nextLevel+'IdPrefix'] = currentItemId + '-' + nextLevel + '-';
-			currentSubMenuItem = setMenuCurrentItemForLevel(nextLevel, depth, currentItem, conf);
-			if (currentSubMenuItem) {
-				$(currentItem).addClass('has-sub-menu'); // update this for robustness
-				$(currentItem).addClass('coupled-shown');
-			}
-		}
-
-		return currentSubMenuItem || currentItem;
-	}
+	});
 
 	$('.menu-item.has-sub-menu').each(function () {
 		var menuItem = this;
@@ -565,224 +432,6 @@
 			updatePageSidebarNavSubMenuForMenuItem(menuItem, 'toggle');
 		});
 	});
-
-
-	var $allTabularLists = $('.tabular .f-list');
-
-	$allTabularLists.each(function () {
-		var $allListItems  = $(this).find(' > li.selectable');
-		var $allCheckboxes = $allListItems.find('input[type="checkbox"].selectable-list-item-selector');
-		var $allRadios     = $allListItems.find('input[type="radio"].selectable-list-item-selector');
-		// console.log('has checkboxes: ', $allCheckboxes.length > 0, '\nhas radios: ', $allRadios.length > 0);
-
-		function _updateListItemAccordingToCheckboxStatus(listItem, checkbox) {
-			var $li = $(listItem);
-			if (checkbox.disabled) {
-				$li.addClass('disabled');
-			} else {
-				$li.removeClass('disabled');
-			}
-
-			if (checkbox.checked) {
-				$li.addClass('selected');
-			} else {
-				$li.removeClass('selected');
-			}
-		}
-
-		if ($allCheckboxes.length > 0) {
-			$allListItems.each(function () {
-				var listItem = this;
-				var $listItem = $(this);
-
-
-				var $myCheckbox = $listItem.find('input[type="checkbox"].selectable-list-item-selector');
-				var myCheckbox = $myCheckbox[0];
-				var $myCheckboxLabel = $myCheckbox.find('+ label.deco-input[for]');
-
-
-				var _myCheckboxUntouchedYet = true;
-				setTimeout(function () { /* Initializing selection status; And this must dealy because ie8 to ie11 updates cached "checked" statuses very late */
-					if (_myCheckboxUntouchedYet) {
-						_updateListItemAccordingToCheckboxStatus(listItem, myCheckbox);
-					}
-				}, 100);
-
-				if (myCheckbox) {
-					if (isIE8) {
-						$myCheckboxLabel.on('click', function (event) {
-							_myCheckboxUntouchedYet = false;
-							if (event) event.stopPropagation();
-						});
-					}
-					$myCheckbox.on('click', function(event) {
-						if (this.disabled) return false;
-						_myCheckboxUntouchedYet = false;
-						if (event) event.stopPropagation();
-						if (isIE8) {
-							_updateListItemAccordingToCheckboxStatus(listItem, this);
-							_playAnimationForIE8AndIE9OnStatusChange(listItem);
-						}
-					});
-
-					$listItem.on('click', function () {
-						if (myCheckbox.disabled) return false;
-						myCheckbox.checked = !myCheckbox.checked;
-						_myCheckboxUntouchedYet = false;
-						_updateListItemAccordingToCheckboxStatus(this, myCheckbox);
-						_playAnimationForIE8AndIE9OnStatusChange(this);
-					});
-
-					$myCheckbox.on('change', function() {
-						_updateListItemAccordingToCheckboxStatus(listItem, this);
-						// _playAnimationForIE8AndIE9OnStatusChange(listItem);
-					});
-				}
-			});
-		}
-
-
-
-
-
-
-
-		function _updateAllListItemsAccordingToRadioStatuses() {
-			for (var i = 0; i < $allListItems.length; i++) {
-				var _li = $allListItems[i];
-				var _radio = _li.elements && _li.elements.radio;
-
-				var $li = $(_li);
-
-				if (_radio.disabled) {
-					$li.addClass('disabled');
-				}
-
-				if (_radio.checked) {
-					$li.addClass('selected');
-					if (!_radio.disabled) _playAnimationForIE8AndIE9OnStatusChange(_li);
-				} else {
-					$li.removeClass('selected');
-					// _playAnimationForIE8AndIE9OnStatusChange(_li);
-				}
-			}
-		}
-
-		if ($allRadios.length > 0) {
-			var _radioUntouchedYet = true;
-			setTimeout(function () { /* Initializing selection status; And this must dealy because ie8 to ie11 updates cached "checked" statuses very late */
-				if (_radioUntouchedYet) {
-					_updateAllListItemsAccordingToRadioStatuses();
-				}
-			}, 100);
-
-			$allListItems.each(function () {
-				var listItem = this;
-				var $listItem = $(this);
-
-				var $myRadio = $listItem.find('input[type="radio"].selectable-list-item-selector');
-				var myRadio = $myRadio[0];
-				if (myRadio) {
-					if (typeof listItem.elements !== 'object') listItem.elements = {};
-					listItem.elements.radio = myRadio;
-
-					$listItem.on('click', function () {
-						if (!myRadio.disabled) {
-							_radioUntouchedYet = false;
-							myRadio.checked = true;
-						}
-						_updateAllListItemsAccordingToRadioStatuses();
-					});
-				}
-			});
-		}
-
-		function _playAnimationForIE8AndIE9OnStatusChange(listItem) {
-			if (!isIE8 && !isIE9) {
-				return true;
-			}
-
-			function _zoomToFactor(factor) {
-				if (factor===1) {
-					if (isIE8) {
-						listItem.style.zoom = '';
-						listItem.style.margin = '';
-						return true;
-					}
-					if (isIE9) {
-						listItem.style.msTransform = '';
-						return true;
-					}
-				}
-
-				if (isIE8) {
-					var tempMarginHori = oldWidth  * (1 - factor) / 2;
-					var tempMarginVert = oldHeight * (1 - factor) / 2 + originalVertMargin;
-
-					if (factor) {
-						listItem.style.zoom = factor;
-					} else {
-						console.error('Invalid zooming factor: ', factor);
-						return false;
-					}
-					listItem.style.margin = tempMarginVert+'px' + ' ' + tempMarginHori+'px';
-				}
-
-				if (isIE9) {
-					listItem.style.msTransform = 'scale('+factor+', '+factor+')';
-				}
-			}
-			function _doZoomDelay(targetStage) {
-				var zoomFactor = 1;
-				if (targetStage !== tempStageCounter-1) {
-					var lastSegRatioBetweenPiAndTwoPi = 0.75;
-
-					var animationProgress = targetStage/(tempStageCounter-1);
-					var ratio = Math.cos(Math.PI * (2 - (1 - animationProgress) * lastSegRatioBetweenPiAndTwoPi));
-						ratio = ratio * 0.5 + 0.5;
-
-					zoomFactor = minFactor + (1 - minFactor) * ratio;
-				}
-
-				if (targetStage === 0) {
-					_zoomToFactor(zoomFactor);
-				} else {
-					var delayMS = frameGapMS*targetStage;
-					setTimeout(function () {
-						if (currentAniStage < targetStage) {
-							currentAniStage = targetStage;
-							_zoomToFactor(zoomFactor);
-						}
-					}, delayMS);
-				}
-			}
-
-			var currentAniStage = 0;
-			var minFactor = 0.984;
-			var frameGapMS, tempStageCounter;
-
-			var originalVertMargin, oldHeight, oldWidth;
-			if (isIE8) {
-				originalVertMargin = -1; // set by css file
-				oldHeight = $(listItem).outerHeight();
-				oldWidth  = $(listItem).outerWidth();
-			}
-
-			if (isIE8) {
-				frameGapMS = 26;
-				tempStageCounter = 13;
-			}
-			if (isIE9) {
-				frameGapMS = 18;
-				tempStageCounter = 19;
-			}
-
-			for (var i = 0; i < tempStageCounter; i++) {
-				_doZoomDelay(i);
-			}
-		}
-	});
-
 
 
 	$('.drop-down-list').each(function () {
