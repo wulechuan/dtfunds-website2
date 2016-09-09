@@ -189,6 +189,7 @@
 			position: absolute;
 			left: 0;
 			bottom: 0;
+			width: 5rem;
 		}
 		.section-first-fold > .content .row.call-to-action-qrcode-block .figcaption .less-important-segment {
 			display: none;
@@ -240,6 +241,7 @@
 			display: block;
 			font-size: 150%;
 			color: black;
+			cursor: text;
 		}
 
 		.section-financing .f-list.features .f-item .icon {
@@ -255,8 +257,10 @@
 			font-size: 4.5em;
 			color: #cca25d;
 		}
-		.section-financing .f-list.features .icon .icon-face {
+		.section-financing .f-list.features .icon .icon-face-1,
+		.section-financing .f-list.features .icon .icon-face-2 {
 			color: white;
+			font-size: 2.2em;
 		}
 
 
