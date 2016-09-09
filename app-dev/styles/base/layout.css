@@ -264,6 +264,10 @@
 		overflow: hidden; /* for masking expanded bgs */
 	}
 
+	.page-chief-section > .bg-set .width-wrap {
+		height: 100%;
+	}
+
 	.page-chief-section > .content {
 		position: absolute;
 		display: block;
@@ -288,11 +292,21 @@
 		-webkit-transition-duration: 0;
 		        transition-duration: 0;
 		    -ms-transition-duration: 0;
+
+	    opacity: 1;
+	}
+	.page-chief-section > .bg-set .bg-tint.fading-out-on-show {
+	    opacity: 0;
 	}
 	.page-chief-section > .bg-set .bg-tint.fading-in {
-		-webkit-animation: fades-in 5s backwards;
-		        animation: fades-in 5s backwards;
-		    -ms-animation: fades-in 5s backwards;
+		-webkit-animation: fades-in 4s backwards;
+		        animation: fades-in 4s backwards;
+		    -ms-animation: fades-in 4s backwards;
+	}
+	.page-chief-section > .bg-set .bg-tint.fading-out {
+		-webkit-animation: fades-out 4s backwards;
+		        animation: fades-out 4s backwards;
+		    -ms-animation: fades-out 4s backwards;
 	}
 
 	.page-chief-section > .content .animation {

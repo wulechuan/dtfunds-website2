@@ -619,13 +619,13 @@ label.deco-input {
 
 #app-header {
 	border-color: rgba(204, 162, 93, 0.25);
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(0, 0, 0, 0.8);
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.07);
 	}
 
 	#app-header.use-theme-for-first-fold {
 		border-color: transparent;
-		background-color: transparent;
+		background-color:  rgba(0, 0, 0, 0.2);
 		box-shadow: 0 2px 3px rgba(0, 0, 0, 0);
 	}
 	#app-header.use-theme-for-contacts {
@@ -640,13 +640,28 @@ label.deco-input {
 	#app-chief-nav .menu.level-1 {
 		background-color: transparent;
 		}
+	#app-chief-nav .menu.level-1 > .menu-item > a > .label,
+	#app-chief-nav .menu.level-1 > .menu-item     > .label {
+		color: #cca25d;
+	}
+	#app-chief-nav .menu.level-1 > .menu-item > a > .label:hover,
+	#app-chief-nav .menu.level-1 > .menu-item     > .label:hover,
+	#app-chief-nav .menu.level-1 > .menu-item.coupled-shown  > a > .label,
+	#app-chief-nav .menu.level-1 > .menu-item.coupled-shown      > .label,
+	#app-chief-nav .menu.level-1 > .menu-item.current-parent > a > .label,
+	#app-chief-nav .menu.level-1 > .menu-item.current-parent     > .label,
+	#app-chief-nav .menu.level-1 > .menu-item.current        > a > .label,
+	#app-chief-nav .menu.level-1 > .menu-item.current            > .label {
+		color: white;
+	}
 
-		#app-chief-nav .menu.level-2 {
-			/* border-color: #cca25d; */
-			/* box-shadow: 0 0 8px 0 #cca25d; */
-			border-color: rgba(204, 162, 93, 0.35);
-			box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.147);
-			background-color: white;
+
+	#app-chief-nav .menu.level-2 {
+		/* border-color: #cca25d; */
+		/* box-shadow: 0 0 8px 0 #cca25d; */
+		border-color: rgba(204, 162, 93, 0.35);
+		box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.147);
+		background-color: white;
 		}
 
 		#app-chief-nav .menu.level-2 {
@@ -670,7 +685,7 @@ label.deco-input {
 		}
 
 
-	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item > a > .label,
+	/* .use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item > a > .label,
 	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item     > .label {
 		color: #cca25d;
 	}
@@ -684,7 +699,7 @@ label.deco-input {
 	.use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item.current            > .label {
 		color: white;
 	}
-
+ */
 	.use-theme-for-first-fold #app-chief-nav .menu.level-2 {
 		background-color: transparent;
 	}
@@ -711,7 +726,7 @@ label.deco-input {
 	}
 
 
-	.use-theme-for-contacts #app-chief-nav .menu.level-1 > .menu-item > a > .label,
+	/* .use-theme-for-contacts #app-chief-nav .menu.level-1 > .menu-item > a > .label,
 	.use-theme-for-contacts #app-chief-nav .menu.level-1 > .menu-item     > .label {
 		color: #cca25d;
 	}
@@ -725,7 +740,7 @@ label.deco-input {
 	.use-theme-for-contacts #app-chief-nav .menu.level-1 > .menu-item.current            > .label {
 		color: white;
 	}
-
+ */
 	.use-theme-for-contacts #app-chief-nav .menu.level-2 {
 		background-color: transparent;
 	}
@@ -775,7 +790,10 @@ label.deco-input {
 	background: #fdfdfd;
 	}
 	.page-chief-section > .bg-set .bg-tint {
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+	.page-chief-section > .bg-set .bg-tint.white {
+		background-color: rgba(255, 255, 255, 0.7);
 	}
 	.page-chief-section.section-contacts {
 		background-color: #1c1c1c;
@@ -789,7 +807,7 @@ label.deco-input {
 	}
 	.page-chief-section.section-contacts > .content .brand {
 		border-color: #cca25d;
-		background-image: url(../../images/pages/financing/brand-firt-fold-title.png);
+		background-image: url(../../images/company-brand/brand-first-fold-title.png);
 	}
 	.page-chief-section.section-contacts > .content .row.links-block .f-list.links > li:hover a {
 		color: white;

@@ -31,7 +31,6 @@
 
 	(function SimpleBgSlides() {
 		var $bgTint = $('.bg-tint');
-		var cssClassNameTint = 'fading-in';
 		var cssClassNameSlide = 'start-to-show';
 		var $rootElement = $('.page-chief-section.section-first-fold .bg-set');
 		var $slides = $rootElement.find('.bg');
@@ -63,7 +62,15 @@
 				}
 			}
 
+			var shouldFadeOut = index === 0;
 
+			var cssClassNameTint = 'fading-in';
+			if (shouldFadeOut) {
+				cssClassNameTint = 'fading-out'
+				$bgTint.addClass('fading-out-on-show');
+			} else {
+				$bgTint.removeClass('fading-out-on-show');
+			}
 			$bgTint.addClass(cssClassNameTint);
 			setTimeout(function () {
 				$bgTint.removeClass(cssClassNameTint);
