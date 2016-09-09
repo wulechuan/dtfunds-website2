@@ -772,7 +772,26 @@ label.deco-input {
 
 
 .page-chief-section {
+	background: #fdfdfd;
 	}
 	.page-chief-section > .bg-set .bg-tint {
 		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.page-chief-section.section-contacts {
+		background-color: #1c1c1c;
+	}
+	.page-chief-section.section-contacts > .content {
+		color: white;
+	}
+	.page-chief-section.section-contacts > .content .links-block,
+	.page-chief-section.section-contacts > .content .copyright-block {
+		color: #474747;
+	}
+	.page-chief-section.section-contacts > .content .brand {
+		border-color: #cca25d;
+		background-image: url(../../images/pages/financing/brand-firt-fold-title.png);
+	}
+	.page-chief-section.section-contacts > .content .row.links-block .f-list.links > li:hover a {
+		color: white;
+		background-color: rgba(204, 162, 93, 0.32);
 	}

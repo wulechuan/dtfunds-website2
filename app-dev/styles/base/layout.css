@@ -346,3 +346,130 @@
 	}
 
 
+
+.section-contacts {
+	}
+
+	.section-contacts > .content {
+		text-align: center;
+	}
+
+	.section-contacts > .content .links-block,
+	.section-contacts > .content .copyright-block {
+		font-size: 0.7rem;
+		font-weight: 200;
+	}
+
+	.section-contacts > .content .row.info-block {
+		top: 10%;
+	}
+	.section-contacts > .content .row.call-to-action-qrcode-block {
+		top: 37%;
+		height: 30%;
+		max-height: 200px;
+		z-index: 3;
+	}
+	.section-contacts > .content .row.links-block {
+		bottom: 13%;
+		left: 0;
+		right: 0;
+	}
+	.section-contacts > .content .row.copyright-block {
+		bottom: 9%;
+	}
+
+	.section-contacts > .content .brand,
+	.section-contacts > .content .subtitle {
+		margin: 1.8rem auto;
+	}
+
+	.section-contacts > .content .brand {
+		position: relative;
+		width: 70%;
+		max-width: 25rem;
+		height: 2.1rem;
+		overflow: hidden;
+		white-space: nowrap;
+		text-indent: 4000px;
+		/* margin: 0 auto; */
+
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		}
+
+
+	.section-contacts > .content .subtitle {
+		font-size: 1.7rem;
+		font-weight: 200;
+	}
+	.section-contacts > .content .subtitle span {
+		display: inline-block;
+	}
+
+
+	.section-contacts > .content .row.call-to-action-qrcode-block .qrcode {
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 7rem;
+		height: 7rem;
+		margin: 0 auto 2.25rem;
+
+		top: 0;
+	}
+	.section-contacts > .content .row.call-to-action-qrcode-block .figcaption {
+		position: absolute;
+		left: 0;
+		right: 0;
+		font-size: 1.3rem;
+		font-weight: 200;
+
+		bottom: 0;
+	}
+
+	.section-contacts > .content .row.links-block h3 {
+		margin: 0.7rem auto;
+	}
+
+	.section-contacts > .content .row.links-block .f-list.links > li {
+		display: inline-block;
+		margin: 0.3rem 0.6rem; 
+	}
+
+	.section-contacts > .content .row.links-block .f-list.links > li a {
+		display: inline-block;
+		padding: 0.2em 0.5em;
+		margin: -0.2em -0.25rem;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	@media only screen and (max-height: 720px) {
+		.section-contacts > .content .row.info-block {
+			top: 6%;
+		}
+		.section-contacts > .content .row.info-block .subtitle {
+			width: 0;
+			height: 0;
+			opacity: 0;
+			visibility: hidden;
+			overflow: hidden;
+		}		
+		.section-contacts > .content .row.call-to-action-qrcode-block {
+			top: 30%;
+		}		
+		.section-contacts > .content .row.call-to-action-qrcode-block .figcaption {
+			width: 0;
+			height: 0;
+			opacity: 0;
+			visibility: hidden;
+			overflow: hidden;
+		}		
+		.section-contacts > .content .row.links-block {
+			bottom: 12%;
+		}
+		.section-contacts > .content .row.copyright-block {
+			bottom: 6%;
+		}
+	}

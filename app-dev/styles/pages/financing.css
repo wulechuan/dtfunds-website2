@@ -1,9 +1,7 @@
 .width-wrap {
 	min-width: 728px;
 }
-.page-chief-section {
-	background: #fdfdfd;
-}
+
 .page-chief-section > .content > .row {
 	position: absolute;
 	left: 8%;
@@ -30,6 +28,106 @@
 		height: 100%;
 		margin: 0;
 	}
+
+.row.section-title {
+	top: 5%;
+	}
+	.row.section-title h2 {
+		display: block;
+		text-align: center;
+		position: relative;
+		margin-bottom: 2rem;
+		font-size: 1.5rem;
+		min-width: 4rem;
+	}
+
+	.row.section-title h2:after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 2.8rem;
+		height: 0.15rem;
+		bottom: 0;
+		margin: 0 auto -0.6rem;
+		background-color: #cca25d;
+	}
+
+.abstract {
+	position: absolute;
+	left: 0;
+	right: auto;
+	text-align: left;
+	padding: 1rem 2rem;
+	margin: 0 1.2rem;
+	}
+	.abstract > h3 {
+		text-align: inherit;
+		font-size: 1.2rem;
+		font-weight: 500;
+		line-height: 2;
+		margin-bottom: 0.5rem;
+	}
+	.abstract > dl {
+		text-align: inherit;
+		position: relative;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.5;
+		padding: 0.6rem 0.5rem 0.6rem 0;
+	}
+	.abstract > dl:before,
+	.abstract > dl:after {
+		background-color: #cbcbcb;
+	}
+	.abstract > dl:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 1rem;
+		height: 1px;
+		top: 0;
+	}
+	.abstract > dl:after {
+		content: '';
+		display: block;
+		width: 0.6rem;
+		height: 0.6rem;
+		border-radius: 1000px;
+		position: absolute;
+		left: auto;
+		right: 0;
+		top: 0;
+		margin: -0.3rem 0;
+	}
+	.abstract > dl > dt {
+		color: #cca25d;
+	}
+	.abstract > dl > dd {
+		color: #848484;
+		margin-bottom: 1.5rem;
+	}
+
+	.abstract.align-right {
+		text-align: right;
+		left: auto;
+		right: 0;
+		}
+		.abstract.align-right > dl {
+			padding-left: 0.5rem;
+			padding-right: 0;
+		}
+		.abstract.align-right > dl:before {
+			left: 1rem;
+			right: 0;
+		}
+		.abstract.align-right > dl:after {
+			left: 0;
+			right: auto;
+		}
+
 
 
 
@@ -106,238 +204,82 @@
 	}
 
 
-
-
-
-.section-financing {
+.section-jinshibao {
+	background-color: #f5f5f5;
 	}
 
-	.section-financing .row.features-block {
-		height: 50%;
-		min-height: 270px;
-		max-height: 450px;
-		top: 0;
-		bottom: 0;
-		font-size: 1rem;
-		}
+	.section-jinshibao .row.product-abstract-block {
+		top: 15%;
+		background-color: inherit;
+	}
 
-	.section-financing .f-list.features .f-item {
-		left: 8%;
-		position: absolute;
-		padding: 1em 2em 1em 6.4em;
-		margin: 0;
-		-webkit-transform: translateY(-50%);
-		        transform: translateY(-50%);
-		    -ms-transform: translateY(-50%);
-		}
-		.section-financing .f-list.features .f-item *,
-		.section-financing .f-list.features .f-item {
-			transition-property: background, width, height, max-width, min-width, max-height, min-height, color, opacity, visibility, transform;
-		}
-		.section-financing .f-list.features .f-item.f-item-1 {
-			top: 0;
-		}
-		.section-financing .f-list.features .f-item.f-item-2 {
-			top: 40%;
-		}
-		.section-financing .f-list.features .f-item.f-item-3 {
-			top: 80%;
-		}
-		.section-financing .f-list.features .f-item p {
-			font-weight: 200;
-			font-size: 90%;
-			line-height: 1.8;
-			color: #848484;
-		}
-		.section-financing .f-list.features .f-item p .label {
-			display: block;
-			font-size: 150%;
-			color: black;
-			cursor: text;
-		}
+	.section-jinshibao .row.product-abstract-block .abstract {
+		background-image: linear-gradient(to bottom, #f5f5f5 60%, transparent);
+	}
 
-		.section-financing .f-list.features .f-item .icon {
-			position: absolute;
-			left: 0;
-			top: 0.6em;
-			width: 4.5em;
-			height: 4.5em;
-			font-size: 1em;
-			line-height: 4.5em;
-		}
-		.section-financing .f-list.features .icon .icon-bg {
-			font-size: 4.5em;
-			color: #cca25d;
-		}
-		.section-financing .f-list.features .icon .icon-face-1,
-		.section-financing .f-list.features .icon .icon-face-2 {
-			color: white;
-			font-size: 2.2em;
-		}
-
-
-	.section-financing .illustrate.device-0 .illustrate-look {
+	.section-jinshibao .illustrate.device-0 .illustrate-look {
 		background-position: right bottom;
 		background-size: contain;
 		background-image: url(../../images/pages/financing/page-section-1-device-0.jpg);
 	}
 
 	@media only screen and (max-width: 1440px) {
-		.section-financing .illustrate.device-0 .illustrate-look {
+		.section-jinshibao .illustrate.device-0 .illustrate-look {
 			background-position: 120% bottom;
 		}
 	}
 	@media only screen and (max-width: 768px) {
-		.section-financing .f-list.features .f-item {
+		.section-jinshibao .f-list.features .f-item {
 			left: 0;
 		}
 	}
 
 	@media only screen and (max-height: 768px) {
-		.section-financing .f-list.features .f-item {
+		.section-jinshibao .f-list.features .f-item {
 			font-size: 80%;
 			padding-left: 6em;
 		}
-		.section-financing .f-list.features .icon .icon-bg {
+		.section-jinshibao .f-list.features .icon .icon-bg {
 			font-size: 4.5em;
 		}
 	}
 
 
-.section-contacts {
-	background-color: #1c1c1c;
+.section-po {
 	}
 
-	.section-contacts > .content {
-		text-align: center;
-		color: white;
+	.section-jinshibao .row.product-abstract-block {
+		top: 15%;
+		background-color: inherit;
 	}
 
-	.section-contacts > .content .links-block,
-	.section-contacts > .content .copyright-block {
-		color: #474747;
-		font-size: 0.7rem;
-		font-weight: 200;
+	.section-jinshibao .row.product-abstract-block .abstract {
+		background-image: linear-gradient(to bottom, #f5f5f5 60%, transparent);
 	}
 
-	.section-contacts > .content .row.info-block {
-		top: 10%;
-	}
-	.section-contacts > .content .row.call-to-action-qrcode-block {
-		top: 37%;
-		height: 30%;
-		max-height: 200px;
-		z-index: 3;
-	}
-	.section-contacts > .content .row.links-block {
-		bottom: 13%;
-		left: 0;
-		right: 0;
-	}
-	.section-contacts > .content .row.copyright-block {
-		bottom: 9%;
-	}
-
-	.section-contacts > .content .brand,
-	.section-contacts > .content .subtitle {
-		margin: 1.8rem auto;
-	}
-
-	.section-contacts > .content .brand {
-		position: relative;
-		width: 70%;
-		max-width: 25rem;
-		height: 2.1rem;
-		overflow: hidden;
-		white-space: nowrap;
-		text-indent: 4000px;
-		border-color: #cca25d;
-		/* margin: 0 auto; */
-
-		background-repeat: no-repeat;
-		background-position: center;
+	.section-jinshibao .illustrate.device-0 .illustrate-look {
+		background-position: right bottom;
 		background-size: contain;
-		background-image: url(../../images/pages/financing/brand-firt-fold-title.png);
+		background-image: url(../../images/pages/financing/page-section-1-device-0.jpg);
+	}
+
+	@media only screen and (max-width: 1440px) {
+		.section-jinshibao .illustrate.device-0 .illustrate-look {
+			background-position: 120% bottom;
 		}
-
-
-	.section-contacts > .content .subtitle {
-		font-size: 1.7rem;
-		font-weight: 200;
 	}
-	.section-contacts > .content .subtitle span {
-		display: inline-block;
-	}
-
-
-	.section-contacts > .content .row.call-to-action-qrcode-block .qrcode {
-		position: absolute;
-		left: 0;
-		right: 0;
-		width: 7rem;
-		height: 7rem;
-		margin: 0 auto 2.25rem;
-
-		top: 0;
-	}
-	.section-contacts > .content .row.call-to-action-qrcode-block .figcaption {
-		position: absolute;
-		left: 0;
-		right: 0;
-		font-size: 1.3rem;
-		font-weight: 200;
-
-		bottom: 0;
-	}
-
-	.section-contacts > .content .row.links-block h3 {
-		margin: 0.7rem auto;
-	}
-
-	.section-contacts > .content .row.links-block .f-list.links > li {
-		display: inline-block;
-		margin: 0.3rem 0.6rem; 
-	}
-
-	.section-contacts > .content .row.links-block .f-list.links > li a {
-		display: inline-block;
-		padding: 0.2em 0.5em;
-		margin: -0.2em -0.25rem;
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.section-contacts > .content .row.links-block .f-list.links > li:hover a {
-		color: white;
-		background-color: rgba(204, 162, 93, 0.32);
-	}
-
-	@media only screen and (max-height: 720px) {
-		.section-contacts > .content .row.info-block {
-			top: 6%;
-		}
-		.section-contacts > .content .row.info-block .subtitle {
-			width: 0;
-			height: 0;
-			opacity: 0;
-			visibility: hidden;
-			overflow: hidden;
-		}		
-		.section-contacts > .content .row.call-to-action-qrcode-block {
-			top: 30%;
-		}		
-		.section-contacts > .content .row.call-to-action-qrcode-block .figcaption {
-			width: 0;
-			height: 0;
-			opacity: 0;
-			visibility: hidden;
-			overflow: hidden;
-		}		
-		.section-contacts > .content .row.links-block {
-			bottom: 12%;
-		}
-		.section-contacts > .content .row.copyright-block {
-			bottom: 6%;
+	@media only screen and (max-width: 768px) {
+		.section-jinshibao .f-list.features .f-item {
+			left: 0;
 		}
 	}
 
+	@media only screen and (max-height: 768px) {
+		.section-jinshibao .f-list.features .f-item {
+			font-size: 80%;
+			padding-left: 6em;
+		}
+		.section-jinshibao .f-list.features .icon .icon-bg {
+			font-size: 4.5em;
+		}
+	}
