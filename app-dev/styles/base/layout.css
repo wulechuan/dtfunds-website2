@@ -304,7 +304,7 @@
 		    -ms-transition-duration: 0.3s;
 	}
 
-	.page-chief-section.section-first-fold > .bg-set .bg {
+	.page-chief-section > .bg-set .bg {
 		z-index: 1;
 		background-position: center;
 		background-size: cover;
@@ -326,7 +326,7 @@
 		        transform: scale(1, 1);
 		    -ms-transform: scale(1, 1);
 	}
-	.page-chief-section.section-first-fold > .bg-set .bg.start-to-show {
+	.page-chief-section > .bg-set .bg.start-to-show {
 		z-index: 2;
 		-webkit-animation: bg-shows-up 5s -1s backwards ease-out;
 		        animation: bg-shows-up 5s -1s backwards ease-out;

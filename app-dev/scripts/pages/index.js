@@ -1,5 +1,6 @@
 (function () {
 	var $appHeader = $('#app-header');
+	$appHeader.addClass('use-theme-for-first-fold');
 
 	new window.Swiper('#app-body > .swiper-container', {
 		direction: 'vertical',
