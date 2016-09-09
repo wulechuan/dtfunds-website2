@@ -253,6 +253,7 @@ gulp.task('html-inject-snippets', ['pre-process-html-snippets'], () => {
     { file: 'tag-body-end.html', name: 'bodyEnd:html' },
     { file: 'module-app-header.html', name: 'appHeader:html' },
     { file: 'module-app-footer.html', name: 'appFooter:html' },
+    { file: 'module-app-footer-simple.html', name: 'appFooterSimple:html' },
     { file: 'module-app-body-wrap-begin.html', name: 'appBodyWrapBegin:html' },
     { file: 'module-app-body-wrap-end.html', name: 'appBodyWrapEnd:html' },
     { file: 'module-popup-layers-wrap-begin.html', name: 'popupLayersWrapBegin:html' },

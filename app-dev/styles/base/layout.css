@@ -25,6 +25,15 @@
 
 .copyright-block {
 	line-height: 1.5;
+	font-size: 0.7rem;
+	font-weight: 300;
+	padding-left: 4rem;
+	padding-right: 4rem;
+	color: #474747;
+	}
+	.copyright-block span {
+		display: inline-block;
+	}
 	}
 	.copyright-block span {
 		display: inline-block;
@@ -83,6 +92,10 @@
 	.page-chief-section > .content {
 		top: 2.3rem;
 	}
+	.page {
+		padding-top: 2.3rem;
+		padding-bottom: 2.3rem;
+	}
 
 	.page-chief-section > .content *,
 	.page-chief-section > .content {
@@ -125,6 +138,30 @@
 		top: 0;
 		right: 0;
 		height: 100%;
+	}
+
+
+#app-footer {
+	}
+	#app-footer.style-simple {
+		text-align: center;
+		border-width: 1px 0 0 0;
+		height: 4.75rem;
+		overflow: hidden;
+	}
+	#app-footer.style-simple:before {
+		content: '';
+		width: 0;
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	#app-footer.style-simple .copyright-block {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	#app-footer.style-simple .copyright-block .width-wrap {
+		min-width: 0;
 	}
 
 

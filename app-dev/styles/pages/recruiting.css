@@ -1,0 +1,163 @@
+.page {
+	text-align: center;
+}
+
+.button {
+	font-size: 0.9rem;
+	border-radius: 0.666em;
+	padding: 0.7em 1.2em;
+	line-height: normal;
+	}
+	.button.call-to-action:after {
+		font-family: 'iconfont'!important;
+		content: '\e605\e605';
+		letter-spacing: -0.6em;
+		margin-left: 0.5em;
+	}
+
+.intro-block {
+	color: #666;
+	margin-bottom: 4rem;
+	}
+
+	.intro-block .subject-title {
+		height: 12.5rem;
+		margin: 3.5rem auto;
+		}
+		.intro-block .subject-title h1 {
+			text-indent: -3000px;
+		}
+
+		.intro-block .subject-title .illustrate-look.bg {
+			background-position: center;
+			background-size: contain;
+			background-image: url(../../images/pages/recruiting/2016.png);
+		}
+		.intro-block .subject-title .illustrate-look.text {
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			width: 64%;
+			height: 64%;
+			background-position: center;
+			background-size: contain;
+			background-image: url(../../images/pages/recruiting/meng-xiang-qi-hang.png);
+		}
+
+	.intro-block p {
+		font-weight: 300;
+	}
+
+	@media only screen and (max-width: 960px) {
+		.intro-block .subject-title {
+			height: 10rem;
+			margin: 1.5rem auto;
+		}
+	}
+
+
+.available-positions-block {
+	margin: 4rem auto 6.4rem;
+	}
+
+	.available-positions-block .subject-title {
+		display: inline-block;
+		}
+		.available-positions-block .subject-title h2 {
+			font-size: 1.1rem;
+			color: #4c4a4a;
+			line-height: 1.5;
+			margin: 0.3rem auto;
+		}
+		.available-positions-block .subject-title .subtitle {
+			position: relative;
+			font-size: 0.7rem;
+			color: #666;
+		}
+
+		.available-positions-block .subject-title .subtitle:after,
+		.available-positions-block .subject-title .subtitle:before {
+			content: '';
+			border-color: inherit;
+			border-width: 1px 0 0 0;
+			display: block;
+			width: auto;
+			height: 0;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto 0;
+			opacity: 0.4;
+			}
+			.available-positions-block .subject-title .subtitle:before {
+				left: 0;
+				right: 50%;
+				margin-right: 1.5rem;
+			}
+			.available-positions-block .subject-title .subtitle:after {
+				left: 50%;
+				right: 0;
+				margin-left: 1.5rem;
+			}
+
+
+	.available-positions-block .columns {
+		margin: 3rem auto;
+		}
+
+		.available-positions-block .columns .col {
+			text-align: center;
+		}
+
+		.available-positions-block .columns .col-1,
+		.available-positions-block .columns .col-3 {
+			width: 30%;
+		}
+
+		.available-positions-block .columns .col-2 {
+			width: 40%;
+		}
+
+		.available-positions-block .columns > hr {
+			margin-top: 0.6rem;
+			height: 7.5rem;
+			border-color: #dfdfdf;		
+		}
+
+		.available-positions-block .columns .illustrate {
+			display: block;
+			margin: 0 auto 1rem;
+			position: relative;
+			width: 125px;
+			height: 125px;
+		}
+
+		.available-positions-block .columns .col:hover .illustrate {
+			-webkit-transform: scale(1.1, 1.1);
+			transform: scale(1.1, 1.1);
+		}
+
+		.available-positions-block .columns a {
+			color: black;
+		}
+
+		.available-positions-block .columns .illustrate .illustrate-look {
+			background-image: url(../../images/pages/recruiting/illustrate-available-positions.png);
+		}
+		.available-positions-block .columns .col-2 .illustrate .illustrate-look {
+			background-position: 0 -125px;
+		}
+		.available-positions-block .columns .col-3 .illustrate .illustrate-look {
+			background-position: 0 -250px;
+		}
+
+
+
+.call-to-action-block {
+	margin: 3rem auto 3rem;
+	}
+	.button.call-to-action {
+		margin: 1.8rem auto;
+	}

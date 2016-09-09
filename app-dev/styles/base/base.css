@@ -969,9 +969,24 @@ button.button-x {
 	}
 
 
-.columns > .col {
+.columns > a > .col,
+.columns     > .col {
 	display: inline-block;
 	vertical-align: top;
+	}
+	.columns a > li,
+	.columns   > li {
+		list-style: none;
+	}
+	.columns > hr {
+		display: inline-block;
+		vertical-align: top;
+		width: 0;
+		min-height: 1rem;
+		border-style: solid;
+		border-width: 0 0 0 1px;
+		margin-left: -1px;
+		margin-right: 0;
 	}
 
 

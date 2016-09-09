@@ -99,7 +99,7 @@ input {
 	.button:hover,
 	[role="button"]:hover,
 	button:hover {
-		background-color: #3f93ff;
+		background-color: #eabf77;
 	}
 
 	input[type="reset"].bg-transparent,
@@ -507,6 +507,11 @@ button.button-x {
 		background-color: transparent;
 		box-shadow: 0 2px 3px rgba(0, 0, 0, 0);
 	}
+
+
+#app-footer.style-simple {
+	border-color: #ddd;
+}
 
 
 #app-chief-nav {
