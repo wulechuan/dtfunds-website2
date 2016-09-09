@@ -1,35 +1,3 @@
-.width-wrap {
-	min-width: 728px;
-}
-.page-chief-section > .content > .row {
-	position: absolute;
-	left: 8%;
-	right: 8%;
-	margin: auto;
-	}
-	.page-chief-section > .content > .row .width-wrap {
-		min-width: 574px;
-		height: 100%;
-	}
-	.page-chief-section > .content > .row.illustrate-block {
-		top: 0;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		padding: 0;
-	}
-	.page-chief-section > .content > .row.illustrate-block .width-wrap {
-		height: 100%;
-		max-width: none;
-	}
-	.qrcode .qrcode-image {
-		width: 100%;
-		height: 100%;
-		margin: 0;
-	}
-
-
-
 .section-first-fold {
 	}
 
