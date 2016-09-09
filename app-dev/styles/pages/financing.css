@@ -75,6 +75,16 @@
 		text-align: center;
 	}
 
+	@media only screen and (max-width: 768px) {
+		.section-first-fold .hero-content .hero-word {
+			font-size: 3rem;
+		}
+		.section-first-fold .illustrate.device-0 .illustrate-look {
+			height: 60%;
+			background-size: contain;
+		}
+	}
+
 	@media only screen and (max-height: 840px) {
 		.section-first-fold .hero-content .hero-word {
 			font-size: 3rem;
