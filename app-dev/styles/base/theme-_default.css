@@ -703,22 +703,22 @@ button.button-x {
 		color: #c1c1c1;
 	}
 
-.section-contacts {
+.last-fold {
 	background-color: #1c1c1c;
 		color: white;
 	}
-	.section-contacts > .content {
+	.last-fold > .content {
 	}
-	.section-contacts > .content .contacts-block,
-	.section-contacts > .content .links-block,
-	.section-contacts > .content .copyright-block {
+	.last-fold > .content .contacts-block,
+	.last-fold > .content .links-block,
+	.last-fold > .content .copyright-block {
 		color: #474747;
 	}
-	.section-contacts > .content .brand {
+	.last-fold > .content .brand {
 		border-color: #cca25d;
 		background-image: url(../../images/company-brand/brand-first-fold-title.png);
 	}
-	.section-contacts > .content .row.links-block .f-list.links > li:hover a {
+	.last-fold > .content .row.links-block .f-list.links > li:hover a {
 		color: white;
 		background-color: rgba(204, 162, 93, 0.32);
 	}
