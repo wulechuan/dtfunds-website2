@@ -7,6 +7,7 @@
 	        scrollbar: slidesRootSelector+' .swiper-scrollbar',
 	        slidesPerView: 'auto',
 			mousewheelControl: true,
+			scrollbarHide: false,
 			freeMode: true
 		});
 	})();

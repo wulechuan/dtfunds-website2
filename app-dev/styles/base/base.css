@@ -969,24 +969,17 @@ button.button-x {
 	}
 
 
-.columns > a > .col,
-.columns     > .col {
-	display: inline-block;
-	vertical-align: top;
+.columns {
+	position: relative;
+	}
+	.columns > a > .col,
+	.columns     > .col {
+		display: inline-block;
+		vertical-align: top;
 	}
 	.columns a > li,
 	.columns   > li {
 		list-style: none;
-	}
-	.columns > hr {
-		display: inline-block;
-		vertical-align: top;
-		width: 0;
-		min-height: 1rem;
-		border-style: solid;
-		border-width: 0 0 0 1px;
-		margin-left: -1px;
-		margin-right: 0;
 	}
 	.columns.columns-count-2 > a > li,
 	.columns.columns-count-2     > li,
@@ -999,6 +992,22 @@ button.button-x {
 	.columns.columns-count-3 > a > .col,
 	.columns.columns-count-3     > .col {
 		width: 33.33%;
+	}
+
+	.columns > hr {
+		display: inline-block;
+		width: 0;
+		height: auto;
+		min-height: 1rem;
+		border-style: solid;
+		border-width: 0 0 0 1px;
+		margin: -0.5rem 0 -0.5rem -1px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: auto;
+		right: auto;
+		z-index: 2;
 	}
 
 

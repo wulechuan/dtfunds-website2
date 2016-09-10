@@ -121,12 +121,6 @@
 			width: 40%;
 		}
 
-		.available-positions-block .columns > hr {
-			margin-top: 0.6rem;
-			height: 7.5rem;
-			border-color: #dfdfdf;		
-		}
-
 		.available-positions-block .columns .illustrate {
 			display: block;
 			margin: 0 auto 1rem;

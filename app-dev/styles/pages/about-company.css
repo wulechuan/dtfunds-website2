@@ -66,6 +66,7 @@
 		color: #2f3133;
 		}
 		.company-intro .columns {
+			position: relative;
 			margin: 3rem auto;
 			}
 
@@ -80,12 +81,6 @@
 
 			.company-intro .columns .col-2 {
 				width: 33.4%;
-			}
-
-			.company-intro .columns > hr {
-				margin-top: 0.6rem;
-				height: 7.5rem;
-				border-color: #dfdfdf;		
 			}
 
 			.company-intro .columns .col > .content {

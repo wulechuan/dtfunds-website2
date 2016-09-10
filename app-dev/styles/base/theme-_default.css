@@ -48,6 +48,16 @@ em {
 hr {
 	border-color: #cca25d;
 	}
+	article hr.section-divider:before {
+		background-color: rgba(0, 0, 0, 0.1);
+		}
+		article hr.section-divider:after {
+		background-color: rgba(0, 0, 0, 0.1);
+		box-shadow: 1001.4rem 0 0 0 rgba(0, 0, 0, 0.1);
+		}
+	.columns > hr {
+		border-color: #dfdfdf;
+	}
 
 
 blockquote {
@@ -418,15 +428,6 @@ button.button-x {
 	}
 
 
-article hr:before {
-	background-color: rgba(0, 0, 0, 0.1);
-	}
-	article hr:after {
-	background-color: rgba(0, 0, 0, 0.1);
-	box-shadow: 1001.4rem 0 0 0 rgba(0, 0, 0, 0.1);
-	}
-
-
 .tabular-lists {
 	}
 
@@ -704,10 +705,11 @@ article hr:before {
 
 .section-contacts {
 	background-color: #1c1c1c;
-	}
-	.section-contacts > .content {
 		color: white;
 	}
+	.section-contacts > .content {
+	}
+	.section-contacts > .content .contacts-block,
 	.section-contacts > .content .links-block,
 	.section-contacts > .content .copyright-block {
 		color: #474747;
