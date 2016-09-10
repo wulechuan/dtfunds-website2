@@ -234,6 +234,49 @@
 		}
 
 
+
+.swiper-container-vertical > .swiper-scrollbar {
+	width: 1rem;
+	right: 0.1rem;
+	background-color: transparent;
+	border-radius: 0;
+	}
+	.swiper-scrollbar-drag {
+		width: 100%;
+		left: 0;
+		background-color: transparent;
+		cursor: pointer;
+	}
+	.swiper-container-vertical > .swiper-scrollbar:hover {
+		opacity: 1!important;
+	}
+	.swiper-container-vertical > .swiper-scrollbar:before,
+	.swiper-scrollbar-drag:before {
+		display: block;
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0.45rem;
+		width: 0.1rem;
+		height: 100%;
+		border-radius: 1000px;
+	}
+	.swiper-container-vertical > .swiper-scrollbar:before {
+		background-color: #eee;
+	}
+	.swiper-scrollbar-drag:before {
+		background-color: #cca25d;
+		-webkit-transition: all 0.2s;
+		        transition: all 0.2s;
+	}
+
+	.swiper-container-vertical > .swiper-scrollbar:hover .swiper-scrollbar-drag:before,
+	.swiper-scrollbar-drag:hover:before {
+		left: 0.35rem;
+		width: 0.3rem;
+	}
+
+
 .swiper-container.page-chief-sections {
 	position: fixed;
 	top: 0;
@@ -360,6 +403,20 @@
 		.page-chief-section > .content > .row.illustrate-block .width-wrap {
 			height: 100%;
 			max-width: none;
+		}
+
+		.page-chief-section > .content .content-scrollable-block {
+			position: absolute;
+		}
+		.page-chief-section > .content .content-scrollable-block iframe {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			border-width: 0;
 		}
 	.page-chief-section > .content {
 		position: absolute;
@@ -600,16 +657,38 @@ article {}
 		display: inline-block;
 	}
 
-	article ol.list-indices-in-labels {
+	ol.list-indices-in-labels {
 		list-style: none;
 		/* padding-left: 0; */
 	}
-	article ol.list-indices-in-labels > li {
+	ol.list-indices-in-labels > li {
 		position: relative;
 		padding-left: 3.5rem;
 	}
-	article ol.list-indices-in-labels > li > .label {
+	ol.list-indices-in-labels > li > .label {
 		position: absolute;
 		top: 0;
 		left: 0;
+	}
+	ol.list-indices-in-labels > li.has-p-tag > .label{
+		top: 0.5em;
+	}
+
+
+html.scrollable-content-block-iframe-root body,
+html.scrollable-content-block-iframe-root {
+	background-color: transparent;
+	}
+	html.scrollable-content-block-iframe-root body > .scrollable-content-block,
+	html.scrollable-content-block-iframe-root body > .swiper-container,
+	html.scrollable-content-block-iframe-root body,
+	html.scrollable-content-block-iframe-root {
+		height: 100%;
+		overflow: hidden;
+	}
+	html.scrollable-content-block-iframe-root body > .swiper-container .swiper-slide {
+		height: auto;
+	}
+	html.scrollable-content-block-iframe-root body > .swiper-container .swiper-slide > article {
+		margin-right: 1.5rem;
 	}

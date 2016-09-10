@@ -1,6 +1,8 @@
 article h1 {
-	margin: 2rem auto;
+	margin: 3rem auto;
 }
+
+
 
 .section-first-fold {
 	text-align: center;
@@ -239,6 +241,17 @@ article h1 {
 
 .section-risk {
 	}
+	.page-chief-section.section-risk > .bg-set .bg {
+		max-width: 1652px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		background-position: center bottom;
+		background-image: url(../../images/pages/safety-control/page-section-risk-bg.png);
+		background-size: contain;
+	}
+
 	.section-risk > .content > article {
 		border-width: 1px;
 		border-color: #cca25d;
@@ -249,12 +262,26 @@ article h1 {
 		bottom: 0;
 		margin: 2rem;
 	}
-	.section-risk > .content > article .scrollable-block {
+	.section-risk > .content > article .content-scrollable-block {
 		position: absolute;
 		left: 0;
 		right: 0;
-		top: 4rem;
+		top: 6rem;
 		bottom: 0;
 		margin: 1rem;
-		padding-right: 1rem;
 	}
+
+	ol.list-indices-in-labels.risk-list > li {
+		padding-left: 2rem;
+	}
+
+	@media only screen and (max-height: 720px) {
+		.section-risk > .content > article h1 {
+			margin-top: 1.5rem;
+			margin-bottom: 1rem;
+		}
+		.section-risk > .content > article .content-scrollable-block {
+			top: 3rem;
+		}
+	}
+
