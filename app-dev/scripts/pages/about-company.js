@@ -37,8 +37,8 @@
 				if (isNaN(lastBuiltYear)) lastBuiltYear = year;
 
 				var monthGap = (year - lastBuiltYear) * 12 + month - lastBuiltMonth - 1;
-				console.log('frome:', lastBuiltYear, '-', lastBuiltMonth, 'to', year, '-', month, '\t month gap:', monthGap);
-				console.log(currentTextSlideElement.textContent);
+				// console.log('frome:', lastBuiltYear, '-', lastBuiltMonth, 'to', year, '-', month, '\t month gap:', monthGap);
+				// console.log(currentTextSlideElement.textContent);
 
 				var shouldBuildGapLeftMonth     = !doNotBuildAnyGapMonths && monthGap > 0;
 				var shouldBuildGapRightMonth    = !doNotBuildAnyGapMonths && monthGap > 1;
@@ -64,6 +64,7 @@
 					if (isFuture) hasComeToFutureMonths = true;
 
 					builtSlideElement = _buildOneSlide(slidesWrapperElement, yearToBuild, monthToBuild, isThisMonth, true, false);
+					builtSlideElement.isEmpty = !letEventsLastTillNextEvent;
 					if (letEventsLastTillNextEvent) builtSlideElement.textSlideElement = lastTextSlideElement;
 					graphicSlideElements.push(builtSlideElement);
 
@@ -74,6 +75,7 @@
 
 				if (shouldBuildGapOmittedMonths) {
 					builtSlideElement = _buildOneSlide(slidesWrapperElement, NaN, NaN, false, true, true);
+					builtSlideElement.isEmpty = !letEventsLastTillNextEvent;
 					if (letEventsLastTillNextEvent) builtSlideElement.textSlideElement = lastTextSlideElement;
 					graphicSlideElements.push(builtSlideElement);
 				}
@@ -94,6 +96,7 @@
 
 
 					builtSlideElement = _buildOneSlide(slidesWrapperElement, yearToBuild, monthToBuild, isThisMonth, true, false);
+					builtSlideElement.isEmpty = !letEventsLastTillNextEvent;
 					if (letEventsLastTillNextEvent) builtSlideElement.textSlideElement = lastTextSlideElement;
 					graphicSlideElements.push(builtSlideElement);
 
@@ -112,6 +115,7 @@
 
 				builtSlideElement = _buildOneSlide(slidesWrapperElement, yearToBuild, monthToBuild, isThisMonth, false, false);
 				builtSlideElement.textSlideElement = currentTextSlideElement;
+				builtSlideElement.isEmpty = false;
 				graphicSlideElements.push(builtSlideElement);
 
 				lastBuiltYear = yearToBuild;
@@ -188,6 +192,14 @@
 
 
 		function buildSwiper() {
+			var shouldNotStopAtEmptyMonths = true;
+
+
+			var lastActiveIndex = initialSlideIndex;
+			var isAutoSkippingEmptyMonths = false;
+			var autoSkippingDirection = -1;
+
+
 			return new window.Swiper(graphicSlidesRootSelector, {
 				direction: 'horizontal',
 				speed: graphicSlidesTransitionDurationInSeconds * 1000,
@@ -201,17 +213,39 @@
 
 				onSlideChangeStart: function (thisSwiperControl) {
 					var graphicSlideActiveIndex = thisSwiperControl.activeIndex;
-					var avtiveGraphicSlideElement = thisSwiperControl.slides[graphicSlideActiveIndex];
+					var activeGraphicSlideElement = thisSwiperControl.slides[graphicSlideActiveIndex];
+
+					// console.log('isEmpty?', activeGraphicSlideElement.isEmpty, thisSwiperControl);
+					if (shouldNotStopAtEmptyMonths) {
+						if (activeGraphicSlideElement.isEmpty) {
+							var nextIndex = graphicSlideActiveIndex;
+							if (isAutoSkippingEmptyMonths) {
+								nextIndex += autoSkippingDirection;
+							} else {
+								isAutoSkippingEmptyMonths = true;
+								autoSkippingDirection = (lastActiveIndex < graphicSlideActiveIndex) ? 1 : -1;
+							}
+							setTimeout(function () {
+								thisSwiperControl.slideTo(graphicSlideActiveIndex + autoSkippingDirection);
+							}, 100);
+						} else {
+							isAutoSkippingEmptyMonths = false;
+						}
+					} else {
+						isAutoSkippingEmptyMonths = false;
+					}
+
+					lastActiveIndex = graphicSlideActiveIndex;
 
 
-					var year = avtiveGraphicSlideElement.year;
+					var year = activeGraphicSlideElement.year;
 					if (!isNaN(year) && niddleLabel) {
-						niddleLabel.textContent = avtiveGraphicSlideElement.year;
+						niddleLabel.textContent = activeGraphicSlideElement.year;
 					}
 
 
-					var textSlideElementToShow = avtiveGraphicSlideElement.textSlideElement;
-					console.log('year:', year, textSlideElementToShow);
+					var textSlideElementToShow = activeGraphicSlideElement.textSlideElement;
+					// console.log('year:', year, textSlideElementToShow);
 
 					var cssClassNameActiveArticle = 'active'; 
 					for (var i = 0; i < $textSlideElements.length; i++) {

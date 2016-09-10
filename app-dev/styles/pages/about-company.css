@@ -54,9 +54,11 @@
 	}
 
 	.ruler-segment > .tip {
-		color: #c1c1c1;
 		left: 55%;
 		bottom: 100%;
+		font-size: 0.9rem;
+		font-weight: 200;
+		color: #c1c1c1;
 	}
 
 	.ruler-segment:before,
