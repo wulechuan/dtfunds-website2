@@ -9,8 +9,8 @@
 		loop: false,
 		pagination: '.swiper-pagination',
 		paginationClickable: true,
-		onSlideChangeStart: function (swiperControl) {
-			var slideIndexToShow = swiperControl.activeIndex;
+		onSlideChangeStart: function (thisSwiperControl) {
+			var slideIndexToShow = thisSwiperControl.activeIndex;
 			var cssClassName3 = 'use-theme-for-contacts';
 			if (slideIndexToShow === 3) {
 				$appHeader.addClass(cssClassName3);

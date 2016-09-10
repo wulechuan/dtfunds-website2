@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1473434827'); /* IE9*/
-  src: url('iconfont.eot?t=1473434827#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1473434827') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1473434827') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1473434827#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1473477642'); /* IE9*/
+  src: url('iconfont.eot?t=1473477642#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1473477642') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1473477642') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1473477642#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -21,3 +21,8 @@
 .icon-balance-circled:before { content: "\e602"; }
 .icon-stacks:before { content: "\e603"; }
 .icon-arrow-hit:before { content: "\e604"; }
+.icon-hard-disc-stack-with-a-key:before { content: "\e606"; }
+.icon-greek-hall:before { content: "\e607"; }
+.icon-folks-in-suits:before { content: "\e608"; }
+.icon-shield-with-quad-grid:before { content: "\e609"; }
+.icon-monitor-with-poly-lines:before { content: "\e60a"; }

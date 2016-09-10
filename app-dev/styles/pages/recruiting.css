@@ -26,6 +26,7 @@
 		}
 		.intro-block .subject-title h1 {
 			text-indent: -3000px;
+			position: absolute;
 		}
 
 		.intro-block .subject-title .illustrate-look.bg {
@@ -118,12 +119,6 @@
 
 		.available-positions-block .columns .col-2 {
 			width: 40%;
-		}
-
-		.available-positions-block .columns > hr {
-			margin-top: 0.6rem;
-			height: 7.5rem;
-			border-color: #dfdfdf;		
 		}
 
 		.available-positions-block .columns .illustrate {
