@@ -9,7 +9,5 @@
 			mousewheelControl: true,
 			freeMode: true
 		});
-
-		console.log(swiper.slides);
 	})();
 })();

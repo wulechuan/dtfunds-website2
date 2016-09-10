@@ -48,6 +48,8 @@ article h1 {
 		}
 
 	.section-first-fold .details-block .swiper-container.graphic-slides {
+		perspective: 10rem;
+		transform-style: preserve-3d;
 		width: 100%;
 		}
 		.section-first-fold .details-block .graphic-slides .swiper-slide {
@@ -87,17 +89,25 @@ article h1 {
 			-webkit-transform: scale(0.5, 0.5);
 					transform: scale(0.5, 0.5);
 			opacity: 0.219;
+			-webkit-transition-timing-function: ease-out;
+			        transition-timing-function: ease-out;
+			-webkit-transition-delay: 0.1s;
+			        transition-delay: 0.1s;
 		}
 		/* .section-first-fold .details-block .graphic-slides .swiper-slide.swiper-slide-prev .icon, */
 		.section-first-fold .details-block .graphic-slides .swiper-slide[data-index-distance-to-active-one="-1"] .icon {
-			-webkit-transform: translateX(-12.5%) scale(0.75, 0.75);
-					transform: translateX(-12.5%) scale(0.75, 0.75);
+			-webkit-transition-delay: 0.15s;
+			        transition-delay: 0.15s;
+			-webkit-transform: translate3d(-12.5%, 0, 0) scale(0.75, 0.75);
+					transform: translate3d(-12.5%, 0, 0) scale(0.75, 0.75);
 			opacity: 0.51;
 		}
 		/* .section-first-fold .details-block .graphic-slides .swiper-slide.swiper-slide-next .icon, */
 		.section-first-fold .details-block .graphic-slides .swiper-slide[data-index-distance-to-active-one="1"] .icon {
-			-webkit-transform: translateX( 12.5%) scale(0.75, 0.75);
-					transform: translateX( 12.5%) scale(0.75, 0.75);
+			-webkit-transition-delay: 0.25s;
+			        transition-delay: 0.25s;
+			-webkit-transform: translate3d( 12.5%, 0, 0) scale(0.75, 0.75);
+					transform: translate3d( 12.5%, 0, 0) scale(0.75, 0.75);
 			opacity: 0.51;
 		}
 		/* .section-first-fold .details-block .graphic-slides .swiper-slide.swiper-slide-active .icon, */
@@ -105,6 +115,8 @@ article h1 {
 			-webkit-transform: scale(1, 1);
 					transform: scale(1, 1);
 			opacity: 1;
+			-webkit-transition-delay: 0.2s;
+			        transition-delay: 0.2s;
 		}
 		.section-first-fold .details-block .graphic-slides .swiper-slide .icon .iconfont {
 			font-size: inherit;
@@ -238,6 +250,40 @@ article h1 {
 
 
 
+.section-business-rules > .content > article,
+.section-risk           > .content > article {
+	border-width: 1px;
+	border-color: #cca25d;
+	position: absolute;
+	left: 8%;
+	right: 8%;
+	top: 0;
+	bottom: 0;
+	margin: 2rem;
+	}
+	.section-business-rules > .content > article .content-scrollable-block,
+	.section-risk           > .content > article .content-scrollable-block {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 6rem;
+		bottom: 0;
+		margin: 1rem;
+	}
+
+	@media only screen and (max-height: 720px) {
+		.section-business-rules > .content > article h1,
+		.section-risk           > .content > article h1 {
+			margin-top: 1.5rem;
+			margin-bottom: 1rem;
+		}
+		.section-business-rules > .content > article .content-scrollable-block,
+		.section-risk           > .content > article .content-scrollable-block {
+			top: 3rem;
+		}
+	}
+
+
 
 .section-risk {
 	}
@@ -252,36 +298,69 @@ article h1 {
 		background-size: contain;
 	}
 
-	.section-risk > .content > article {
-		border-width: 1px;
-		border-color: #cca25d;
-		position: absolute;
-		left: 8%;
-		right: 8%;
-		top: 0;
-		bottom: 0;
-		margin: 2rem;
-	}
-	.section-risk > .content > article .content-scrollable-block {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 6rem;
-		bottom: 0;
-		margin: 1rem;
-	}
-
 	ol.list-indices-in-labels.risk-list > li {
 		padding-left: 2rem;
 	}
 
-	@media only screen and (max-height: 720px) {
-		.section-risk > .content > article h1 {
-			margin-top: 1.5rem;
-			margin-bottom: 1rem;
-		}
-		.section-risk > .content > article .content-scrollable-block {
-			top: 3rem;
-		}
+
+
+
+
+.section-business-rules {
 	}
 
+	.section-business-rules > .content > article {
+		margin: 0 0.5rem 0.5rem;
+		border-color: transparent;
+		bottom: 4rem; /* for app-footer */
+	}
+
+	.business-rules-content-block dl.qna {
+		counter-reset: questionIndex;
+		padding: 0 1rem;
+		font-size: 1rem;
+	}
+
+	.business-rules-content-block dl.qna > dd,
+	.business-rules-content-block dl.qna > dt {
+		padding-left: 2rem;
+	}
+	.business-rules-content-block dl.qna > dt {
+		counter-increment: questionIndex;
+		font-size: 0.9em;
+		font-weight: 300;
+		line-height: 2;
+
+		color: #cca25d;
+	}
+	.business-rules-content-block dl.qna > dt > .label {
+	}
+	.business-rules-content-block dl.qna > dt > .label,
+	.business-rules-content-block dl.qna > dt:before {
+		content: counter(questionIndex) '、';
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0.5;
+	}
+
+	.business-rules-content-block dl.qna > dd {
+		font-size: 0.8rem;
+		color: #2f3133;
+		margin-bottom: 1.8em;
+		line-height: 1.5;
+	}
+
+	.business-rules-content-block dl.qna > dd:before {
+		content: '答：';
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0.5;
+	}
+
+	@media only screen and (max-height: 720px) {
+		.section-business-rules > .content > article {
+			bottom: 2.5rem; /* for app-footer */
+		}
+	}

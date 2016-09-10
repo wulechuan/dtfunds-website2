@@ -169,6 +169,21 @@
 		min-width: 0;
 	}
 
+	.page-chief-section #app-footer.style-simple {
+		position: absolute;
+		bottom: 0;
+		top: auto;
+		left: 0;
+		right: 0;
+		height: 4rem;
+	}
+
+	@media only screen and (max-height: 720px) {
+		.page-chief-section #app-footer.style-simple {
+			height: 2.5rem;
+		}
+	}
+
 
 #app-chief-nav {
 	margin: 0;
@@ -262,10 +277,8 @@
 		border-radius: 1000px;
 	}
 	.swiper-container-vertical > .swiper-scrollbar:before {
-		background-color: #eee;
 	}
 	.swiper-scrollbar-drag:before {
-		background-color: #cca25d;
 		-webkit-transition: all 0.2s;
 		        transition: all 0.2s;
 	}
@@ -355,6 +368,7 @@
 
 
 .page-chief-section {
+	overflow: hidden;
 	}
 
 	.page-chief-section > .bg-set {
@@ -405,9 +419,27 @@
 			max-width: none;
 		}
 
+		.page-chief-section > .content article {
+			overflow: hidden;
+		}
 		.page-chief-section > .content .content-scrollable-block {
 			position: absolute;
-		}
+			}
+			/* .page-chief-section > .content .content-scrollable-block:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				height: 2rem;
+				margin: 0;
+				z-index: 5;
+			}
+			.page-chief-section > .content .content-scrollable-block:before {
+				top: 0;
+			} */
+			/* .page-chief-section > .content .content-scrollable-block:after {
+				bottom: 0;
+			} */
 		.page-chief-section > .content .content-scrollable-block iframe {
 			position: absolute;
 			left: 0;
