@@ -26,6 +26,7 @@
 		}
 		.intro-block .subject-title h1 {
 			text-indent: -3000px;
+			position: absolute;
 		}
 
 		.intro-block .subject-title .illustrate-look.bg {

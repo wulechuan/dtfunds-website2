@@ -47,7 +47,12 @@
 
 	.width-wrap {
 		max-width: 1280px;
-		min-width: 728px;
+		/* min-width: 728px; */
+		min-width: 512px;
+	}
+
+	.page-chief-section.swiper-slide .width-wrap {
+		min-width: 512px;
 	}
 
 
@@ -448,7 +453,6 @@
 	}
 
 
-
 .section-contacts {
 	}
 
@@ -574,4 +578,15 @@
 		.section-contacts > .content .row.copyright-block {
 			bottom: 6%;
 		}
+	}
+
+
+article {}
+	article h1 {
+		font-size: 1.7rem;
+		font-weight: 300;
+	}
+	article .ofb,
+	.ofb {
+		display: inline-block;
 	}
