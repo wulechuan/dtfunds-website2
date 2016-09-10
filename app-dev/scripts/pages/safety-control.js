@@ -14,6 +14,8 @@
 	})();
 
 
+
+
 	(function processSectionFirstFoldDetailsSwipers() {
 		var knownSlidesCountPerSwiper = 5;
 		var graphicSlidesTransitionDurationInSeconds = 0.6;
@@ -83,6 +85,21 @@
 
 				// console.log('---------------------------');
 			}
+		});
+	})();
+
+
+
+	(function processRiskBlockSwiperForCustomizedScrollbar() {
+		var slidesRootSelector = '.section-risk .swiper-container.scrollable-block';
+
+		new window.Swiper(slidesRootSelector, {
+			nested: true,
+			direction: 'vertical',
+	        scrollbar: slidesRootSelector+' .swiper-scrollbar',
+	        slidesPerView: 'auto',
+			mousewheelControl: true,
+			freeMode: true
 		});
 	})();
 })();

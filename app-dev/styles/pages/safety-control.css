@@ -1,5 +1,5 @@
 article h1 {
-	margin: 3rem auto;
+	margin: 2rem auto;
 }
 
 .section-first-fold {
@@ -234,3 +234,27 @@ article h1 {
 		}
 	}
 
+
+
+
+.section-risk {
+	}
+	.section-risk > .content > article {
+		border-width: 1px;
+		border-color: #cca25d;
+		position: absolute;
+		left: 8%;
+		right: 8%;
+		top: 0;
+		bottom: 0;
+		margin: 2rem;
+	}
+	.section-risk > .content > article .scrollable-block {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 4rem;
+		bottom: 0;
+		margin: 1rem;
+		padding-right: 1rem;
+	}
