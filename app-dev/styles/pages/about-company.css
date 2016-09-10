@@ -1,26 +1,47 @@
 .page {
 	text-align: center;
-}
+	}
+	.page article h1 {
+		font-size: 1.8rem;
+		font-weight: 300;
+	}
+	.page article h2 {
+		font-size: 1.7rem;
+		font-weight: 400;
+	}
 
-.intro-block {
-	color: #666;
+
+.chief-block {
 	margin-bottom: 4rem;
 	}
 
-	.intro-block .subject-title {
-		height: 12.5rem;
-		margin: 3.5rem auto;
+	.chief-block .subject-title {
+		position: relative;
+		height: 10rem;
+		margin: 6rem auto 2rem;
 		}
-		.intro-block .subject-title h1 {
+		.chief-block .subject-title h1 {
 			text-indent: -3000px;
+			opacity: 0;
+		}
+		.chief-block .subject-title .company-logo {
+			width: 8rem;
+			height: 8rem;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			background-size: 100%;
 		}
 
-		.intro-block .subject-title .illustrate-look.bg {
+		.chief-block .subject-title .illustrate-look.bg {
 			background-position: center;
 			background-size: contain;
 			background-image: url(../../images/pages/recruiting/2016.png);
 		}
-		.intro-block .subject-title .illustrate-look.text {
+		.chief-block .subject-title .illustrate-look.text {
 			left: 0;
 			right: 0;
 			top: 0;
@@ -32,15 +53,4 @@
 			background-size: contain;
 			background-image: url(../../images/pages/recruiting/meng-xiang-qi-hang.png);
 		}
-
-	.intro-block p {
-		font-weight: 300;
-	}
-
-	@media only screen and (max-width: 960px) {
-		.intro-block .subject-title {
-			height: 10rem;
-			margin: 1.5rem auto;
-		}
-	}
 

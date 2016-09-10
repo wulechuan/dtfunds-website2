@@ -716,6 +716,41 @@ article {}
 	ol.list-indices-in-labels > li.has-p-tag > .label{
 		top: 0.5em;
 	}
+	article hr {
+		position: relative;
+		margin: 4.5rem;
+		display: block;
+		width: auto;
+		height: 1rem;
+		overflow: hidden;
+		clear: both;
+		float: none;
+		background-color: transparent;
+		clip: rect(-20px, auto, 40px, auto);
+		}
+		article hr:before {
+			content: '';
+			display: block;
+			width: 0.5rem;
+			height: 0.5rem;
+			border-width: 0;
+			border-radius: 1000px;
+
+			position: absolute;
+			left: 50%;
+			margin: 0 -0.25rem;
+			top: 0.25rem;
+		}
+		article hr:after {
+			content: '';
+			display: block;
+			width: 1000rem;
+			height: 1px;
+			position: absolute;
+			right: 50%;
+			top: 50%;
+			margin-right: 0.75rem;
+		}
 
 
 html.scrollable-content-block-iframe-root body,
