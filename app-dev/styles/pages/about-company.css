@@ -1,6 +1,11 @@
 .page {
 	text-align: center;
 	}
+	article p,
+	article {
+		line-height: 2;
+		font-weight: 300;
+	}
 	article h1 {
 		font-size: 2rem;
 		font-weight: 300;
@@ -36,7 +41,7 @@
 	.subject-title {
 		position: relative;
 		height: 10rem;
-		margin: 6rem auto 2rem;
+		margin: 6rem auto 1rem;
 		}
 		.subject-title h1 {
 			text-indent: -3000px;
@@ -53,6 +58,89 @@
 			margin: auto;
 			background-size: 100%;
 		}
+
+
+
+	.company-intro {
+		line-height: 2;
+		color: #2f3133;
+		}
+		.company-intro .columns {
+			margin: 3rem auto;
+			}
+
+			.company-intro .columns .col {
+				text-align: center;
+			}
+
+			.company-intro .columns .col-1,
+			.company-intro .columns .col-3 {
+				width: 33.3%;
+			}
+
+			.company-intro .columns .col-2 {
+				width: 33.4%;
+			}
+
+			.company-intro .columns > hr {
+				margin-top: 0.6rem;
+				height: 7.5rem;
+				border-color: #dfdfdf;		
+			}
+
+			.company-intro .columns .col > .content {
+				margin: 0 13%;
+				text-align: left;
+			}
+			.company-intro .columns .col-1 > .content {
+				margin-left: 0;
+			}
+			.company-intro .columns .col-3 > .content {
+				margin-right: 0;
+				text-align: center;
+			}
+			.company-intro .columns .col dt {
+				margin-bottom: 1rem;
+				color: #2f3133;
+			}
+			.company-intro .columns .col dd {
+				color: #666;
+			}
+
+			@media only screen and (max-width: 1080px) {
+				.company-intro .columns .col > .content {
+					margin-left: 8.5%;
+					margin-right: 8.5%;
+				}
+				.company-intro .columns .col-1 > .content {
+					margin-right: 7%;
+				}
+				.company-intro .columns .col-3 > .content {
+					margin-left: 7%;
+				}
+			}
+
+			@media only screen and (max-width: 960px) {
+				.company-intro .columns .col {
+					display: block;
+					width: 100%;
+					text-align: left;
+				}
+				.company-intro .columns .col > .content {
+					margin: 0;
+				}
+				.company-intro .columns .col dt h3,
+				.company-intro .columns .col dd {
+					text-align: left;
+				}
+				.company-intro .columns .col dt {
+					margin: 2.5rem auto 0rem;
+				}
+
+				.company-intro .columns > hr {
+					display: none;
+				}
+			}
 
 
 	.lead-team {
@@ -95,6 +183,7 @@
 
 
 	.company-qualification {}
+
 		.company-qualification h2 {
 			margin-bottom: 2rem;
 		}
@@ -112,7 +201,7 @@
 			padding: 0.9rem;
 		}
 		.company-qualification .columns.certificates img {
-			width: 60%;
+			width: 90%;
 			height: auto;
 			max-width: 380px;
 			border-width: 1px;
@@ -129,7 +218,7 @@
 		}
 
 		.company-qualification .team-members {
-			margin: 3.8rem auto 5rem;
+			margin: 2.5rem auto 4rem;
 			font-size: 1rem;
 			}
 
@@ -151,7 +240,7 @@
 
 			.company-qualification .team-members > table tr {
 				height: 2em;
-				line-height: 1.9em;
+				line-height: 1.95em;
 			}
 
 			.company-qualification .team-members > table thead {
@@ -178,18 +267,34 @@
 			}
 
 			@media only screen and (max-width: 1080px) {
+				.company-qualification h2 {
+					margin-bottom: 1rem;
+				}
+				.company-qualification .columns.certificates {
+					margin: 0 auto;
+				}
+				.company-qualification h3 {
+					margin: 1rem auto;
+				}
 				.company-qualification .team-members {
 					font-size: 0.85rem;
+					margin: 1rem auto 2rem;
 				}
 			}
 			@media only screen and (max-width: 880px) {
 				.company-qualification .team-members > table {
 					display: table;
 					margin-bottom: -1px;
-					width: 100%;
+					width: 85%;
+					margin-left: auto;
+					margin-right: auto;
 				}
 				.company-qualification .team-members > table + table {
-					margin-left: 0;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				.company-qualification .team-members {
+					font-size: 1rem;
 				}
 			}
 

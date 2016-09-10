@@ -718,9 +718,10 @@ article {}
 	}
 	article hr {
 		position: relative;
-		margin: 4.5rem;
+		margin: 4.5rem auto;
 		display: block;
 		width: auto;
+		max-width: 50rem;
 		height: 1rem;
 		overflow: hidden;
 		clear: both;
