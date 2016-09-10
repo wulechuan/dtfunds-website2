@@ -581,6 +581,15 @@ article hr:before {
 		#app-chief-nav .menu.level-2 > .menu-item     > .label {
 			color: black;
 		}
+		#app-chief-nav .menu.level-2 > .menu-item.current > a > .label,
+		#app-chief-nav .menu.level-2 > .menu-item.current     > .label {
+			background-color: rgba(204, 162, 93, 0.35);
+		}
+
+		#app-chief-nav .menu.level-2 > .menu-item         > a > .label:hover,
+		#app-chief-nav .menu.level-2 > .menu-item             > .label:hover {
+			background-color: #cca25d;
+		}
 
 
 	/* .use-theme-for-first-fold #app-chief-nav .menu.level-1 > .menu-item > a > .label,
@@ -652,14 +661,10 @@ article hr:before {
 		color: #cca25d;
 	}
 
-	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item > a > .label:hover,
-	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item     > .label:hover,
-	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item.coupled-shown  > a > .label,
-	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item.coupled-shown      > .label,
-	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item.current-parent > a > .label,
-	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item.current-parent     > .label,
-	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item.current        > a > .label,
-	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item.current            > .label {
+	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item.current > a > .label,
+	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item.current     > .label,
+	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item         > a > .label:hover,
+	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item             > .label:hover {
 		color: white;
 		background-color: #cca25d;
 	}
@@ -697,21 +702,21 @@ article hr:before {
 		color: #c1c1c1;
 	}
 
-	.page-chief-section.section-contacts {
-		background-color: #1c1c1c;
-		}
-		.page-chief-section.section-contacts > .content {
-			color: white;
-		}
-		.page-chief-section.section-contacts > .content .links-block,
-		.page-chief-section.section-contacts > .content .copyright-block {
-			color: #474747;
-		}
-		.page-chief-section.section-contacts > .content .brand {
-			border-color: #cca25d;
-			background-image: url(../../images/company-brand/brand-first-fold-title.png);
-		}
-		.page-chief-section.section-contacts > .content .row.links-block .f-list.links > li:hover a {
-			color: white;
-			background-color: rgba(204, 162, 93, 0.32);
-		}
+.section-contacts {
+	background-color: #1c1c1c;
+	}
+	.section-contacts > .content {
+		color: white;
+	}
+	.section-contacts > .content .links-block,
+	.section-contacts > .content .copyright-block {
+		color: #474747;
+	}
+	.section-contacts > .content .brand {
+		border-color: #cca25d;
+		background-image: url(../../images/company-brand/brand-first-fold-title.png);
+	}
+	.section-contacts > .content .row.links-block .f-list.links > li:hover a {
+		color: white;
+		background-color: rgba(204, 162, 93, 0.32);
+	}

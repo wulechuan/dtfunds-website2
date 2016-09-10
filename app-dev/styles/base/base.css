@@ -1065,7 +1065,7 @@ button.button-x {
 		padding-right: 10px;
 	}
 	.menu-item > a > .label,
-	.menu-item > .label {
+	.menu-item     > .label {
 		position: relative;
 		z-index: 5;
 
@@ -1077,6 +1077,10 @@ button.button-x {
 		max-height: 100%;
 		width: 100%;
 		overflow: hidden;
+	}
+	.menu-item > a > .label,
+	.menu-item     > .label {
+		cursor: inherit;
 	}
 
 	.menu.layout-hori > .menu-item {

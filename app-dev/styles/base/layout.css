@@ -110,7 +110,7 @@
 	}
 	.page {
 		padding-top: 2.3rem;
-		padding-bottom: 2.3rem;
+		padding-bottom: 0;
 	}
 
 	.page-chief-section > .content *,
@@ -238,7 +238,7 @@
 		top: 100%;
 		width: 100%;
 		padding: 0;
-		margin: 0;
+		margin: 1px 0 0;
 		}
 		#app-chief-nav .menu.level-2 {
 			box-sizing: border-box;
@@ -553,6 +553,11 @@
 
 
 .section-contacts {
+	padding: 10rem 0 4rem;
+	}
+
+	.swiper-slide.section-contacts {
+		padding: 0;
 	}
 
 	.section-contacts > .content {
