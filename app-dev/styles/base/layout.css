@@ -104,8 +104,8 @@
 
 	.page-chief-section > .content *,
 	.page-chief-section > .content {
-		-webkit-transition-property: background, width, height, max-width, min-width, max-height, min-height, color, opacity, visibility, transform, margin, padding, border-radius;
-		        transition-property: background, width, height, max-width, min-width, max-height, min-height, color, opacity, visibility, transform, margin, padding, border-radius;
+		-webkit-transition-property: visibility, opacity, color, border-color, background, width, height, max-width, min-width, max-height, min-height, transform, left, right, top, bottom, margin, padding, border-radius;
+		        transition-property: visibility, opacity, color, border-color, background, width, height, max-width, min-width, max-height, min-height, transform, left, right, top, bottom, margin, padding, border-radius;
 		-webkit-transition-duration: 0.3s;
 		        transition-duration: 0.3s;
 		    -ms-transition-duration: 0.3s;
