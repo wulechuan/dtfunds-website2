@@ -35,22 +35,3 @@
 			margin: auto;
 			background-size: 100%;
 		}
-
-		.chief-block .subject-title .illustrate-look.bg {
-			background-position: center;
-			background-size: contain;
-			background-image: url(../../images/pages/recruiting/2016.png);
-		}
-		.chief-block .subject-title .illustrate-look.text {
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			margin: auto;
-			width: 64%;
-			height: 64%;
-			background-position: center;
-			background-size: contain;
-			background-image: url(../../images/pages/recruiting/meng-xiang-qi-hang.png);
-		}
-
