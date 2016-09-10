@@ -27,6 +27,7 @@
 		/* background-image: url(../../images/company-brand/shiji-qrcode-app-downloading.png); */
 	}
 
+
 .illustrate .casts-shadow,
 .illustrate.casts-shadow {
 	box-shadow: 0 2px 12px 2px rgba(0, 0, 0, 0.23);
@@ -257,7 +258,6 @@
 			vertical-align: top;
 			text-indent: -2px;
 		}
-
 
 
 .swiper-container-vertical > .swiper-scrollbar {

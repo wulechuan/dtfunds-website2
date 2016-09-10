@@ -1,13 +1,26 @@
 .page {
 	text-align: center;
 	}
-	.page article h1 {
-		font-size: 1.8rem;
+	article h1 {
+		font-size: 2rem;
 		font-weight: 300;
 	}
-	.page article h2 {
-		font-size: 1.7rem;
+	article h2 {
+		font-size: 1.8rem;
 		font-weight: 400;
+		margin-bottom: 3.5rem;
+	}
+	article h3 {
+		font-size: 1.5rem;
+		font-weight: 400;
+	}
+	article dt h3 {
+		font-size: 1.1rem;
+	}
+	article .strong {
+		font-size: 1rem;
+		line-height: 2;
+		font-weight: 300;
 	}
 
 
@@ -15,16 +28,21 @@
 	margin-bottom: 4rem;
 	}
 
-	.chief-block .subject-title {
+	.chief-block > .width-wrap {
+		padding: 0 2.5rem;
+		box-sizing: border-box;
+	}
+
+	.subject-title {
 		position: relative;
 		height: 10rem;
 		margin: 6rem auto 2rem;
 		}
-		.chief-block .subject-title h1 {
+		.subject-title h1 {
 			text-indent: -3000px;
 			opacity: 0;
 		}
-		.chief-block .subject-title .company-logo {
+		.subject-title .company-logo {
 			width: 8rem;
 			height: 8rem;
 			position: absolute;
@@ -35,3 +53,143 @@
 			margin: auto;
 			background-size: 100%;
 		}
+
+
+	.lead-team {
+		}
+		.lead-team .columns.people {
+			margin: 5rem auto;
+		}
+		.lead-team .columns.people > .col > .content {
+			display: block;
+			width: auto;
+			margin: 0;
+		}
+		.lead-team .columns.people dt {
+			padding: 12rem 1rem 1rem;
+		}
+		.lead-team .columns.people dt .illustrate {
+			width: 10rem;
+			height: 10rem;
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			top: 0.5rem;
+		}
+		.lead-team .columns.people dt .illustrate-look {
+			border-radius: 1000px;
+			background-size: cover;
+		}
+		.lead-team .columns.people dd {
+			line-height: 2.2;
+			text-align: left;
+			/* font-weight: 300; */
+		}
+		.lead-team .columns.people > .col-1 > .content {
+			margin-right: 12%;
+		}
+		.lead-team .columns.people > .col-2 > .content {
+			margin-left: 12%;
+		}
+
+
+	.company-qualification {}
+		.company-qualification h2 {
+			margin-bottom: 2rem;
+		}
+
+		.company-qualification .columns.certificates {
+			margin: 1rem auto 4rem;
+		}
+		.company-qualification .columns.certificates dt {
+			height: 0;
+			overflow: hidden;
+			opacity: 0;
+			text-indent: -3000px;
+		}
+		.company-qualification .columns.certificates dd {
+			padding: 0.9rem;
+		}
+		.company-qualification .columns.certificates img {
+			width: 60%;
+			height: auto;
+			max-width: 380px;
+			border-width: 1px;
+			border-color: #cca25d;
+			box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.219);
+		}
+		.company-qualification .columns.certificates .col-1 dd {
+			text-align: right;
+			direction: rtl;
+		}
+		.company-qualification .columns.certificates .col-2 dd {
+			text-align: left;
+			direction: ltr;
+		}
+
+		.company-qualification .team-members {
+			margin: 3.8rem auto 5rem;
+			font-size: 1rem;
+			}
+
+			.company-qualification .team-members > table {
+				display: inline-table;
+				width: 50%;
+				color: #666;
+			}
+
+			.company-qualification .team-members > table + table {
+				margin-left: -1px;
+			}
+
+			.company-qualification .team-members > table tr,
+			.company-qualification .team-members > table {
+				border-width: 1px;
+				border-color: #ddd;
+			}
+
+			.company-qualification .team-members > table tr {
+				height: 2em;
+				line-height: 1.9em;
+			}
+
+			.company-qualification .team-members > table thead {
+				background-color: rgba(0, 0, 0, 0.045);
+			}
+
+			.company-qualification .team-members > table thead td {
+				font-size: 0.95em;
+				font-weight: 300;
+			}
+
+			.company-qualification .team-members > table tbody td {
+				font-size: 0.8em;
+				font-weight: 300;
+			}
+
+			.company-qualification .team-members > table td:nth-of-type(1) {
+				width: 25%;
+			}
+			.company-qualification .team-members > table td:nth-of-type(2) {
+				width: 35%;
+			}
+			.company-qualification .team-members > table td:nth-of-type(3) {
+			}
+
+			@media only screen and (max-width: 1080px) {
+				.company-qualification .team-members {
+					font-size: 0.85rem;
+				}
+			}
+			@media only screen and (max-width: 880px) {
+				.company-qualification .team-members > table {
+					display: table;
+					margin-bottom: -1px;
+					width: 100%;
+				}
+				.company-qualification .team-members > table + table {
+					margin-left: 0;
+				}
+			}
+
