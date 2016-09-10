@@ -590,3 +590,17 @@ article {}
 	.ofb {
 		display: inline-block;
 	}
+
+	article ol.list-indices-in-labels {
+		list-style: none;
+		/* padding-left: 0; */
+	}
+	article ol.list-indices-in-labels > li {
+		position: relative;
+		padding-left: 3.5rem;
+	}
+	article ol.list-indices-in-labels > li > .label {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}

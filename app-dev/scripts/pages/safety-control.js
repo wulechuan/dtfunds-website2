@@ -1,90 +1,88 @@
 (function () {
-	var $appHeader = $('#app-header');
-	$appHeader.removeClass('use-theme-for-first-fold');
+	(function processChiefSwiper() {
+		var $appHeader = $('#app-header');
+		$appHeader.removeClass('use-theme-for-first-fold');
 
-	new window.Swiper('#app-body > .swiper-container', {
-		direction: 'vertical',
-		mousewheelControl: false,
-		hashnav: true,
-		loop: false,
-		pagination: '#app-body > .swiper-container > .swiper-pagination',
-		paginationClickable: true
-	});
+		new window.Swiper('#app-body > .swiper-container', {
+			direction: 'vertical',
+			mousewheelControl: true,
+			hashnav: true,
+			loop: false,
+			pagination: '#app-body > .swiper-container > .swiper-pagination',
+			paginationClickable: true
+		});
+	})();
 
 
-	var sectionFirstFoldDetailsSwiperDurationInSeconds = 0.6;
-	var sectionFirstFoldDetailsSwiperRootSelector = '.section-first-fold .details-block .swiper-container';
-	var sectionFirstFoldDetailsSwiperPaginationItemsSelector = sectionFirstFoldDetailsSwiperRootSelector + ' .swiper-pagination';
-	var $sectionFirstFoldDetailsSwiperPaginationItems = $(sectionFirstFoldDetailsSwiperPaginationItemsSelector + ' .swiper-pagination-item');
-	var sectionFirstFoldDetailsSwiperRawSlidesCount = $sectionFirstFoldDetailsSwiperPaginationItems.length;
-	if (sectionFirstFoldDetailsSwiperRawSlidesCount < 1) {
-		console.warn('No paginationItem found for sectionFirstFoldDetailsSwiper!');
-	}
-	var sectionFirstFoldDetailsSwiper = new window.Swiper(sectionFirstFoldDetailsSwiperRootSelector, {
-		nested: true,
-		direction: 'horizontal',
-		speed: sectionFirstFoldDetailsSwiperDurationInSeconds * 1000,
+	(function processSectionFirstFoldDetailsSwipers() {
+		var knownSlidesCountPerSwiper = 5;
+		var graphicSlidesTransitionDurationInSeconds = 0.6;
+		var articleSlidesTransitionDurationInSeconds = 0.6;
+		var graphicSlidesRootSelector = '.section-first-fold .details-block .swiper-container.graphic-slides';
+		var articleSlidesRootSelector = '.section-first-fold .details-block .swiper-container.explaination-slides';
 
-		mousewheelControl: true,
-		// paginationClickable: false,
+		var $articleSlideElements = $(articleSlidesRootSelector + ' .feature-explaination-block');
 
-		loop: true,
-		slidesPerView: sectionFirstFoldDetailsSwiperRawSlidesCount,
-		centeredSlides: true,
-		// loopedSlides: 0,
-		slideToClickedSlide: true,
 
-        nextButton: sectionFirstFoldDetailsSwiperRootSelector + ' .swiper-button-next',
-        prevButton: sectionFirstFoldDetailsSwiperRootSelector + ' .swiper-button-prev',
+		var graphicSlidesSwiper = new window.Swiper(graphicSlidesRootSelector, {
+			nested: true,
+			direction: 'horizontal',
+			speed: graphicSlidesTransitionDurationInSeconds * 1000,
 
-		pagination: sectionFirstFoldDetailsSwiperPaginationItemsSelector,
-		paginationType: 'custom',
+			mousewheelControl: false,
+			slideToClickedSlide: true,
+			pagination: null,
 
-		onSlideChangeStart: function (thisSwiperControl) {
-			var slideIndexToShow = thisSwiperControl.activeIndex;
-			var count = sectionFirstFoldDetailsSwiperRawSlidesCount;
-			if (count < 1) {
-				return;
-			}
+			loop: true,
+			slidesPerView: knownSlidesCountPerSwiper,
+			centeredSlides: true,
+			// loopedSlides: 0,
 
-			slideIndexToShow = slideIndexToShow % count;
+	        nextButton: graphicSlidesRootSelector + ' .swiper-button-next',
+	        prevButton: graphicSlidesRootSelector + ' .swiper-button-prev',
 
-			var i;
-			var centerViewIndex = Math.floor(count / 2);
-
-			var allSlideElementsIncludingDupliactions = thisSwiperControl.slides;
-			for (i = 0; i < allSlideElementsIncludingDupliactions.length; i++) {
-				var slideElement = allSlideElementsIncludingDupliactions[i];
-
-				var slideVirtualIndex = parseInt(slideElement.getAttribute('data-swiper-slide-index'));
-				if (isNaN(slideVirtualIndex)) continue;
-
-				var indexDistanceToActiveIndex = slideVirtualIndex - slideIndexToShow;
-				var distanceAbs = Math.abs(indexDistanceToActiveIndex);
-				if (distanceAbs > centerViewIndex) {
-					indexDistanceToActiveIndex += indexDistanceToActiveIndex > 0 ? -count : count;
+			onSlideChangeStart: function (thisSwiperControl) {
+				var slideIndexToShow = thisSwiperControl.activeIndex;
+				var count = knownSlidesCountPerSwiper;
+				if (count < 1) {
+					return;
 				}
-				console.log('distance info:', slideIndexToShow, slideVirtualIndex, ':', indexDistanceToActiveIndex);
-				slideElement.setAttribute('data-index-distance-to-active-one', indexDistanceToActiveIndex);
-			}
 
+				slideIndexToShow = slideIndexToShow % count;
 
-			var cssClassNameActivePagination = 'active';
-			for (i = 0; i < count; i++) {
-				var paginationItem = $sectionFirstFoldDetailsSwiperPaginationItems[i];
-				if (i === slideIndexToShow) {
-					$(paginationItem).addClass(cssClassNameActivePagination);
-				} else {
-					$(paginationItem).removeClass(cssClassNameActivePagination);
+				var i;
+				var centerViewIndex = Math.floor(count / 2);
+
+				var allSlideElementsIncludingDupliactions = thisSwiperControl.slides;
+				for (i = 0; i < allSlideElementsIncludingDupliactions.length; i++) {
+					var slideElement = allSlideElementsIncludingDupliactions[i];
+
+					var slideVirtualIndex = parseInt(slideElement.getAttribute('data-swiper-slide-index'));
+					if (isNaN(slideVirtualIndex)) continue;
+
+					var indexDistanceToActiveIndex = slideVirtualIndex - slideIndexToShow;
+					var distanceAbs = Math.abs(indexDistanceToActiveIndex);
+					if (distanceAbs > centerViewIndex) {
+						indexDistanceToActiveIndex += indexDistanceToActiveIndex > 0 ? -count : count;
+					}
+					// console.log('distance info:', slideIndexToShow, slideVirtualIndex, ':', indexDistanceToActiveIndex);
+					slideElement.setAttribute('data-index-distance-to-active-one', indexDistanceToActiveIndex);
 				}
+
+
+
+				var cssClassNameActiveArticle = 'active'; 
+				for (i = 0; i < count; i++) {
+					var article = $articleSlideElements[i]; 
+					if (i === slideIndexToShow) { 
+						$(article).addClass(cssClassNameActiveArticle); 
+					} else { 
+						$(article).removeClass(cssClassNameActiveArticle);
+					}
+				}
+
+				// console.log('---------------------------');
 			}
-
-			console.log('++++++++++++++++++');
-		}
-	});
-
-	var allSlideElementsIncludingDupliactions = sectionFirstFoldDetailsSwiper.slides;
-	$(allSlideElementsIncludingDupliactions).find('.icon').each(function () {
-		this.style.transitionDuration = sectionFirstFoldDetailsSwiperDurationInSeconds + 's';
-	});
+		});
+	})();
 })();
