@@ -295,7 +295,17 @@
 		background-position: right bottom;
 		background-size: contain;
 		background-image: url(../../images/pages/index/page-section-1-device-0.jpg);
+
+		/* 72.3deg - 90deg = -17.7 */
+
+		-webkit-transition-duration: 1.87s;
+		        transition-duration: 1.87s;
+		-webkit-transition-delay: -0.4s;
+		        transition-delay: -0.4s;
+		-webkit-transform: rotate(17.7deg) translate3d(0, 50%, 0) rotate(-17.7deg);
+		        transform: rotate(17.7deg) translate3d(0, 50%, 0) rotate(-17.7deg);
 	}
+
 
 	@media only screen and (max-width: 1440px) {
 		.section-financing .illustrate.device-0 .illustrate-look {
