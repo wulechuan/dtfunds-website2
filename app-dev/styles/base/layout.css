@@ -553,6 +553,56 @@
 	}
 
 
+
+
+/* .branded-divider {
+	position: relative;
+	width: 70%;
+	max-width: 25rem;
+	height: 2.1rem;
+	border-color: #cca25d;
+	overflow: hidden;
+	white-space: nowrap;
+	text-indent: 2560px;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-image: url(../../images/company-brand/brand-first-fold-title.png);
+	}
+
+	.branded-divider:after,
+	.branded-divider:before {
+		content: '';
+		border-color: inherit;
+		border-width: 1px 0 0 0;
+		display: block;
+		width: auto;
+		height: 0;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		opacity: 0.4;
+		}
+		.branded-divider:before {
+			left: 0;
+			right: 50%;
+			margin-right: 4rem;
+		}
+		.branded-divider:after {
+			left: 50%;
+			right: 0;
+			margin-left: 4rem;
+		}
+ */
+
+
+
+
 .last-fold {
 	padding: 8rem 0 4rem;
 	}

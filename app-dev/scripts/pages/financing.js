@@ -7,6 +7,7 @@
 		mousewheelControl: true,
 		hashnav: true,
 		loop: false,
+		// freeMode: true,
 		pagination: '.swiper-pagination',
 		paginationClickable: true,
 		onSlideChangeStart: function (thisSwiperControl) {

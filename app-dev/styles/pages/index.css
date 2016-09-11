@@ -27,11 +27,11 @@
 		min-height: 220px;
 	}
 	.section-first-fold > .content .row.call-to-action-button-block {
-		top: 52%;
+		top: 47%;
 		height: 2rem;
 	}
 	.section-first-fold > .content .row.call-to-action-qrcode-block {
-		bottom: 15%;
+		bottom: 12%;
 	}
 
 
@@ -44,13 +44,13 @@
 		margin: 0 auto;
 		}
 		.section-first-fold > .content .first-fold-title {
-			top: 5%;
+			top: 0;
 		}
 		.section-first-fold > .content .slogan {
-			top: 38%;
+			top: 25%;
 		}
 		.section-first-fold > .content .subtitle {
-			top: 77%;
+			top: 60%;
 		}
 
 
@@ -105,8 +105,9 @@
 
 
 	.section-first-fold > .content .slogan {
-		font-weight: 700;
+		font-weight: 500;
 		font-size: 3rem;
+		letter-spacing: 0.05em;
 		/* margin: 3rem auto 2.5rem; */
 	}
 	.section-first-fold > .content .subtitle {
@@ -122,21 +123,47 @@
 		height: 4.2rem;
 		margin: 0 auto 1rem;
 	}
+	.section-first-fold > .content .row.call-to-action-qrcode-block .figcaption {
+		font-size: 0.7rem;
+	}
 
 
 	@media only screen and (max-width: 980px) {
-		.section-first-fold > .content .row.call-to-action-button-block {
-			top: 57%;
+		.section-first-fold > .content .slogan {
+			font-size: 2.4rem;
 		}
 		.section-first-fold > .content .subtitle span {
 			display: block;
 		}
+		.section-first-fold > .content .row.call-to-action-button-block {
+			top: 57%;
+		}
 	}
 
-	@media only screen and (max-height: 720px) {
+	@media only screen and (max-height: 768px) {
+		.section-first-fold > .content .first-fold-title {
+			top: 5%;
+		}
+		.section-first-fold > .content .slogan {
+			top: 38%;
+			font-size: 2.4rem;
+		}
+		.section-first-fold > .content .subtitle {
+			top: 77%;
+			font-size: 1.1rem;
+		}
 		.section-first-fold > .content .row.call-to-action-button-block {
-			top: 63%;
-			bottom: 15%;
+			top: 53%;
+		}
+	}
+
+	@media only screen and (max-height: 620px) {
+		.section-first-fold>.content .row.slogan-block {
+			top: 8%;
+		}
+		.section-first-fold > .content .row.call-to-action-button-block {
+			top: 57%;
+			bottom: 19%;
 		}
 		.section-first-fold > .content .row.call-to-action-qrcode-block {
 			bottom: 5%;
@@ -158,6 +185,41 @@
 		}
 		.section-first-fold > .content .row.call-to-action-qrcode-block .figcaption .less-important-segment {
 			display: none;
+		}
+	}
+
+	@media only screen and (max-height: 500px) {
+		.section-first-fold>.content .row.slogan-block {
+			top: 8%;
+		}
+		.section-first-fold > .content .slogan {
+			font-size: 2.2rem;
+			font-weight: 300;
+		}
+		.section-first-fold > .content .subtitle {
+			font-weight: 200;
+		}
+		.section-first-fold > .content .row.call-to-action-button-block {
+			top: auto;
+			bottom: 25%;
+		}
+	}
+
+	@media only screen and (max-height: 400px) {
+		.section-first-fold>.content .row.slogan-block {
+			top: 8%;
+		}
+		.section-first-fold > .content .slogan {
+			top: 35%;
+			font-size: 2rem;
+		}
+		.section-first-fold > .content .subtitle {
+			top: 64%;
+			font-size: 0.9rem;
+		}
+		.section-first-fold > .content .row.call-to-action-button-block {
+			top: auto;
+			bottom: 13%;
 		}
 	}
 

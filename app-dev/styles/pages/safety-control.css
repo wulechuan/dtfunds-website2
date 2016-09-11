@@ -57,6 +57,7 @@ article h1 {
 			width: 10rem;
 			height: 100%;
 			z-index: 1;
+			cursor: pointer;
 		}
 		.section-first-fold .details-block .graphic-slides .swiper-slide[data-index-distance-to-active-one="-1"],
 		.section-first-fold .details-block .graphic-slides .swiper-slide[data-index-distance-to-active-one="1"] {
