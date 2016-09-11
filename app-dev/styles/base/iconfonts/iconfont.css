@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1473477642'); /* IE9*/
-  src: url('iconfont.eot?t=1473477642#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1473477642') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1473477642') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1473477642#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1473572680'); /* IE9*/
+  src: url('iconfont.eot?t=1473572680#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1473572680') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1473572680') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1473572680#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -26,3 +26,7 @@
 .icon-folks-in-suits:before { content: "\e608"; }
 .icon-shield-with-quad-grid:before { content: "\e609"; }
 .icon-monitor-with-poly-lines:before { content: "\e60a"; }
+.icon-filter-filled:before { content: "\e60b"; }
+.icon-diamond:before { content: "\e60c"; }
+.icon-human-head-with-dollar-sign:before { content: "\e60d"; }
+.icon-cards-with-rmb-sign:before { content: "\e60e"; }
