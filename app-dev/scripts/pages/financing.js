@@ -97,7 +97,8 @@
 		var $appHeader = $('#app-header');
 		$appHeader.removeClass('use-theme-for-first-fold');
 
-		new window.Swiper('#app-body > .swiper-container', {
+		var lastSlideElement;
+		var swiperControl = new window.Swiper('#app-body > .swiper-container', {
 			direction: 'vertical',
 			mousewheelControl: true,
 			hashnav: true,
@@ -107,13 +108,25 @@
 			paginationClickable: true,
 			onSlideChangeStart: function (thisSwiperControl) {
 				var slideIndexToShow = thisSwiperControl.activeIndex;
+				$(thisSwiperControl.slides[thisSwiperControl.activeIndex]).find('.actor').addClass('acting');
+
+				if (lastSlideElement) {
+					$(lastSlideElement).find('.actor').removeClass('acting');
+				}
+
 				var cssClassName3 = 'use-theme-for-contacts';
 				if (slideIndexToShow === 3) {
 					$appHeader.addClass(cssClassName3);
 				} else {
 					$appHeader.removeClass(cssClassName3);
 				}
+			},
+			onSlideChangeEnd: function (thisSwiperControl) {
+				lastSlideElement = thisSwiperControl.slides[thisSwiperControl.activeIndex];
+
 			}
 		});
+
+		$(swiperControl.slides[swiperControl.activeIndex]).find('.actor').addClass('acting');
 	})();
 })();

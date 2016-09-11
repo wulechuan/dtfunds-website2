@@ -1,31 +1,43 @@
 (function () {
-	var $appHeader = $('#app-header');
-	$appHeader.addClass('use-theme-for-first-fold');
+	(function setupPageChiefSwiper() {
+		var $appHeader = $('#app-header');
+		$appHeader.addClass('use-theme-for-first-fold');
 
-	new window.Swiper('#app-body > .swiper-container', {
-		direction: 'vertical',
-		mousewheelControl: true,
-		hashnav: true,
-		loop: false,
-		pagination: '.swiper-pagination',
-		paginationClickable: true,
-		onSlideChangeStart: function (thisSwiperControl) {
-			var slideIndexToShow = thisSwiperControl.activeIndex;
-			var cssClassName0 = 'use-theme-for-first-fold';
-			var cssClassName2 = 'use-theme-for-contacts';
-			if (slideIndexToShow === 0) {
-				$appHeader.addClass(cssClassName0);
-			} else {
-				$appHeader.removeClass(cssClassName0);
-			}
-			if (slideIndexToShow === 2) {
-				$appHeader.addClass(cssClassName2);
-			} else {
-				$appHeader.removeClass(cssClassName2);
-			}
-		}
-	});
+		var lastSlideElement;
 
+		new window.Swiper('#app-body > .swiper-container', {
+			direction: 'vertical',
+			mousewheelControl: true,
+			hashnav: true,
+			loop: false,
+			pagination: '.swiper-pagination',
+			paginationClickable: true,
+			onSlideChangeStart: function (thisSwiperControl) {
+				var slideIndexToShow = thisSwiperControl.activeIndex;
+				$(thisSwiperControl.slides[slideIndexToShow]).find('.actor').addClass('acting');
+
+				if (lastSlideElement) {
+					$(lastSlideElement).find('.actor').removeClass('acting');
+				}
+
+				var cssClassName0 = 'use-theme-for-first-fold';
+				var cssClassName2 = 'use-theme-for-contacts';
+				if (slideIndexToShow === 0) {
+					$appHeader.addClass(cssClassName0);
+				} else {
+					$appHeader.removeClass(cssClassName0);
+				}
+				if (slideIndexToShow === 2) {
+					$appHeader.addClass(cssClassName2);
+				} else {
+					$appHeader.removeClass(cssClassName2);
+				}
+			},
+			onSlideChangeEnd: function (thisSwiperControl) {
+				lastSlideElement = thisSwiperControl.slides[thisSwiperControl.activeIndex];
+			}
+		});
+	})();
 
 
 
