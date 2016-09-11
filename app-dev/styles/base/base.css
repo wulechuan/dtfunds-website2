@@ -993,6 +993,18 @@ button.button-x {
 	.columns.columns-count-3     > .col {
 		width: 33.33%;
 	}
+	.columns.columns-count-4 > a > li,
+	.columns.columns-count-4     > li,
+	.columns.columns-count-4 > a > .col,
+	.columns.columns-count-4     > .col {
+		width: 25%;
+	}
+	.columns.columns-count-5 > a > li,
+	.columns.columns-count-5     > li,
+	.columns.columns-count-5 > a > .col,
+	.columns.columns-count-5     > .col {
+		width: 20%;
+	}
 
 	.columns > hr {
 		display: inline-block;

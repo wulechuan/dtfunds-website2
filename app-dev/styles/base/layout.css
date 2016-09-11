@@ -162,7 +162,7 @@
 	#app-footer.style-simple {
 		text-align: center;
 		border-width: 1px 0 0 0;
-		height: 4.75rem;
+		height: 4rem;
 		overflow: hidden;
 	}
 	#app-footer.style-simple:before {

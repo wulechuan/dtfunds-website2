@@ -3,8 +3,11 @@
 	}
 	.width-wrap {
 		padding: 0 2.5rem;
-		box-sizing: border-box;
-	}
+		}
+		.intro-block > .width-wrap {
+			min-width: 512px;
+			box-sizing: border-box;
+		}
 
 	article p,
 	article {
@@ -22,11 +25,9 @@
 		margin-top: 7rem;
 	}
 	article h3 {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		font-weight: 400;
-	}
-	article dt h3 {
-		font-size: 1rem;
+		margin-bottom: 4rem;
 	}
 	article .strong {
 		font-size: 1rem;
@@ -176,24 +177,77 @@
 
 .advantage-2 {}
 	.dtfunds-utilities {
-	}
-	.dtfunds-utilities > .columns .col >  .label {
-		color: initial;
-		font-size: 1rem;
-	}
-	.dtfunds-utilities > .columns .col >  .illustrate {
-		position: relative;
-		width: 10rem;
-		height: 10rem;
-		margin: 1rem auto;
-	}
-	.dtfunds-utilities > .columns .col >  .illustrate .illustrate-look {
-		background-size: contain;
-	}
-	.dtfunds-utilities > .columns > hr {
-		top: 5rem;
-		bottom: 2.5rem;
-	}
+		}
+		.dtfunds-utilities > .columns .col >  .label {
+			color: initial;
+			font-size: 1rem;
+		}
+		.dtfunds-utilities > .columns .col >  .illustrate {
+			position: relative;
+			width: 10rem;
+			height: 10rem;
+			margin: 1rem auto;
+		}
+		.dtfunds-utilities > .columns .col >  .illustrate .illustrate-look {
+			background-size: contain;
+		}
+		.dtfunds-utilities > .columns > hr {
+			top: 5rem;
+			bottom: 2.5rem;
+		}
+
+	.researching-herarchies {
+		margin: 6rem auto;
+		}
+		/* .researching-herarchies h3 {
+			margin-bottom: 4rem;
+		} */
+		.researching-herarchies > .columns > hr {
+			bottom: 0.5rem;
+		}
+		.researching-herarchies > .columns dt {
+			font-size: 1.3rem;
+			line-height: 1;
+			font-weight: 400;
+			color: #2f3133;
+		}
+		.researching-herarchies > .columns dd p {
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1
+			margin: 0;
+		}
+		.researching-herarchies > .columns ul {
+			list-style: none;
+			padding: 0;
+			line-height: 1.8;
+		}
+		.researching-herarchies > .columns ul li {
+			display: inline-block;
+			position: relative;
+			margin: 0 0 0 1em;
+		}
+		.researching-herarchies > .columns ul li:before {
+			content: '';
+			display: block;
+			width: 0.2rem;
+			height: 0.2rem;
+			border-radius: 1000px;
+			margin: auto ;
+			position: absolute;
+			left: -1em;
+			right: 100%;
+			top: 0;
+			bottom: 0;
+
+			background-color: #cca25d;
+		}
+		.researching-herarchies > .columns ul li:first-of-type {
+			margin-left: 0;
+		}
+		.researching-herarchies > .columns ul li:first-of-type:before {
+			content: none;
+		}
 
 
 .advantage-3 {}
@@ -206,171 +260,62 @@
 		width: auto;
 		margin: 5rem auto;
 	}
-
-
-
-
-.company-intro {
-	line-height: 2;
-	color: #2f3133;
+	.advantage-3 .illustrate .illustrate-look {
+		background-size: contain;
+		background-position: center top;
 	}
-	.company-intro .columns {
-		position: relative;
-		margin: 3rem auto;
-		}
-
-		.company-intro .columns .col {
-			text-align: center;
-		}
-
-		.company-intro .columns .col-1,
-		.company-intro .columns .col-3 {
-			width: 33.3%;
-		}
-
-		.company-intro .columns .col-2 {
-			width: 33.4%;
-		}
-
-		.company-intro .columns .col > .content {
-			margin: 0 13%;
-			text-align: left;
-		}
-		.company-intro .columns .col-1 > .content {
-			margin-left: 0;
-		}
-		.company-intro .columns .col-3 > .content {
-			margin-right: 0;
-			text-align: center;
-		}
-		.company-intro .columns .col dt {
-			margin-bottom: 1rem;
-			color: #2f3133;
-		}
-		.company-intro .columns .col dd {
-			color: #666;
-		}
-
-		@media only screen and (max-width: 1080px) {
-			.company-intro .columns .col > .content {
-				margin-left: 8.5%;
-				margin-right: 8.5%;
-			}
-			.company-intro .columns .col-1 > .content {
-				margin-right: 7%;
-			}
-			.company-intro .columns .col-3 > .content {
-				margin-left: 7%;
-			}
-		}
-
-		@media only screen and (max-width: 960px) {
-			.company-intro .columns .col {
-				display: block;
-				width: 100%;
-				text-align: left;
-			}
-			.company-intro .columns .col > .content {
-				margin: 0;
-			}
-			.company-intro .columns .col dt h3,
-			.company-intro .columns .col dd {
-				text-align: left;
-			}
-			.company-intro .columns .col dt {
-				margin: 2.5rem auto 0rem;
-			}
-
-			.company-intro .columns > hr {
-				display: none;
-			}
-		}
+	.advantage-3 img.illustrate {
+		height: auto;
+		width: 100%;
+		max-width: 1180px;
+		margin: 5rem auto;
+	}
 
 
 
-.platform-features {}
-
-	.platform-features h3 {
-		margin-bottom: 2rem;
+.advantage-4 {
 	}
 
 	.platform-features {
-		margin: 2.5rem auto 4rem;
+		margin: 7rem auto 5rem;
 		font-size: 1rem;
 		}
 
 		.platform-features > table {
 			display: inline-table;
-			width: 50%;
-			color: #666;
+			width: 90%;
+			border-width: 1px;
+			border-color: transparent;
+			color: #2f3133;
 		}
-
-		.platform-features > table + table {
-			margin-left: -1px;
+		.platform-features > table td {
+			width: 33.33%;
+			padding: 0.25rem;
 		}
-
-		.platform-features > table tr,
-		.platform-features > table {
+		.platform-features > table td h4 {
+			font-size: 1.2rem;
+			font-weight: 300;
+		}
+		.platform-features > table td p {
+			font-size: 0.75rem;
+			font-weight: 400;
+		}
+		.platform-features > table tbody td {
 			border-width: 1px;
 			border-color: #ddd;
-		}
+			}
 
-		.platform-features > table tr {
-			height: 2em;
-			line-height: 1.95em;
-		}
+			.platform-features > table tbody tr:first-of-type td {
+				border-top-color: transparent;
+			}
+			.platform-features > table tbody tr:last-of-type td {
+				border-bottom-color: transparent;
+			}
 
-		.platform-features > table thead {
-			background-color: rgba(0, 0, 0, 0.045);
-		}
+			.platform-features > table tbody td:first-of-type {
+				border-left-color: transparent;
+			}
+			.platform-features > table tbody td:last-of-type {
+				border-right-color: transparent;
+			}
 
-		.platform-features > table thead td {
-			font-size: 0.95em;
-			font-weight: 300;
-		}
-
-		.platform-features > table tbody td {
-			font-size: 0.8em;
-			font-weight: 300;
-		}
-
-		.platform-features > table td:nth-of-type(1) {
-			width: 25%;
-		}
-		.platform-features > table td:nth-of-type(2) {
-			width: 35%;
-		}
-		.platform-features > table td:nth-of-type(3) {
-		}
-
-		@media only screen and (max-width: 1080px) {
-			.platform-features h2 {
-				margin-bottom: 1rem;
-			}
-			.platform-features .columns.certificates {
-				margin: 0 auto;
-			}
-			.platform-features h3 {
-				margin: 1rem auto;
-			}
-			.platform-features {
-				font-size: 0.85rem;
-				margin: 1rem auto 2rem;
-			}
-		}
-		@media only screen and (max-width: 880px) {
-			.platform-features > table {
-				display: table;
-				margin-bottom: -1px;
-				width: 85%;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			.platform-features > table + table {
-				margin-left: auto;
-				margin-right: auto;
-			}
-			.platform-features {
-				font-size: 1rem;
-			}
-		}
