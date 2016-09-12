@@ -328,7 +328,16 @@ article h1 {
 	right: 0;
 	top: 0;
 	bottom: 0;
-	margin: 2rem 0.5rem 2rem 0;
+	margin-left: 0;
+	margin-right: 0.5rem;
+	}
+	.section-risk           > .content > .row > .width-wrap > article {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+	.section-business-rules > .content > .row > .width-wrap > article {
+		margin-top: 2rem;
+		margin-bottom: 0rem;
 	}
 	.section-business-rules > .content > .row > .width-wrap > article .content-scrollable-block,
 	.section-risk           > .content > .row > .width-wrap > article .content-scrollable-block {
@@ -429,8 +438,14 @@ article h1 {
 		margin: 0;
 	}
 
-	@media only screen and (max-height: 720px) {
+	@media only screen and (max-width: 1200px) {
 		.section-business-rules > .content > .row > .width-wrap > article {
-			bottom: 2.5rem; /* for app-footer */
+			bottom: 5.5rem; /* for app-footer */
+		}
+	}
+
+	@media only screen and (max-width: 800px) {
+		.section-business-rules > .content > .row > .width-wrap > article {
+			bottom: 7rem; /* for app-footer */
 		}
 	}
