@@ -137,6 +137,7 @@
 			var s = new window.Swiper(slidesRootSelector, {
 				nested: true,
 				direction: 'vertical',
+
 				slidesPerView: 'auto',
 
 				scrollbar: slidesRootSelector+' .swiper-scrollbar',
