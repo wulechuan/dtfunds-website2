@@ -123,4 +123,31 @@
 			});
     	}
 	})();
+
+
+
+
+	(function processNestedSwipers() {
+		var slidesRootSelector = '.content-scrollable-block > .swiper-container';
+
+		var isFireFox = !!navigator.userAgent.match(/Firefox/i);
+		var mousewheelSensitivity = isFireFox ? 25 : 1;
+
+		$(slidesRootSelector).each(function () {
+			var s = new window.Swiper(slidesRootSelector, {
+				nested: true,
+				direction: 'vertical',
+				slidesPerView: 'auto',
+
+				scrollbar: slidesRootSelector+' .swiper-scrollbar',
+				scrollbarDraggable: true,
+				scrollbarHide: false,
+
+				freeMode: true,
+				mousewheelControl: true,
+				mousewheelReleaseOnEdges: true,
+				mousewheelSensitivity: mousewheelSensitivity
+			});
+		});
+	})();
 })();
