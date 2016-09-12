@@ -144,7 +144,7 @@
 				scrollbarDraggable: true,
 				scrollbarHide: false,
 
-				freeMode: true,
+				freeMode: false,
 				mousewheelControl: true,
 				mousewheelReleaseOnEdges: true,
 				mousewheelSensitivity: mousewheelSensitivity

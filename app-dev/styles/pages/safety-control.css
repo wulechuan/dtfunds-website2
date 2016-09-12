@@ -286,6 +286,7 @@ article h1 {
 		right: 0;
 		top: 6rem;
 		bottom: 0;
+		margin: 0 0 1rem 0;
 	}
 
 	@media only screen and (max-height: 720px) {
