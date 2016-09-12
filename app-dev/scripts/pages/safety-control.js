@@ -152,7 +152,7 @@
 				scrollbar: slidesRootSelector+' .swiper-scrollbar',
 				scrollbarHide: false,
 				scrollbarDraggable: true,
-				// scrollbarSnapOnRelease: true,
+				scrollbarSnapOnRelease: true,
 
 				mousewheelControl: true,
 				mousewheelReleaseOnEdges: true,
