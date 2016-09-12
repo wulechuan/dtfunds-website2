@@ -24,10 +24,10 @@
 		}
 
 		function roll(el, from, to) {
-			var intervalInMS = 30;
-			var valueStepAbs = 3;
+			var intervalInMS = 25;
+			var valueStepAbs = 9;
 			var valueStepAbsAcceleration = 1.23;
-			var valueStepAbsMax = 7654;
+			var valueStepAbsMax = 87654;
 
 			if (el.isRolling) return true;
 
