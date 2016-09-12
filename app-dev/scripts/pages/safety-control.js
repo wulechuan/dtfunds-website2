@@ -19,6 +19,7 @@
 
 
 	(function processSectionFirstFoldDetailsSwipers() {
+		return;
 		function evaluateIndexDistanceTo(count, centerIndex, targetIndex) {
 			count = parseInt(count);
 			if (isNaN(count) || count < 1) return NaN;
