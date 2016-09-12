@@ -2,6 +2,17 @@ article h1 {
 	margin: 3rem auto;
 }
 
+.content-scrollable-block .swiper-container {
+	height: 100%;
+	padding-right: 1.6rem; /* for scrollbars */
+	}
+	.content-scrollable-block .swiper-wrapper {
+		width: calc(100% - 1.6rem);
+	}
+	.content-scrollable-block .swiper-container .swiper-slide {
+		height: auto;
+		box-sizing: border-box;
+	}
 
 
 .section-first-fold {
@@ -19,7 +30,7 @@ article h1 {
 	.section-first-fold .details-block .width-wrap {
 		min-width: 5rem;
 		height: 100%;
-		max-width: 800px;
+		max-width: 1000px;
 	}
 
 	.section-first-fold .abstract-block .features {
@@ -47,11 +58,58 @@ article h1 {
 			content: none;
 		}
 
+	.section-first-fold .details-block .slides-block {
+		position: relative;
+		height: 100%;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button {
+			position: absolute;
+			width: 2rem;
+			height: 4rem;
+			line-height: 4rem;
+			padding: 0;
+			margin: -5.5rem 0 0;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button > .label {
+			opacity: 0;
+			text-indent: 1000px;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button > .icon {
+			position: absolute;
+			margin: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			line-height: inherit;
+			font-size: 4rem;
+			text-indent: -0.3em;
+			color: black;
+			opacity: 0.15;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button:hover > .icon {
+			opacity: 0.4;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button.swiper-slide-prev {
+			left: -2rem;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button.swiper-slide-next {
+			right: -2rem;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button.swiper-slide-prev > .icon {
+			left: 0;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button.swiper-slide-next > .icon {
+			right: 0;
+			direction: rtl;
+		}
+
 	.section-first-fold .details-block .swiper-container.graphic-slides {
 		perspective: 10rem;
 		transform-style: preserve-3d;
-		width: 100%;
+		margin-left: 3rem;
+		margin-right: 3rem;
 		}
+
 		.section-first-fold .details-block .graphic-slides .swiper-slide {
 			position: relative;
 			width: 10rem;
@@ -151,8 +209,8 @@ article h1 {
 
 
 	.section-first-fold .details-block .explaination-slides {
-		margin-left: -1rem;
-		margin-right: -1rem;
+		margin-left: 2rem;
+		margin-right: 2rem;
 		}
 
 		.feature-explaination-block {
@@ -199,12 +257,14 @@ article h1 {
 	}
 
 	.section-first-fold .details-block .swiper-container.graphic-slides {
-		height: 15rem;
+		height: 14rem;
 	}
 	.section-first-fold .details-block .graphic-slides .swiper-pagination.swiper-pagination-custom,
-	.section-first-fold .details-block .explaination-slides {
-		top: 15rem;
+	.section-first-fold .details-block .explaination-slides ,
+	.section-first-fold .details-block .slides-block button.slide-nav-button {
+		top: 14rem;
 	}
+
 	.section-first-fold .details-block .graphic-slides .swiper-slide .icon {
 		width: 7.5rem;
 		height: 7.5rem;
@@ -217,7 +277,8 @@ article h1 {
 			height: 10rem;
 		}
 		.section-first-fold .details-block .graphic-slides .swiper-pagination.swiper-pagination-custom,
-		.section-first-fold .details-block .explaination-slides {
+		.section-first-fold .details-block .explaination-slides,
+		.section-first-fold .details-block .slides-block button.slide-nav-button {
 			top: 11rem;
 		}
 	}
@@ -238,7 +299,8 @@ article h1 {
 			height: 5rem;
 		}
 		.section-first-fold .details-block .graphic-slides .swiper-pagination.swiper-pagination-custom,
-		.section-first-fold .details-block .explaination-slides {
+		.section-first-fold .details-block .explaination-slides,
+		.section-first-fold .details-block .slides-block button.slide-nav-button {
 			top: 6rem;
 		}
 		.section-first-fold .details-block .graphic-slides .swiper-slide .icon {
@@ -257,8 +319,8 @@ article h1 {
 	bottom: 0;
 }
 
-.section-business-rules > .content article,
-.section-risk           > .content article {
+.section-business-rules > .content > .row > .width-wrap > article,
+.section-risk           > .content > .row > .width-wrap > article {
 	border-width: 1px;
 	border-color: #cca25d;
 	position: absolute;
@@ -266,26 +328,35 @@ article h1 {
 	right: 0;
 	top: 0;
 	bottom: 0;
-	margin: 2rem 0;
+	margin-left: 0;
+	margin-right: 0.5rem;
 	}
-	.section-business-rules > .content article .content-scrollable-block,
-	.section-risk           > .content article .content-scrollable-block {
+	.section-risk           > .content > .row > .width-wrap > article {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+	.section-business-rules > .content > .row > .width-wrap > article {
+		margin-top: 2rem;
+		margin-bottom: 0rem;
+	}
+	.section-business-rules > .content > .row > .width-wrap > article .content-scrollable-block,
+	.section-risk           > .content > .row > .width-wrap > article .content-scrollable-block {
 		position: absolute;
 		left: 0;
 		right: 0;
 		top: 6rem;
 		bottom: 0;
-		margin: 1rem;
+		margin: 0 0 1rem 0;
 	}
 
 	@media only screen and (max-height: 720px) {
-		.section-business-rules > .content article h1,
-		.section-risk           > .content article h1 {
+		.section-business-rules > .content > .row > .width-wrap > article h1,
+		.section-risk           > .content > .row > .width-wrap > article h1 {
 			margin-top: 1.5rem;
 			margin-bottom: 1rem;
 		}
-		.section-business-rules > .content article .content-scrollable-block,
-		.section-risk           > .content article .content-scrollable-block {
+		.section-business-rules > .content > .row > .width-wrap > article .content-scrollable-block,
+		.section-risk           > .content > .row > .width-wrap > article .content-scrollable-block {
 			top: 3rem;
 		}
 	}
@@ -314,15 +385,14 @@ article h1 {
 .section-business-rules {
 	}
 
-	.section-business-rules > .content article {
-		margin: 0 0.5rem 0.5rem;
+	.section-business-rules > .content > .row > .width-wrap > article {
 		border-color: transparent;
 		bottom: 4rem; /* for app-footer */
 	}
 
 	.business-rules-content-block dl.qna {
 		counter-reset: questionIndex;
-		padding: 0 1rem;
+		padding: 0;
 		font-size: 1rem;
 	}
 
@@ -368,8 +438,14 @@ article h1 {
 		margin: 0;
 	}
 
-	@media only screen and (max-height: 720px) {
-		.section-business-rules > .content article {
-			bottom: 2.5rem; /* for app-footer */
+	@media only screen and (max-width: 1200px) {
+		.section-business-rules > .content > .row > .width-wrap > article {
+			bottom: 5.5rem; /* for app-footer */
+		}
+	}
+
+	@media only screen and (max-width: 800px) {
+		.section-business-rules > .content > .row > .width-wrap > article {
+			bottom: 7rem; /* for app-footer */
 		}
 	}
