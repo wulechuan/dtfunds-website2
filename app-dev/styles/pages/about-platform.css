@@ -1,12 +1,10 @@
 .page {
 	text-align: center;
 	}
-	.width-wrap {
+	.page .width-wrap {
 		padding: 0 2.5rem;
-		}
-		.intro-block > .width-wrap {
-			min-width: 512px;
-			box-sizing: border-box;
+		min-width: 512px;
+		box-sizing: border-box;
 		}
 
 	article p,

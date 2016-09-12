@@ -311,8 +311,6 @@ article h1 {
 
 
 
-
-
 .section-business-rules {
 	}
 
@@ -328,11 +326,11 @@ article h1 {
 		font-size: 1rem;
 	}
 
-	.business-rules-content-block dl.qna > dd,
-	.business-rules-content-block dl.qna > dt {
+	.business-rules-content-block dl.qna dd,
+	.business-rules-content-block dl.qna dt {
 		padding-left: 2rem;
 	}
-	.business-rules-content-block dl.qna > dt {
+	.business-rules-content-block dl.qna dt {
 		counter-increment: questionIndex;
 		font-size: 0.9em;
 		font-weight: 300;
@@ -340,10 +338,10 @@ article h1 {
 
 		color: #cca25d;
 	}
-	.business-rules-content-block dl.qna > dt > .label {
+	.business-rules-content-block dl.qna dt > .label {
 	}
-	.business-rules-content-block dl.qna > dt > .label,
-	.business-rules-content-block dl.qna > dt:before {
+	.business-rules-content-block dl.qna dt > .label,
+	.business-rules-content-block dl.qna dt:before {
 		content: counter(questionIndex) '、';
 		position: absolute;
 		left: 0;
@@ -351,19 +349,23 @@ article h1 {
 		opacity: 0.5;
 	}
 
-	.business-rules-content-block dl.qna > dd {
+	.business-rules-content-block dl.qna dd {
 		font-size: 0.8rem;
 		color: #2f3133;
 		margin-bottom: 1.8em;
 		line-height: 1.5;
 	}
 
-	.business-rules-content-block dl.qna > dd:before {
+	.business-rules-content-block dl.qna dd:before {
 		content: '答：';
 		position: absolute;
 		left: 0;
 		top: 0;
 		opacity: 0.5;
+	}
+
+	.business-rules-content-block dl.qna dd li {
+		margin: 0;
 	}
 
 	@media only screen and (max-height: 720px) {
