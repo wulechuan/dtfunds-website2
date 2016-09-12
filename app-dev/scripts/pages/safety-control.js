@@ -1,4 +1,6 @@
 (function () {
+	var C = window.console;
+
 	(function processChiefSwiper() {
 		var $appHeader = $('#app-header');
 		$appHeader.removeClass('use-theme-for-first-fold');
@@ -134,7 +136,7 @@
 		var mousewheelSensitivity = isFireFox ? 25 : 1;
 
 		$(slidesRootSelector).each(function () {
-			var s = new window.Swiper(slidesRootSelector, {
+			var s = new window.Swiper(this, {
 				nested: true,
 				direction: 'vertical',
 
@@ -147,7 +149,11 @@
 				freeMode: false,
 				mousewheelControl: true,
 				mousewheelReleaseOnEdges: true,
-				mousewheelSensitivity: mousewheelSensitivity
+				mousewheelSensitivity: mousewheelSensitivity,
+
+				onSlideChangeStart: function(thisSwiperControl) {
+					C.log(thisSwiperControl);
+				}
 			});
 		});
 	})();
