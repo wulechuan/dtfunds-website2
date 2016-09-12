@@ -251,19 +251,25 @@ article h1 {
 
 
 
-.section-business-rules > .content > article,
-.section-risk           > .content > article {
+.section-business-rules > .content .row,
+.section-risk           > .content .row {
+	top: 0;
+	bottom: 0;
+}
+
+.section-business-rules > .content article,
+.section-risk           > .content article {
 	border-width: 1px;
 	border-color: #cca25d;
 	position: absolute;
-	left: 8%;
-	right: 8%;
+	left: 0;
+	right: 0;
 	top: 0;
 	bottom: 0;
-	margin: 2rem;
+	margin: 2rem 0;
 	}
-	.section-business-rules > .content > article .content-scrollable-block,
-	.section-risk           > .content > article .content-scrollable-block {
+	.section-business-rules > .content article .content-scrollable-block,
+	.section-risk           > .content article .content-scrollable-block {
 		position: absolute;
 		left: 0;
 		right: 0;
@@ -273,13 +279,13 @@ article h1 {
 	}
 
 	@media only screen and (max-height: 720px) {
-		.section-business-rules > .content > article h1,
-		.section-risk           > .content > article h1 {
+		.section-business-rules > .content article h1,
+		.section-risk           > .content article h1 {
 			margin-top: 1.5rem;
 			margin-bottom: 1rem;
 		}
-		.section-business-rules > .content > article .content-scrollable-block,
-		.section-risk           > .content > article .content-scrollable-block {
+		.section-business-rules > .content article .content-scrollable-block,
+		.section-risk           > .content article .content-scrollable-block {
 			top: 3rem;
 		}
 	}
@@ -310,7 +316,7 @@ article h1 {
 .section-business-rules {
 	}
 
-	.section-business-rules > .content > article {
+	.section-business-rules > .content article {
 		margin: 0 0.5rem 0.5rem;
 		border-color: transparent;
 		bottom: 4rem; /* for app-footer */
@@ -361,7 +367,7 @@ article h1 {
 	}
 
 	@media only screen and (max-height: 720px) {
-		.section-business-rules > .content > article {
+		.section-business-rules > .content article {
 			bottom: 2.5rem; /* for app-footer */
 		}
 	}
