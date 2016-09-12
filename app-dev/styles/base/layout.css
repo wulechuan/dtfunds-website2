@@ -281,7 +281,7 @@
 
 .swiper-container-vertical > .swiper-scrollbar {
 	width: 1rem;
-	right: 0.1rem;
+	right: 0.4rem;
 	background-color: transparent;
 	border-radius: 0;
 	animation: fades-in 0.3s 0.2s backwards;

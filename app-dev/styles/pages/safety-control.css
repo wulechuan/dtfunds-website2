@@ -4,11 +4,14 @@ article h1 {
 
 .content-scrollable-block .swiper-container {
 	height: 100%;
+	padding-right: 1.6rem; /* for scrollbars */
+	}
+	.content-scrollable-block .swiper-wrapper {
+		width: calc(100% - 1.6rem);
 	}
 	.content-scrollable-block .swiper-container .swiper-slide {
 		height: auto;
 		box-sizing: border-box;
-		padding: 0 2rem 0 0; /* for scrollbars */
 	}
 
 
@@ -283,7 +286,6 @@ article h1 {
 		right: 0;
 		top: 6rem;
 		bottom: 0;
-		margin: 1rem;
 	}
 
 	@media only screen and (max-height: 720px) {
