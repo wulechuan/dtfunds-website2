@@ -43,7 +43,7 @@
 		background-image: url(../../images/company-brand/shiji-qrcode-app-downloading.png);
 	}
 	.qrcode-for-weixin-public {
-		/* background-image: url(../../images/company-brand/shiji-qrcode-app-downloading.png); */
+		background-image: url(../../images/company-brand/dtfunds-qrcode-weixin-public.png);
 	}
 
 
@@ -67,6 +67,9 @@
 	}
 	.copyright-block span {
 		display: inline-block;
+	}
+	.copyright-block .statement {
+		margin-top: 1em;
 	}
 
 
@@ -199,18 +202,29 @@
 		min-width: 0;
 	}
 
+	#app > #app-footer.style-simple,
+	.page-chief-section #app-footer.style-simple {
+		height: 4rem;
+	}
 	.page-chief-section #app-footer.style-simple {
 		position: absolute;
 		bottom: 0;
 		top: auto;
 		left: 0;
 		right: 0;
-		height: 4rem;
 	}
 
-	@media only screen and (max-height: 720px) {
+	@media only screen and (max-width: 1200px) {
+		#app > #app-footer.style-simple,
 		.page-chief-section #app-footer.style-simple {
-			height: 2.5rem;
+			height: 5.5rem;
+		}
+	}
+
+	@media only screen and (max-width: 800px) {
+		#app > #app-footer.style-simple,
+		.page-chief-section #app-footer.style-simple {
+			height: 7rem;
 		}
 	}
 
@@ -281,7 +295,7 @@
 
 .swiper-container-vertical > .swiper-scrollbar {
 	width: 1rem;
-	right: 0.1rem;
+	right: 0.4rem;
 	background-color: transparent;
 	border-radius: 0;
 	animation: fades-in 0.3s 0.2s backwards;
@@ -629,6 +643,13 @@
 	.last-fold > .content {
 		text-align: center;
 	}
+	.last-fold > .content a {
+		display: inline-block;
+		padding: 0.2em 0.5em;
+		margin: -0.2em -0.25rem;
+		text-decoration: none;
+		color: inherit;
+	}
 
 	.last-fold > .content .row.info-block {
 		}
@@ -756,14 +777,6 @@
 			margin: 0.3rem 0.6rem; 
 		}
 
-		.last-fold > .content .row.links-block .f-list.links > li a {
-			display: inline-block;
-			padding: 0.2em 0.5em;
-			margin: -0.2em -0.25rem;
-			text-decoration: none;
-			color: inherit;
-		}
-
 
 	.swiper-slide.last-fold {
 		padding: 0;
@@ -798,12 +811,12 @@
 			}
 
 		.swiper-slide.last-fold > .content .row.links-block {
-			bottom: 13%;
+			bottom: 16%;
 			left: 0;
 			right: 0;
 			}
 			.swiper-slide.last-fold > .content .row.copyright-block {
-				bottom: 5%;
+				bottom: 3.5%;
 			}
 
 
@@ -822,14 +835,29 @@
 				overflow: hidden;
 			}		
 			.swiper-slide.last-fold > .content .row.links-block {
-				bottom: 12%;
+				bottom: 22%;
 			}
 			.swiper-slide.last-fold > .content .row.copyright-block {
 				bottom: 6%;
 			}
 		}
 
-		@media only screen and (max-height: 500px) {
+		@media only screen and (max-height: 590px) {
+			/* .last-fold > .content .brand,
+			.swiper-slide.last-fold > .content .row.links-block h3 {
+				height: 0;
+				opacity: 0;
+				visibility: hidden;
+				overflow: hidden;
+			} */
+			.swiper-slide.last-fold > .content .row.call-to-action-qrcode-block {
+				top: 0;
+				bottom: 5rem;
+				height: 7rem;
+				margin: auto;
+			}		
+		}
+		@media only screen and (max-height: 512px) {
 			.last-fold > .content .brand,
 			.swiper-slide.last-fold > .content .row.links-block h3 {
 				height: 0;
@@ -838,10 +866,7 @@
 				overflow: hidden;
 			}
 			.swiper-slide.last-fold > .content .row.call-to-action-qrcode-block {
-				top: 0;
-				bottom: 5rem;
-				height: 7rem;
-				margin: auto;
+				bottom: 6rem;
 			}		
 		}
 
