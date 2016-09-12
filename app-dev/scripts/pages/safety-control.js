@@ -147,11 +147,13 @@
 
 				slidesPerView: 'auto',
 
-				scrollbar: slidesRootSelector+' .swiper-scrollbar',
-				scrollbarDraggable: true,
-				scrollbarHide: false,
-
 				freeMode: false,
+
+				scrollbar: slidesRootSelector+' .swiper-scrollbar',
+				scrollbarHide: false,
+				scrollbarDraggable: true,
+				// scrollbarSnapOnRelease: true,
+
 				mousewheelControl: true,
 				mousewheelReleaseOnEdges: true,
 				mousewheelSensitivity: mousewheelSensitivity,
