@@ -94,7 +94,7 @@
 				mousewheelControl: false,
 				slideToClickedSlide: true,
 				pagination: null,
-				autoplay: 5000,
+				autoplay: 1600,
 
 				loop: true,
 				slidesPerView: knownSlidesCountPerSwiper,
