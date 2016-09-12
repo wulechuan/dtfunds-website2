@@ -110,7 +110,7 @@ article li, .article li {
 }
 article p, .article p {
     padding: 0.5em;
-    margin: 0em -0.5em 0.5em;
+    margin: 0em -0.5em 0em;
     line-height: 1.5;
 }
 

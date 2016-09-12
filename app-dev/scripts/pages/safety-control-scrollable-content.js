@@ -2,13 +2,15 @@
 	(function processRiskBlockSwiperForCustomizedScrollbar() {
 		var slidesRootSelector = '.swiper-container';
 
-		var swiper = new window.Swiper(slidesRootSelector, {
+		new window.Swiper(slidesRootSelector, {
+			nested: true,
 			direction: 'vertical',
-	        scrollbar: slidesRootSelector+' .swiper-scrollbar',
-	        slidesPerView: 'auto',
+			scrollbar: slidesRootSelector+' .swiper-scrollbar',
+			scrollbarDraggable: true,
+			slidesPerView: 'auto',
 			mousewheelControl: true,
 			scrollbarHide: false,
-			freeMode: false // important for FireFox!
+			freeMode: true
 		});
 	})();
 })();
