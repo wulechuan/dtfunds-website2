@@ -8,7 +8,7 @@
 	        slidesPerView: 'auto',
 			mousewheelControl: true,
 			scrollbarHide: false,
-			freeMode: true
+			freeMode: false // important for FireFox!
 		});
 	})();
 })();
