@@ -224,76 +224,56 @@
 
 	.section-jinshibao .illustrate.app-screenshot-jinshibao {
 		left: 52%;
+		right: 12%;
 		top: 15%;
 		bottom: 0;
-		height: auto;
-		width: 500px;
 		margin-top: 3rem;
-	}
-	.section-jinshibao .illustrate.app-screenshot-jinshibao img {
-		position: absolute;
-		height: 100%;
-		width: auto;
+		height: auto;
+		}
+		.section-jinshibao .illustrate.app-screenshot-jinshibao img {
+			position: absolute;
+			height: 100%;
+			left: 0;
+			width: auto;
+			height: 100%;
+			margin: auto;
+			top: auto;
+			bottom: 0;
 
-		-webkit-transition-delay: 0.3s;
-		        transition-delay: 0.3s;
-		-webkit-transform: translate3d(0, 6rem, 0);
-		        transform: translate3d(0, 6rem, 0);
-	}
+			-webkit-transition-delay: 0.3s;
+			        transition-delay: 0.3s;
+			-webkit-transform: translate3d(0, 6rem, 0);
+			        transform: translate3d(0, 6rem, 0);
+		}
 
 	@media only screen and (max-width: 1280px) {
 		.section-jinshibao .abstract {
 			font-size: 90%;
 		}
 	}
-
-	@media only screen and (max-width: 1280px) {
+	@media only screen and (max-width: 960px) {
 		.section-jinshibao .illustrate.app-screenshot-jinshibao {
-			left: 48%;
-		}
-		.section-jinshibao .illustrate.app-screenshot-jinshibao img {
-			height: 90%;
-			top: auto;
-			bottom: 0;
-		}
-	}
-	@media only screen and (max-width: 1100px) {
-		.section-jinshibao .illustrate.app-screenshot-jinshibao img {
-			height: 70%;
-		}
-	}
-	@media only screen and (max-width: 840px) {
-		.section-jinshibao .illustrate.app-screenshot-jinshibao {
-			left: 8%;
-		}
-		.section-jinshibao .illustrate.app-screenshot-jinshibao img {
-			left: 0;
-			bottom: 0;
+			left: 45%;
 		}
 		.section-jinshibao .illustrate.app-screenshot-echart .tip {
-			left: auto;
-			right: 5%;
-		}
-		.section-jinshibao .illustrate.app-screenshot-echart .tip span {
-			display: block;
+			font-size: 0.6rem;
 		}
 	}
-	@media only screen and (max-height: 720px) {
+	@media only screen and (max-width: 800px) {
 		.section-jinshibao .illustrate.app-screenshot-echart {
 			right: 0;
 			left: auto;
-			width: 60%;
+			width: 90%;
 		}
-		.section-jinshibao .illustrate.app-screenshot-echart .tip {
+		.section-jinshibao .illustrate.app-screenshot-jinshibao {
 			left: auto;
-			right: 5%;
+		}
+		.section-jinshibao .illustrate.app-screenshot-jinshibao img {
+			left: auto;
+			right: 0;
 		}
 		.section-jinshibao .illustrate.app-screenshot-echart .tip span {
 			display: block;
-		}
-		.section-jinshibao .illustrate.app-screenshot-jinshibao img {
-			height: 90%;
-			bottom: 3rem;
 		}
 	}
 
