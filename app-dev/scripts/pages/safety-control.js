@@ -1,11 +1,11 @@
 (function () {
 	var C = window.console;
 
-	(function processChiefSwiper() {
+	var chiefSwiper = (function processChiefSwiper() {
 		var $appHeader = $('#app-header');
 		$appHeader.removeClass('use-theme-for-first-fold');
 
-		new window.Swiper('#app-body > .swiper-container', {
+		return new window.Swiper('#app-body > .swiper-container', {
 			direction: 'vertical',
 			mousewheelControl: true,
 			hashnav: true,
@@ -132,17 +132,17 @@
 
 
 
-	(function processNestedSwipers() {
+	(function processNestedSwipers(chiefSwiper) {
 		var slidesRootSelector = '.content-scrollable-block > .swiper-container';
 
 		var isFireFox = !!navigator.userAgent.match(/Firefox/i);
 		var mousewheelSensitivity = isFireFox ? 25 : 1;
 
 		$(slidesRootSelector).each(function () {
-			var lastSlideIndex = NaN;
+			// var lastSlideIndex = NaN;
 
 			new window.Swiper(this, {
-				nested: true,
+				// nested: true,
 				direction: 'vertical',
 
 				slidesPerView: 'auto',
@@ -155,30 +155,40 @@
 				scrollbarSnapOnRelease: true,
 
 				mousewheelControl: true,
-				mousewheelReleaseOnEdges: true,
+				// mousewheelReleaseOnEdges: true,
 				mousewheelSensitivity: mousewheelSensitivity,
 
-				onSlideChangeStart: function(thisSwiperControl) {
-					// C.log(thisSwiperControl);
-					C.log('start');
+				// onSlideChangeStart: function(thisSwiperControl) {
+				// 	// C.log(thisSwiperControl);
+				// 	C.log('start');
+				// },
+
+				// onSlideChangeEnd: function(thisSwiperControl) {
+				// 	setTimeout(function () {
+				// 		C.log('end', lastSlideIndex);
+				// 		lastSlideIndex = thisSwiperControl.activeIndex;
+				// 	});
+				// },
+
+				onReachBeginning: function(thisSwiperControl) {
+					// C.log('onReachBeginning');
+					// chiefSwiper.slidePrev();
 				},
 
-				onSlideChangeEnd: function(thisSwiperControl) {
-					setTimeout(function () {
-						C.log('end', lastSlideIndex);
-						lastSlideIndex = thisSwiperControl.activeIndex;
-					});
+				onReachEnd: function (thisSwiperControl) {
+					// C.log('onReachEnd');
+					// chiefSwiper.slideNext();
 				},
 
-				onProgress: function(thisSwiperControl, progress) {
-					var newIndex = thisSwiperControl.activeIndex;
-					C.log('progress:', progress, lastSlideIndex, newIndex);
-					var isScrollingUp = !isNaN(lastSlideIndex) && (newIndex < lastSlideIndex);
-					if (isScrollingUp && progress > 0.01) {
-						C.log('should NOT bubble event');
-					}
-				}
+				// onProgress: function(thisSwiperControl, progress) {
+				// 	var newIndex = thisSwiperControl.activeIndex;
+				// 	C.log('progress:', progress, lastSlideIndex, newIndex);
+				// 	var isScrollingUp = !isNaN(lastSlideIndex) && (newIndex < lastSlideIndex);
+				// 	if (isScrollingUp && progress > 0.01) {
+				// 		C.log('should NOT bubble event');
+				// 	}
+				// }
 			});
 		});
-	})();
+	})(chiefSwiper);
 })();

@@ -30,7 +30,7 @@ article h1 {
 	.section-first-fold .details-block .width-wrap {
 		min-width: 5rem;
 		height: 100%;
-		max-width: 800px;
+		max-width: 1000px;
 	}
 
 	.section-first-fold .abstract-block .features {
