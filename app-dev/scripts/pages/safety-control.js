@@ -60,9 +60,12 @@
 
 		var knownSlidesCountPerSwiper = 5;
 		var graphicSlidesTransitionDurationInSeconds = 0.6;
-		var graphicSlidesRootSelector = '.section-first-fold .details-block .swiper-container.graphic-slides';
-		var articleSlidesRootSelector = '.section-first-fold .details-block .swiper-container.explaination-slides';
+		var slidesWrapperBlockSelector = '.section-first-fold .details-block .slides-block';
+		var graphicSlidesRootSelector = slidesWrapperBlockSelector + ' .swiper-container.graphic-slides';
+		var articleSlidesRootSelector = slidesWrapperBlockSelector + ' .swiper-container.explaination-slides';
 
+		var buttonSlidePrev = $(slidesWrapperBlockSelector + ' .swiper-slide-prev')[0];
+		var buttonSlideNext = $(slidesWrapperBlockSelector + ' .swiper-slide-next')[0];
 
 		var $graphicSlideElements = $(graphicSlidesRootSelector + ' .swiper-slide');
 		var $articleSlideElements = $(articleSlidesRootSelector + ' .swiper-slide');
@@ -101,8 +104,8 @@
 				centeredSlides: true,
 				// loopedSlides: 0,
 
-		        nextButton: graphicSlidesRootSelector + ' .swiper-button-next',
-		        prevButton: graphicSlidesRootSelector + ' .swiper-button-prev',
+		        prevButton: buttonSlidePrev,
+		        nextButton: buttonSlideNext,
 
 				onSlideChangeStart: function (thisSwiperControl) {
 					var count = knownSlidesCountPerSwiper;
@@ -136,7 +139,9 @@
 		var mousewheelSensitivity = isFireFox ? 25 : 1;
 
 		$(slidesRootSelector).each(function () {
-			var s = new window.Swiper(this, {
+			var lastSlideIndex = NaN;
+
+			new window.Swiper(this, {
 				nested: true,
 				direction: 'vertical',
 
@@ -152,7 +157,24 @@
 				mousewheelSensitivity: mousewheelSensitivity,
 
 				onSlideChangeStart: function(thisSwiperControl) {
-					C.log(thisSwiperControl);
+					// C.log(thisSwiperControl);
+					C.log('start');
+				},
+
+				onSlideChangeEnd: function(thisSwiperControl) {
+					setTimeout(function () {
+						C.log('end', lastSlideIndex);
+						lastSlideIndex = thisSwiperControl.activeIndex;
+					});
+				},
+
+				onProgress: function(thisSwiperControl, progress) {
+					var newIndex = thisSwiperControl.activeIndex;
+					C.log('progress:', progress, lastSlideIndex, newIndex);
+					var isScrollingUp = !isNaN(lastSlideIndex) && (newIndex < lastSlideIndex);
+					if (isScrollingUp && progress > 0.01) {
+						C.log('should NOT bubble event');
+					}
 				}
 			});
 		});

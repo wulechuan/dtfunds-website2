@@ -58,11 +58,58 @@ article h1 {
 			content: none;
 		}
 
+	.section-first-fold .details-block .slides-block {
+		position: relative;
+		height: 100%;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button {
+			position: absolute;
+			width: 2rem;
+			height: 4rem;
+			line-height: 4rem;
+			padding: 0;
+			margin: -5.5rem 0 0;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button > .label {
+			opacity: 0;
+			text-indent: 1000px;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button > .icon {
+			position: absolute;
+			margin: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			line-height: inherit;
+			font-size: 4rem;
+			text-indent: -0.3em;
+			color: black;
+			opacity: 0.15;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button:hover > .icon {
+			opacity: 0.4;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button.swiper-slide-prev {
+			left: -2rem;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button.swiper-slide-next {
+			right: -2rem;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button.swiper-slide-prev > .icon {
+			left: 0;
+		}
+		.section-first-fold .details-block .slides-block button.slide-nav-button.swiper-slide-next > .icon {
+			right: 0;
+			direction: rtl;
+		}
+
 	.section-first-fold .details-block .swiper-container.graphic-slides {
 		perspective: 10rem;
 		transform-style: preserve-3d;
-		width: 100%;
+		margin-left: 3rem;
+		margin-right: 3rem;
 		}
+
 		.section-first-fold .details-block .graphic-slides .swiper-slide {
 			position: relative;
 			width: 10rem;
@@ -162,8 +209,8 @@ article h1 {
 
 
 	.section-first-fold .details-block .explaination-slides {
-		margin-left: -1rem;
-		margin-right: -1rem;
+		margin-left: 2rem;
+		margin-right: 2rem;
 		}
 
 		.feature-explaination-block {
@@ -210,12 +257,14 @@ article h1 {
 	}
 
 	.section-first-fold .details-block .swiper-container.graphic-slides {
-		height: 15rem;
+		height: 14rem;
 	}
 	.section-first-fold .details-block .graphic-slides .swiper-pagination.swiper-pagination-custom,
-	.section-first-fold .details-block .explaination-slides {
-		top: 15rem;
+	.section-first-fold .details-block .explaination-slides ,
+	.section-first-fold .details-block .slides-block button.slide-nav-button {
+		top: 14rem;
 	}
+
 	.section-first-fold .details-block .graphic-slides .swiper-slide .icon {
 		width: 7.5rem;
 		height: 7.5rem;
@@ -228,7 +277,8 @@ article h1 {
 			height: 10rem;
 		}
 		.section-first-fold .details-block .graphic-slides .swiper-pagination.swiper-pagination-custom,
-		.section-first-fold .details-block .explaination-slides {
+		.section-first-fold .details-block .explaination-slides,
+		.section-first-fold .details-block .slides-block button.slide-nav-button {
 			top: 11rem;
 		}
 	}
@@ -249,7 +299,8 @@ article h1 {
 			height: 5rem;
 		}
 		.section-first-fold .details-block .graphic-slides .swiper-pagination.swiper-pagination-custom,
-		.section-first-fold .details-block .explaination-slides {
+		.section-first-fold .details-block .explaination-slides,
+		.section-first-fold .details-block .slides-block button.slide-nav-button {
 			top: 6rem;
 		}
 		.section-first-fold .details-block .graphic-slides .swiper-slide .icon {
