@@ -43,7 +43,7 @@
 
 	(function SimpleBgSlides() {
 		var $bgTint = $('.bg-tint');
-		var cssClassNameSlide = 'start-to-show';
+		var cssClassNameSlideStartToShowAnimation = 'start-to-show';
 		var $rootElement = $('.page-chief-section.section-first-fold .bg-set');
 		var $slides = $rootElement.find('.bg');
 		var currentIndex = NaN;
@@ -79,25 +79,32 @@
 			var cssClassNameTint = 'fading-in';
 			if (shouldFadeOut) {
 				cssClassNameTint = 'fading-out'
-				$bgTint.addClass('fading-out-on-show');
+				// $bgTint.addClass('fading-out-on-show');
 			} else {
-				$bgTint.removeClass('fading-out-on-show');
+				// $bgTint.removeClass('fading-out-on-show');
 			}
 			$bgTint.addClass(cssClassNameTint);
-			setTimeout(function () {
-				$bgTint.removeClass(cssClassNameTint);
-			}, 5100);
+			$bgTint.show();
+			if (!shouldFadeOut) {
+				setTimeout(function () {
+					$bgTint.removeClass(cssClassNameTint);
+				}, 5100);
+			} else {
+				setTimeout(function () {
+					$bgTint.hide();
+				}, 4000);
+			}
 		}
 		function showOneSlide(slideElement, i) {
-			$(slideElement).addClass(cssClassNameSlide);
+			$(slideElement).addClass(cssClassNameSlideStartToShowAnimation);
 			currentIndex = i;
 			slideElement.style.zIndex = 2;
 			window.setTimeout(function () {
-				$(slideElement).removeClass(cssClassNameSlide);
+				$(slideElement).removeClass(cssClassNameSlideStartToShowAnimation);
 			}, 4000);
 		}
 		function hideOneSlide(slideElement, i) {
-			$(slideElement).removeClass(cssClassNameSlide);
+			$(slideElement).removeClass(cssClassNameSlideStartToShowAnimation);
 			slideElement.style.zIndex = '';
 		}
 	})();
