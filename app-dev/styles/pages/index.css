@@ -275,12 +275,13 @@
 			position: absolute;
 			left: 0;
 			top: 0.6em;
-			width: 4.5em;
-			height: 4.5em;
+			width: 4.8em;
+			height: 4.8em;
 			font-size: 1em;
-			line-height: 4.5em;
+			line-height: 4.8em;
 		}
 		.section-financing .f-list.features .icon .icon-bg {
+			line-height: 1.1em;
 			font-size: 4.5em;
 			color: #cca25d;
 		}
