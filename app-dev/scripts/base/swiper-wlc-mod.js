@@ -879,8 +879,8 @@
                 s.isBeginning = s.progress <= 0;
                 s.isEnd = s.progress >= 1;
             }
-            var isTarget = !!s.container[0].className.match(/scrollable-content-block/i);
-            if (isTarget) {
+            var wlcIsTarget = !!s.container[0].className.match(/scrollable-content-block/i);
+            if (wlcIsTarget) {
                 // console.log('diff is zero?', translatesDiff, translatesDiff === 0);
                 console.log('P:', s.progress, '\n\t B:', s.isBeginning, '\tE:', s.isEnd);
             }
@@ -3183,8 +3183,8 @@
         
             if (!s.params.freeMode) {
                 if ((new window.Date()).getTime() - s.mousewheel.lastScrollTime > 60) {
-                    var isTarget = !!s.container[0].className.match(/scrollable-content-block/i);
-                    if (isTarget) {
+                    var wlcIsTarget = !!s.container[0].className.match(/scrollable-content-block/i);
+                    if (wlcIsTarget) {
                         console.log('\n\nVVVVVVVVVVVVVVVVVVVV', s.container[0].className);
                         console.log('delta:', delta, '\n\t B:', s.isBeginning, '\tE:', s.isEnd);
                         console.log('^^^^^^^^^^^^^^^^^^^^\n\n');
