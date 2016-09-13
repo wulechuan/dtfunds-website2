@@ -135,6 +135,8 @@
 
 	(function processNestedSwipers(chiefSwiper) {
 		var slidesRootSelector = '.content-scrollable-block > .swiper-container';
+		var alreadyReachedBeginning = false;
+		var alreadyReachedEnd = false;
 
 		var isFireFox = !!navigator.userAgent.match(/Firefox/i);
 		var mousewheelSensitivity = isFireFox ? 25 : 1;
@@ -172,13 +174,23 @@
 				// },
 
 				onReachBeginning: function(thisSwiperControl) {
-					// C.log('onReachBeginning');
-					// chiefSwiper.slidePrev();
+					C.log('onReachBeginning');
+					if (!alreadyReachedBeginning) {
+						alreadyReachedBeginning = true;
+					} else {
+						chiefSwiper.slidePrev();
+						alreadyReachedBeginning = false;
+					}
 				},
 
 				onReachEnd: function (thisSwiperControl) {
-					// C.log('onReachEnd');
-					// chiefSwiper.slideNext();
+					C.log('onReachEnd');
+					if (!alreadyReachedEnd) {
+						alreadyReachedEnd = true;
+					} else {
+						chiefSwiper.slideNext();
+						alreadyReachedEnd = false;
+					}
 				},
 
 				// onProgress: function(thisSwiperControl, progress) {

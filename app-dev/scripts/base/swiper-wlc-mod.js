@@ -879,13 +879,13 @@
                 s.isBeginning = s.progress <= 0;
                 s.isEnd = s.progress >= 1;
             }
-            var wlcIsTarget = !!s.container[0].className.match(/scrollable-content-block/i);
-            if (wlcIsTarget) {
-                // console.log('diff is zero?', translatesDiff, translatesDiff === 0);
-                console.log('P:', s.progress, '\n\t B:', s.isBeginning, '\tE:', s.isEnd);
-            }
-            if (s.isBeginning && !wasBeginning) s.emit('onReachBeginning', s);
-            if (s.isEnd && !wasEnd) s.emit('onReachEnd', s);
+
+            /* mod begin */
+            s.wasBeginning = wasBeginning;
+            s.wasEnd = wasEnd;
+            if (s.isBeginning/* && !wasBeginning*/) s.emit('onReachBeginning', s);
+            if (s.isEnd/* && !wasEnd*/) s.emit('onReachEnd', s);
+            /* mod end */
         
             if (s.params.watchSlidesProgress) s.updateSlidesProgress(translate);
             s.emit('onProgress', s, s.progress);
@@ -3138,7 +3138,9 @@
             }
         }
         function handleMousewheel(e) {
+            console.log('mousewheel', e);
             if (e.originalEvent) e = e.originalEvent; //jquery fix
+            e.stopPropagation();
             var we = s.mousewheel.event;
             var delta = 0;
             var rtlFactor = s.rtl ? -1 : 1;
@@ -3152,7 +3154,10 @@
                     }
                     else {
                         if (Math.abs(e.wheelDeltaY) > Math.abs(e.wheelDeltaX)) delta = e.wheelDeltaY;
-                        else return;
+                        else {
+                            console.log('cancelled here1');
+                            return;
+                        }
                     }
                 }
                 else {
@@ -3170,27 +3175,26 @@
                     }
                     else {
                         if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) delta = -e.deltaY;
-                        else return;
+                        else {
+                            console.log('cancelled here2');
+                            return;
+                        }
                     }
                 }
                 else {
                     delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? - e.deltaX * rtlFactor : - e.deltaY;
                 }
             }
-            if (delta === 0) return;
+            if (delta === 0) {
+                console.log('cancelled here333');
+                return;
+            }
         
             if (s.params.mousewheelInvert) delta = -delta;
         
             if (!s.params.freeMode) {
                 if ((new window.Date()).getTime() - s.mousewheel.lastScrollTime > 60) {
-                    var wlcIsTarget = !!s.container[0].className.match(/scrollable-content-block/i);
-                    if (wlcIsTarget) {
-                        console.log('\n\nVVVVVVVVVVVVVVVVVVVV', s.container[0].className);
-                        console.log('delta:', delta, '\n\t B:', s.isBeginning, '\tE:', s.isEnd);
-                        console.log('^^^^^^^^^^^^^^^^^^^^\n\n');
-                    }
                     if (delta < 0) {
-                        console.log('here delta < 0', delta);
                         if ((!s.isEnd || s.params.loop) && !s.animating) s.slideNext();
                         else if (s.params.mousewheelReleaseOnEdges) return true;
                     }
