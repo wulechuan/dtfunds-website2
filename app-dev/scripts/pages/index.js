@@ -43,7 +43,7 @@
 
 	(function SimpleBgSlides() {
 		var $bgTint = $('.bg-tint');
-		var cssClassNameSlide = 'start-to-show';
+		var cssClassNameSlideStartToShowAnimation = 'start-to-show';
 		var $rootElement = $('.page-chief-section.section-first-fold .bg-set');
 		var $slides = $rootElement.find('.bg');
 		var currentIndex = NaN;
@@ -76,28 +76,38 @@
 
 			var shouldFadeOut = index === 0;
 
-			var cssClassNameTint = 'fading-in';
+			var cssClassNameTintAnimating = 'fading-in';
 			if (shouldFadeOut) {
-				cssClassNameTint = 'fading-out'
-				$bgTint.addClass('fading-out-on-show');
+				cssClassNameTintAnimating = 'fading-out'
+
+				$bgTint.addClass('opacity-zero');
+
+				$bgTint.one('animationend', function () {
+					$bgTint.hide();
+				});
 			} else {
-				$bgTint.removeClass('fading-out-on-show');
+				$bgTint.removeClass('opacity-zero');
 			}
-			$bgTint.addClass(cssClassNameTint);
+
+
+			$bgTint.addClass(cssClassNameTintAnimating);
+			$bgTint.show();
+
+
 			setTimeout(function () {
-				$bgTint.removeClass(cssClassNameTint);
+				$bgTint.removeClass(cssClassNameTintAnimating);
 			}, 5100);
 		}
 		function showOneSlide(slideElement, i) {
-			$(slideElement).addClass(cssClassNameSlide);
+			$(slideElement).addClass(cssClassNameSlideStartToShowAnimation);
 			currentIndex = i;
 			slideElement.style.zIndex = 2;
 			window.setTimeout(function () {
-				$(slideElement).removeClass(cssClassNameSlide);
+				$(slideElement).removeClass(cssClassNameSlideStartToShowAnimation);
 			}, 4000);
 		}
 		function hideOneSlide(slideElement, i) {
-			$(slideElement).removeClass(cssClassNameSlide);
+			$(slideElement).removeClass(cssClassNameSlideStartToShowAnimation);
 			slideElement.style.zIndex = '';
 		}
 	})();

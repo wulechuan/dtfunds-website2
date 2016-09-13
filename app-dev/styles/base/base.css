@@ -1547,7 +1547,7 @@ ol.f-list, ul.f-list { /* function list */
 	50%  { opacity: 0; }
 	100% { opacity: 1; }
 }
-@keyframes fades-out {
+@keyframes flickering {
 	0%   { opacity: 1; }
 	50%  { opacity: 0; }
 	100% { opacity: 1; }

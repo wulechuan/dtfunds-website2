@@ -57,7 +57,7 @@
 	.section-first-fold > .content .row.call-to-action-button-block  button,
 	.section-first-fold > .content .row.call-to-action-button-block .button {
 		margin: 0 auto;
-		width: 8.8rem;
+		width: 6.4rem;
 	}
 
 
@@ -75,7 +75,7 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
-		background-image: url(../../images/company-brand/brand-first-fold-title.png);
+		background-image: url(../../images/company-brand/shiji-logo-gold-bg-transparent.png);
 		}
 
 		.section-first-fold > .content .first-fold-title:after,
