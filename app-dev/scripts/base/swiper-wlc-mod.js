@@ -879,8 +879,11 @@
                 s.isBeginning = s.progress <= 0;
                 s.isEnd = s.progress >= 1;
             }
-            // console.log('diff is zero?', translatesDiff, translatesDiff === 0);
-            console.log('P:', s.progress, '\n\t B:', s.isBeginning, '\tE:', s.isEnd);
+            var isTarget = !!s.container[0].className.match(/scrollable-content-block/i);
+            if (isTarget) {
+                // console.log('diff is zero?', translatesDiff, translatesDiff === 0);
+                console.log('P:', s.progress, '\n\t B:', s.isBeginning, '\tE:', s.isEnd);
+            }
             if (s.isBeginning && !wasBeginning) s.emit('onReachBeginning', s);
             if (s.isEnd && !wasEnd) s.emit('onReachEnd', s);
         
@@ -3180,10 +3183,14 @@
         
             if (!s.params.freeMode) {
                 if ((new window.Date()).getTime() - s.mousewheel.lastScrollTime > 60) {
-                    console.log('\n\nVVVVVVVVVVVVVVVVVVVV');
-                    console.log('delta:', delta, '\n\t B:', s.isBeginning, '\tE:', s.isEnd);
-                    console.log('^^^^^^^^^^^^^^^^^^^^\n\n');
+                    var isTarget = !!s.container[0].className.match(/scrollable-content-block/i);
+                    if (isTarget) {
+                        console.log('\n\nVVVVVVVVVVVVVVVVVVVV', s.container[0].className);
+                        console.log('delta:', delta, '\n\t B:', s.isBeginning, '\tE:', s.isEnd);
+                        console.log('^^^^^^^^^^^^^^^^^^^^\n\n');
+                    }
                     if (delta < 0) {
+                        console.log('here delta < 0', delta);
                         if ((!s.isEnd || s.params.loop) && !s.animating) s.slideNext();
                         else if (s.params.mousewheelReleaseOnEdges) return true;
                     }
