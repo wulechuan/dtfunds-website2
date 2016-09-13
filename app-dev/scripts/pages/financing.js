@@ -26,7 +26,7 @@
 			targetNumber += time * ratio;
 			targetNumber = Math.floor(targetNumber);
 
-			console.log(time * ratio, targetNumber);
+			// console.log(time * ratio, targetNumber);
 
 			if (isNaN(targetNumber)) {
 				return false;
