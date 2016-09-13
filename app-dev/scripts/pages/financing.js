@@ -1,8 +1,11 @@
 (function () {
-	(function setupRollingNumber() {
+	setupRollingNumber(1001500);
+
+	function setupRollingNumber(theNumber) {
 		$('.rolling-number').each(function () {
 			var el = this;
-			init(el);
+			$(el).hide();
+			init(el, theNumber);
 			roll(el);
 		});
 
@@ -90,7 +93,7 @@
 
 			return sign+s;
 		}
-	})();
+	}
 
 
 	(function setupPageChiefSwiper() {

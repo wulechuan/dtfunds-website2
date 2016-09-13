@@ -76,24 +76,27 @@
 
 			var shouldFadeOut = index === 0;
 
-			var cssClassNameTint = 'fading-in';
+			var cssClassNameTintAnimating = 'fading-in';
 			if (shouldFadeOut) {
-				cssClassNameTint = 'fading-out'
-				// $bgTint.addClass('fading-out-on-show');
-			} else {
-				// $bgTint.removeClass('fading-out-on-show');
-			}
-			$bgTint.addClass(cssClassNameTint);
-			$bgTint.show();
-			if (!shouldFadeOut) {
-				setTimeout(function () {
-					$bgTint.removeClass(cssClassNameTint);
-				}, 5100);
-			} else {
-				setTimeout(function () {
+				cssClassNameTintAnimating = 'fading-out'
+
+				$bgTint.addClass('opacity-zero');
+
+				$bgTint.one('animationend', function () {
 					$bgTint.hide();
-				}, 4000);
+				});
+			} else {
+				$bgTint.removeClass('opacity-zero');
 			}
+
+
+			$bgTint.addClass(cssClassNameTintAnimating);
+			$bgTint.show();
+
+
+			setTimeout(function () {
+				$bgTint.removeClass(cssClassNameTintAnimating);
+			}, 5100);
 		}
 		function showOneSlide(slideElement, i) {
 			$(slideElement).addClass(cssClassNameSlideStartToShowAnimation);
