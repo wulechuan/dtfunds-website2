@@ -20,14 +20,16 @@
 .company-logo {
 	display: inline-block;
 	background-repeat: no-repeat;
-	/* background-image: url(../../images/company-brand/shiji-logo-gold-bg-transparent.png); */
-	background-image: url(../../images/company-brand/dtfunds-logo-horizontal-gold-bg-transparent.png);
+	background-image: url(../../images/company-brand/shiji-logo-gold-bg-transparent.png);
 	}
 	.company-logo.dtfunds-horizontal {
 		background-image: url(../../images/company-brand/dtfunds-logo-horizontal-gold-bg-transparent.png);
 	}
 	.company-logo.dtfunds-vertical {
 		background-image: url(../../images/company-brand/dtfunds-logo-vertical-gold-bg-transparent.png);
+	}
+	.company-logo.shiji-horizontal {
+		background-image: url(../../images/company-brand/shiji-logo-gold-bg-transparent.png);
 	}
 
 
@@ -43,7 +45,7 @@
 		background-image: url(../../images/company-brand/shiji-qrcode-app-downloading.png);
 	}
 	.qrcode-for-weixin-public {
-		background-image: url(../../images/company-brand/dtfunds-qrcode-weixin-public.png);
+		background-image: url(../../images/company-brand/shiji-qrcode-weixin-public.png);
 	}
 
 
@@ -167,7 +169,7 @@
 		bottom: 0;
 		margin: auto;
 		width: 100%;
-		height: 1.5rem;
+		height: 1.2rem;
 		background-size: contain;
 		background-position: left;
 	}
@@ -521,18 +523,18 @@
 
 	    opacity: 1;
 	}
-	.page-chief-section > .bg-set .bg-tint.fading-out-on-show {
+	.page-chief-section > .bg-set .bg-tint.opacity-zero {
 	    opacity: 0;
 	}
 	.page-chief-section > .bg-set .bg-tint.fading-in {
-		-webkit-animation: fades-in 4s backwards;
-		        animation: fades-in 4s backwards;
-		    -ms-animation: fades-in 4s backwards;
+		-webkit-animation: fades-in 4s both;
+		        animation: fades-in 4s both;
+		    -ms-animation: fades-in 4s both;
 	}
 	.page-chief-section > .bg-set .bg-tint.fading-out {
-		-webkit-animation: fades-out 4s backwards;
-		        animation: fades-out 4s backwards;
-		    -ms-animation: fades-out 4s backwards;
+		-webkit-animation: fades-out 4s both;
+		        animation: fades-out 4s both;
+		    -ms-animation: fades-out 4s both;
 	}
 
 	.page-chief-section > .content .animation {
@@ -568,9 +570,9 @@
 	}
 	.page-chief-section > .bg-set .bg.start-to-show {
 		z-index: 2;
-		-webkit-animation: bg-shows-up 5s -1s backwards ease-out;
-		        animation: bg-shows-up 5s -1s backwards ease-out;
-		    -ms-animation: bg-shows-up 5s -1s backwards ease-out;
+		-webkit-animation: bg-shows-up 5s -1s both ease-out;
+		        animation: bg-shows-up 5s -1s both ease-out;
+		    -ms-animation: bg-shows-up 5s -1s both ease-out;
 	}
 	@-webkit-keyframes bg-shows-up {
 		  0% { -webkit-transform: scale(1.12, 1.12); }
@@ -604,7 +606,7 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
-	background-image: url(../../images/company-brand/brand-first-fold-title.png);
+	background-image: url(../../images/company-brand/shiji-logo-gold-bg-transparent.png);
 	}
 
 	.branded-divider:after,
