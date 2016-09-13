@@ -135,22 +135,20 @@
 
 	(function processNestedSwipers(chiefSwiper) {
 		var slidesRootSelector = '.content-scrollable-block > .swiper-container';
-		var alreadyReachedBeginning = false;
-		var alreadyReachedEnd = false;
+		// var alreadyReachedBeginning = false;
+		// var alreadyReachedEnd = false;
 
 		var isFireFox = !!navigator.userAgent.match(/Firefox/i);
 		var mousewheelSensitivity = isFireFox ? 25 : 1;
 
 		$(slidesRootSelector).each(function () {
-			// var lastSlideIndex = NaN;
-
 			new window.Swiper(this, {
-				// nested: true,
+				nested: true,
 				direction: 'vertical',
 
 				slidesPerView: 'auto',
 
-				freeMode: false,
+				freeMode: true,
 
 				scrollbar: slidesRootSelector+' .swiper-scrollbar',
 				scrollbarHide: false,
@@ -166,31 +164,34 @@
 				// 	C.log('start');
 				// },
 
-				// onSlideChangeEnd: function(thisSwiperControl) {
-				// 	setTimeout(function () {
-				// 		C.log('end', lastSlideIndex);
-				// 		lastSlideIndex = thisSwiperControl.activeIndex;
-				// 	});
-				// },
+				onSlideChangeEnd: function(thisSwiperControl) {
+					// setTimeout(function () {
+					// 	C.log('end', lastSlideIndex);
+					// 	lastSlideIndex = thisSwiperControl.activeIndex;
+					// });
+					var theIndex = thisSwiperControl.activeIndex;
+					if (theIndex > 0) alreadyReachedBeginning = false;
+					if (theIndex < thisSwiperControl.slides.length - 1) alreadyReachedEnd = false;
+				},
 
 				onReachBeginning: function(thisSwiperControl) {
-					C.log('onReachBeginning');
-					if (!alreadyReachedBeginning) {
-						alreadyReachedBeginning = true;
-					} else {
-						chiefSwiper.slidePrev();
-						alreadyReachedBeginning = false;
-					}
+					C.log('onReachBeginning', thisSwiperControl.wasBeginning);
+					// if (!alreadyReachedBeginning) {
+					// 	alreadyReachedBeginning = true;
+					// } else {
+					// 	// chiefSwiper.slidePrev();
+					// }
+					if (thisSwiperControl.wasBeginning) chiefSwiper.slidePrev();
 				},
 
 				onReachEnd: function (thisSwiperControl) {
-					C.log('onReachEnd');
-					if (!alreadyReachedEnd) {
-						alreadyReachedEnd = true;
-					} else {
-						chiefSwiper.slideNext();
-						alreadyReachedEnd = false;
-					}
+					C.log('onReachEnd', thisSwiperControl.wasEnd);
+					// if (!alreadyReachedEnd) {
+					// 	alreadyReachedEnd = true;
+					// } else {
+					// 	// chiefSwiper.slideNext();
+					// }
+					if (thisSwiperControl.wasEnd) chiefSwiper.slideNext();
 				},
 
 				// onProgress: function(thisSwiperControl, progress) {

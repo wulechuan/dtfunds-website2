@@ -3138,7 +3138,7 @@
             }
         }
         function handleMousewheel(e) {
-            console.log('mousewheel', e);
+            console.log('wlc mousewheel');
             if (e.originalEvent) e = e.originalEvent; //jquery fix
             e.stopPropagation();
             var we = s.mousewheel.event;
@@ -3154,10 +3154,7 @@
                     }
                     else {
                         if (Math.abs(e.wheelDeltaY) > Math.abs(e.wheelDeltaX)) delta = e.wheelDeltaY;
-                        else {
-                            console.log('cancelled here1');
-                            return;
-                        }
+                        else return;
                     }
                 }
                 else {
@@ -3175,10 +3172,7 @@
                     }
                     else {
                         if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) delta = -e.deltaY;
-                        else {
-                            console.log('cancelled here2');
-                            return;
-                        }
+                        else return;
                     }
                 }
                 else {
@@ -3186,7 +3180,6 @@
                 }
             }
             if (delta === 0) {
-                console.log('cancelled here333');
                 return;
             }
         
@@ -3195,11 +3188,11 @@
             if (!s.params.freeMode) {
                 if ((new window.Date()).getTime() - s.mousewheel.lastScrollTime > 60) {
                     if (delta < 0) {
-                        if ((!s.isEnd || s.params.loop) && !s.animating) s.slideNext();
+                        if (!s.animating) s.slideNext();
                         else if (s.params.mousewheelReleaseOnEdges) return true;
                     }
                     else {
-                        if ((!s.isBeginning || s.params.loop) && !s.animating) s.slidePrev();
+                        if (!s.animating) s.slidePrev();
                         else if (s.params.mousewheelReleaseOnEdges) return true;
                     }
                 }
