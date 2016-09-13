@@ -1,5 +1,5 @@
 (function () {
-	setupRollingNumber(1001446);
+	setupRollingNumber(1001678);
 
 	function setupRollingNumber(theNumber) {
 		$('.rolling-number').each(function () {
@@ -19,9 +19,9 @@
 				targetNumber = parseFloat(el.textContent.replace(/\,/g, ''));
 			}
 
-			var ratio = (Math.random()*5 + 1923) / ( 24 * 60 * 60);
-			var time = new Date().getTime() - new Date('2016-09-13 11:11 GMT+0800').getTime();
-			time = time / 1000;
+			var ratio = 1588 / (24 * 60 * 60);
+			var time = new Date().getTime() - new Date('2016-09-13 14:44 GMT+0800').getTime();
+			time = Math.max(0, time / 1000);
 
 			targetNumber += time * ratio;
 			targetNumber = Math.floor(targetNumber);
