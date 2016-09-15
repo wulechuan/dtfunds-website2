@@ -1,5 +1,5 @@
 (function () {
-	setupRollingNumber(1001678);
+	setupRollingNumber(1001992);
 
 	function setupRollingNumber(theNumber) {
 		$('.rolling-number').each(function () {
@@ -20,7 +20,7 @@
 			}
 
 			var ratio = 1588 / (24 * 60 * 60);
-			var time = new Date().getTime() - new Date('2016-09-13 14:44 GMT+0800').getTime();
+			var time = new Date().getTime() - new Date('2016-09-13 16:54 GMT+0800').getTime();
 			time = Math.max(0, time / 1000);
 
 			targetNumber += time * ratio;
