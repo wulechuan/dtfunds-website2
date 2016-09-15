@@ -157,38 +157,45 @@
 		}
 	}
 
-	@media only screen and (max-height: 620px) {
+	@media only screen and (max-height: 640px) {
 		.section-first-fold>.content .row.slogan-block {
 			top: 8%;
 		}
+
+			.section-first-fold > .content .first-fold-title {
+				top: 2%;
+				height: 1.5rem;
+			}
+			.section-first-fold > .content .first-fold-title:before {
+				margin-right: 3rem;
+			}
+			.section-first-fold > .content .first-fold-title:after {
+				margin-left: 3rem;
+			}
+
+			.section-first-fold > .content .first-fold-title {
+				top: 5%;
+			}
+			.section-first-fold > .content .slogan {
+				top: 32%;
+				font-size: 2.4rem;
+			}
+			.section-first-fold > .content .subtitle {
+				top: 70%;
+				font-size: 1.1rem;
+			}
+
+
 		.section-first-fold > .content .row.call-to-action-button-block {
-			top: 57%;
+			top: 36%;
 			bottom: 19%;
 		}
 		.section-first-fold > .content .row.call-to-action-qrcode-block {
 			bottom: 5%;
-			left: 1rem;
-		}
-		.section-first-fold > .content .row.call-to-action-qrcode-block .width-wrap {
-			min-width: 0;
-			margin: 0;
-			position: absolute;
-			left: 0;
-			bottom: 0;
-		}
-		.section-first-fold > .content .row.call-to-action-qrcode-block .qrcode-block > .content {
-			margin: 0;
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			width: 5rem;
-		}
-		.section-first-fold > .content .row.call-to-action-qrcode-block .figcaption .less-important-segment {
-			display: none;
 		}
 	}
 
-	@media only screen and (max-height: 500px) {
+	/* @media only screen and (max-height: 500px) {
 		.section-first-fold>.content .row.slogan-block {
 			top: 8%;
 		}
@@ -222,7 +229,7 @@
 			bottom: 13%;
 		}
 	}
-
+ */
 
 .section-financing {
 	}
