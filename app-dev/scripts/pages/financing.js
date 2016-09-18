@@ -1,15 +1,15 @@
 (function () {
-	setupRollingNumber(1001992);
+	setupRollingNumber(1005123, '2016-09-18 09:45 GMT+0800');
 
-	function setupRollingNumber(theNumber) {
+	function setupRollingNumber(theNumber, numberSamplingTime) {
 		$('.rolling-number').each(function () {
 			var el = this;
 			$(el).hide();
-			init(el, theNumber);
+			init(el, theNumber, numberSamplingTime);
 			roll(el);
 		});
 
-		function init(el, targetNumber) {
+		function init(el, targetNumber, numberSamplingTime) {
 			targetNumber = parseFloat(targetNumber);
 			if (isNaN(targetNumber)) {
 				targetNumber = parseFloat(el.getAttribute('data-target-value'));
@@ -19,8 +19,11 @@
 				targetNumber = parseFloat(el.textContent.replace(/\,/g, ''));
 			}
 
-			var ratio = 1588 / (24 * 60 * 60);
-			var time = new Date().getTime() - new Date('2016-09-13 16:54 GMT+0800').getTime();
+			var ratio = 987 / (24 * 60 * 60);
+			var now = new Date().getTime();
+			var time = now - new Date(numberSamplingTime).getTime();
+			if (isNaN(time)) time = now;
+
 			time = Math.max(0, time / 1000);
 
 			targetNumber += time * ratio;

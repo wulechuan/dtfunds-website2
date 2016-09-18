@@ -650,7 +650,7 @@ button.button-x {
 	}
  */
 	.use-theme-for-contacts #app-chief-nav .menu.level-2 {
-		background-color: transparent;
+		background-color: rgba(0, 0, 0, 0.79);
 	}
 
 	.use-theme-for-contacts #app-chief-nav .menu.level-2 > .menu-item:hover {
