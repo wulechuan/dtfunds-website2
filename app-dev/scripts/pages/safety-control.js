@@ -19,7 +19,6 @@
 
 
 	(function processSectionFirstFoldDetailsSwipers() {
-		return;
 		function evaluateIndexDistanceTo(count, centerIndex, targetIndex) {
 			count = parseInt(count);
 			if (isNaN(count) || count < 1) return NaN;
@@ -157,7 +156,7 @@
 
 				slidesPerView: 'auto',
 
-				freeMode: true,
+				freeMode: false,
 
 				scrollbar: slidesRootSelector+' .swiper-scrollbar',
 				scrollbarHide: false,
@@ -165,7 +164,7 @@
 				scrollbarSnapOnRelease: true,
 
 				mousewheelControl: true,
-				// mousewheelReleaseOnEdges: true,
+				mousewheelReleaseOnEdges: true,
 				mousewheelSensitivity: mousewheelSensitivity,
 
 				onInit: function(thisSwiperControl) {
