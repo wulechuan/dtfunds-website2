@@ -139,9 +139,16 @@
 		var mousewheelSensitivity = isFireFox ? 25 : 1;
 
 		$(slidesRootSelector).each(function () {
+			var slidesRoot = this;
+			var isMaxthon = window.navigator.userAgent.match(/Maxthon/i);
+			if (isMaxthon) {
+				var _rStyle = slidesRoot.style;
+				_rStyle.display = 'none';
+			}
+
 			// var lastSlideIndex = NaN;
 
-			new window.Swiper(this, {
+			new window.Swiper(slidesRoot, {
 				// nested: true,
 				direction: 'vertical',
 
@@ -157,6 +164,14 @@
 				mousewheelControl: true,
 				// mousewheelReleaseOnEdges: true,
 				mousewheelSensitivity: mousewheelSensitivity,
+
+				onInit: function(thisSwiperControl) {
+					if (isMaxthon) {
+						// workaround for avoiding maxthon webkit core bug
+						_rStyle.display = '';
+						thisSwiperControl.update();
+					}
+				},
 
 				// onSlideChangeStart: function(thisSwiperControl) {
 				// 	// C.log(thisSwiperControl);
