@@ -144,6 +144,7 @@
 			var slidesRoot = this;
 			var isMaxthon = window.navigator.userAgent.match(/Maxthon/i);
 			if (isMaxthon) {
+				// C.log('maxthon');
 				var _rStyle = slidesRoot.style;
 				_rStyle.display = 'none';
 			}
