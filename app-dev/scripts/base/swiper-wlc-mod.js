@@ -879,8 +879,13 @@
                 s.isBeginning = s.progress <= 0;
                 s.isEnd = s.progress >= 1;
             }
-            if (s.isBeginning && !wasBeginning) s.emit('onReachBeginning', s);
-            if (s.isEnd && !wasEnd) s.emit('onReachEnd', s);
+
+            /* mod begin */
+            s.wasBeginning = wasBeginning;
+            s.wasEnd = wasEnd;
+            if (s.isBeginning/* && !wasBeginning*/) s.emit('onReachBeginning', s);
+            if (s.isEnd/* && !wasEnd*/) s.emit('onReachEnd', s);
+            /* mod end */
         
             if (s.params.watchSlidesProgress) s.updateSlidesProgress(translate);
             s.emit('onProgress', s, s.progress);
@@ -3133,7 +3138,9 @@
             }
         }
         function handleMousewheel(e) {
+            console.log('wlc mousewheel');
             if (e.originalEvent) e = e.originalEvent; //jquery fix
+            e.stopPropagation();
             var we = s.mousewheel.event;
             var delta = 0;
             var rtlFactor = s.rtl ? -1 : 1;
@@ -3172,18 +3179,20 @@
                     delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? - e.deltaX * rtlFactor : - e.deltaY;
                 }
             }
-            if (delta === 0) return;
+            if (delta === 0) {
+                return;
+            }
         
             if (s.params.mousewheelInvert) delta = -delta;
         
             if (!s.params.freeMode) {
                 if ((new window.Date()).getTime() - s.mousewheel.lastScrollTime > 60) {
                     if (delta < 0) {
-                        if ((!s.isEnd || s.params.loop) && !s.animating) s.slideNext();
+                        if (!s.animating) s.slideNext();
                         else if (s.params.mousewheelReleaseOnEdges) return true;
                     }
                     else {
-                        if ((!s.isBeginning || s.params.loop) && !s.animating) s.slidePrev();
+                        if (!s.animating) s.slidePrev();
                         else if (s.params.mousewheelReleaseOnEdges) return true;
                     }
                 }
