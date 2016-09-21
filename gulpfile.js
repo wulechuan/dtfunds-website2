@@ -182,7 +182,7 @@ gulp.task('scripts-unglify', ['es-lint'], () => {
   ])
     // .pipe(sourcemaps.init())
       // .pipe(concat('base.min.js'))
-      .pipe(uglifyJs({preserveComments: 'some'}))
+      // .pipe(uglifyJs({preserveComments: 'some'}))
       .pipe(rename((fullPathName) => {
         fullPathName.basename += '.min';
         return fullPathName;

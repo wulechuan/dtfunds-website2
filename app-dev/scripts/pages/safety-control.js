@@ -134,6 +134,8 @@
 
 	(function processNestedSwipers(chiefSwiper) {
 		var slidesRootSelector = '.content-scrollable-block > .swiper-container';
+		// var alreadyReachedBeginning = false;
+		// var alreadyReachedEnd = false;
 
 		var isFireFox = !!navigator.userAgent.match(/Firefox/i);
 		var mousewheelSensitivity = isFireFox ? 25 : 1;
@@ -162,7 +164,7 @@
 				scrollbarSnapOnRelease: true,
 
 				mousewheelControl: true,
-				// mousewheelReleaseOnEdges: true,
+				mousewheelReleaseOnEdges: true,
 				mousewheelSensitivity: mousewheelSensitivity,
 
 				onInit: function(thisSwiperControl) {
@@ -178,21 +180,34 @@
 				// 	C.log('start');
 				// },
 
-				// onSlideChangeEnd: function(thisSwiperControl) {
-				// 	setTimeout(function () {
-				// 		C.log('end', lastSlideIndex);
-				// 		lastSlideIndex = thisSwiperControl.activeIndex;
-				// 	});
-				// },
+				onSlideChangeEnd: function(thisSwiperControl) {
+					// setTimeout(function () {
+					// 	C.log('end', lastSlideIndex);
+					// 	lastSlideIndex = thisSwiperControl.activeIndex;
+					// });
+					var theIndex = thisSwiperControl.activeIndex;
+					if (theIndex > 0) alreadyReachedBeginning = false;
+					if (theIndex < thisSwiperControl.slides.length - 1) alreadyReachedEnd = false;
+				},
 
 				onReachBeginning: function(thisSwiperControl) {
-					// C.log('onReachBeginning');
-					// chiefSwiper.slidePrev();
+					C.log('onReachBeginning', thisSwiperControl.wasBeginning);
+					// if (!alreadyReachedBeginning) {
+					// 	alreadyReachedBeginning = true;
+					// } else {
+					// 	// chiefSwiper.slidePrev();
+					// }
+					if (thisSwiperControl.wasBeginning) chiefSwiper.slidePrev();
 				},
 
 				onReachEnd: function (thisSwiperControl) {
-					// C.log('onReachEnd');
-					// chiefSwiper.slideNext();
+					C.log('onReachEnd', thisSwiperControl.wasEnd);
+					// if (!alreadyReachedEnd) {
+					// 	alreadyReachedEnd = true;
+					// } else {
+					// 	// chiefSwiper.slideNext();
+					// }
+					if (thisSwiperControl.wasEnd) chiefSwiper.slideNext();
 				},
 
 				// onProgress: function(thisSwiperControl, progress) {
