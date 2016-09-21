@@ -149,7 +149,7 @@
 			// var lastSlideIndex = NaN;
 
 			new window.Swiper(slidesRoot, {
-				// nested: true,
+				nested: true,
 				direction: 'vertical',
 
 				slidesPerView: 'auto',
