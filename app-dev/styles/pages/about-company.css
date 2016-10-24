@@ -561,6 +561,10 @@
 
 		.company-qualification .columns.certificates {
 			margin: 1rem auto 4rem;
+			font-size: 0;
+		}
+		.company-qualification .columns.certificates > .col {
+			font-size: 0.8rem;
 		}
 		.company-qualification .columns.certificates dt {
 			height: 0;

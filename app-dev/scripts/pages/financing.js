@@ -1,15 +1,16 @@
 (function () {
-	setupRollingNumber(1005123, '2016-09-18 09:45 GMT+0800');
+	var incPerDay = 987;
+	setupRollingNumber(1046451, '2016-10-20 09:55 GMT+0800', incPerDay);
 
-	function setupRollingNumber(theNumber, numberSamplingTime) {
+	function setupRollingNumber(theNumber, numberSamplingTime, incPerDay) {
 		$('.rolling-number').each(function () {
 			var el = this;
 			$(el).hide();
-			init(el, theNumber, numberSamplingTime);
+			init(el, theNumber, numberSamplingTime, incPerDay);
 			roll(el);
 		});
 
-		function init(el, targetNumber, numberSamplingTime) {
+		function init(el, targetNumber, numberSamplingTime, incPerDay) {
 			targetNumber = parseFloat(targetNumber);
 			if (isNaN(targetNumber)) {
 				targetNumber = parseFloat(el.getAttribute('data-target-value'));
@@ -19,14 +20,14 @@
 				targetNumber = parseFloat(el.textContent.replace(/\,/g, ''));
 			}
 
-			var ratio = 987 / (24 * 60 * 60);
 			var now = new Date().getTime();
 			var time = now - new Date(numberSamplingTime).getTime();
 			if (isNaN(time)) time = now;
 
 			time = Math.max(0, time / 1000);
 
-			targetNumber += time * ratio;
+			var incPerSecond = incPerDay / (24 * 60 * 60);
+			targetNumber += time * incPerSecond;
 			targetNumber = Math.floor(targetNumber);
 
 			// console.log(time * ratio, targetNumber);
@@ -41,10 +42,10 @@
 		}
 
 		function roll(el, from, to) {
-			var intervalInMS = 25;
-			var valueStepAbs = 9;
-			var valueStepAbsAcceleration = 1.23;
-			var valueStepAbsMax = 87654;
+			var intervalInMS = 20;
+			var valueStepAbs = 19;
+			var valueStepAbsAcceleration = 1.33;
+			var valueStepAbsMax = 98765;
 
 			if (el.isRolling) return true;
 
