@@ -4,6 +4,9 @@
 		{
 			"path": ".",
 			"folder_exclude_patterns": [
+				"*/_temp",
+				"*/_build-cache",
+				"*/build-*",
 				"node_modules",
 				"app-dist",
 				"utilities",
